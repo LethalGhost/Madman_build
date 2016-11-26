@@ -24,6 +24,31 @@
 	var/dynamic_lighting = 1    // Does the turf use dynamic lighting?
 
 	var/list/decals
+	var/interior = 1
+
+	var/list/exterior_areas = list(/area/coldwar/outside,
+							/area/coldwar/forest,
+							/area/coldwar/usmcfob
+							)
+
+	var/list/interior_areas = list(/area/coldwar/civdef,
+							/area/coldwar/sawmill,
+							/area/coldwar/house1,
+							/area/coldwar/house2,
+							/area/coldwar/house3,
+							/area/coldwar/house4,
+							/area/coldwar/house5,
+							/area/coldwar/house6,
+							/area/coldwar/house7,
+							/area/coldwar/house8,
+							/area/coldwar/house9,
+							/area/coldwar/house10,
+							/area/coldwar/shop,
+							/area/coldwar/fobindoors,
+							/area/coldwar/gasoline,
+							/area/coldwar/cafe
+							)
+
 
 /turf/New()
 	..()
@@ -32,10 +57,19 @@
 			src.Entered(AM)
 			return
 
+	if(loc.type in interior_areas)
+		interior = 1
+	//else if(src.type in exterior_turfs)
+	//	interior = 0
+	else
+		interior = 0
+
 	if(dynamic_lighting)
 		luminosity = 0
 	else
 		luminosity = 1
+
+	update_starlight()
 
 /turf/proc/initialize()
 	return
@@ -229,3 +263,18 @@ var/const/enterloopsanity = 100
 
 /turf/proc/update_blood_overlays()
 	return
+
+/turf/proc/update_starlight()
+	if(!config.starlight)
+		return
+	if(interior)
+		return
+
+	set_light(config.starlight, 1, config.starlight_color)
+
+	for(var/d in alldirs)
+		var/turf/T = get_step(src, d)
+		if(!T)
+			continue
+		if(T.interior && !T.opacity)
+			T.set_light(config.starlight, 1, config.starlight_color)

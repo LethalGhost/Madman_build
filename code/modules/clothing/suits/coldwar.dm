@@ -2,8 +2,8 @@
 	name = "armor vest"
 	icon_state = "6b2"
 	desc = "That's the 6B2, an armor vest used by Soviet Army."
-	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(melee = 25, bullet = 30, laser = 20, energy = 30, bomb = 40, bio = 0, rad = 0)
+	body_parts_covered = UPPER_TORSO
+	armor = list(melee = 25, bullet = 35, laser = 20, energy = 30, bomb = 40, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/vest6b2/New()
 	..()
@@ -14,7 +14,7 @@
 	icon_state = "6b3"
 	desc = "That's the 6B3, a modificated 6B2 armor vest used by Soviet Army."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(melee = 35, bullet = 50, laser = 20, energy = 30, bomb = 50, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 60, laser = 20, energy = 30, bomb = 50, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/vest6b3/New()
 	..()
@@ -25,7 +25,7 @@
 	icon_state = "6b2_webbed"
 	desc = "That's the 6B2, an armor vest used by Soviet Army. This one has a Chi-Com webbing vest"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(melee = 30, bullet = 30, laser = 20, energy = 30, bomb = 40, bio = 0, rad = 0)
+	armor = list(melee = 35, bullet = 40, laser = 20, energy = 30, bomb = 40, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/vest6b2webbed/New()
 	..()
@@ -68,7 +68,7 @@
 	icon_state = "pasgt_olive"
 	desc = "That's the armor vest used by USMC."
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
-	armor = list(melee = 25, bullet = 40, laser = 20, energy = 30, bomb = 40, bio = 0, rad = 0)
+	armor = list(melee = 40, bullet = 35, laser = 20, energy = 30, bomb = 40, bio = 0, rad = 0)
 
 /obj/item/clothing/suit/storage/vest/pasgt/woodland
 	icon_state = "pasgt_woodland"

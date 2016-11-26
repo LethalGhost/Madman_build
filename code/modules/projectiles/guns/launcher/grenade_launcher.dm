@@ -151,3 +151,24 @@
 		chambered = null
 	else
 		user << "<span class='warning'>\The [src] is empty.</span>"
+
+
+/obj/item/weapon/gun/launcher/grenade/underslung/m203
+	name = "M203 grenade launcher"
+	desc = "Not much more than a tube and a firing mechanism, this grenade launcher is designed to be fitted to a rifle."
+	whitelisted_grenades = list(
+		/obj/item/weapon/grenade/frag/shell40mm)
+	blacklisted_grenades = list(
+		/obj/item/weapon/grenade/frag/vog25,
+		/obj/item/weapon/grenade/frag
+		)
+
+/obj/item/weapon/gun/launcher/grenade/underslung/gp25
+	name = "GP-25 'Koster' grenade launcher"
+	desc = "Not much more than a tube and a firing mechanism, this grenade launcher is designed to be fitted to a rifle."
+	whitelisted_grenades = list(
+		/obj/item/weapon/grenade/frag/vog25)
+	blacklisted_grenades = list(
+		/obj/item/weapon/grenade/frag/shell40mm,
+		/obj/item/weapon/grenade/frag
+		)

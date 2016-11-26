@@ -246,7 +246,8 @@
 		/obj/item/weapon/grenade/frag,
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
-		/obj/item/weapon/material/knife/bayonet
+		/obj/item/weapon/material/knife/bayonet,
+		/obj/item/weapon/shovel/spade/wood
 		)
 
 /obj/item/weapon/storage/belt/lbeholster/soviet/New()
@@ -280,7 +281,8 @@
 		/obj/item/weapon/grenade/frag,
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
-		/obj/item/weapon/material/knife/bayonet
+		/obj/item/weapon/material/knife/bayonet,
+		/obj/item/weapon/shovel/spade/wood
 		)
 
 /obj/item/weapon/storage/belt/lbeholster/usmc/New()
@@ -311,7 +313,8 @@
 		/obj/item/weapon/grenade/frag,
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
-		/obj/item/weapon/material/knife/bayonet
+		/obj/item/weapon/material/knife/bayonet,
+		/obj/item/weapon/shovel/spade/wood
 		)
 
 
@@ -338,5 +341,6 @@
 		/obj/item/weapon/grenade/frag,
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
-		/obj/item/weapon/material/knife/bayonet
+		/obj/item/weapon/material/knife/bayonet,
+		/obj/item/weapon/shovel/spade/wood
 		)

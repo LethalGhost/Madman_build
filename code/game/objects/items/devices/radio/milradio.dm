@@ -64,7 +64,7 @@
 	w_class = 5
 	canhear_range = 1
 	flags = CONDUCT | NOBLOODY
-	frequency = 1343
+	frequency = 1341
 
 /obj/item/device/radio/r109d/verb/foldup()
 	set name = "Fold up the radio"

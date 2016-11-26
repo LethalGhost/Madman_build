@@ -6,6 +6,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_comdeputy
 	name = "Starshiy Strelok"
@@ -14,7 +15,8 @@
 	head = /obj/item/clothing/head/sovietushanka
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
-	back = /obj/item/weapon/gun/projectile/automatic/ak74
+	back = /obj/item/weapon/gun/projectile/automatic/ak74gl
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_com
 	name = "Komandir Otdeleniya"
@@ -24,6 +26,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_radio
 	name = "Radiotelefonist"
@@ -33,6 +36,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/aks74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_lmg
 	name = "Pulemetchik"
@@ -42,6 +46,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/rpk74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_rpg
 	name = "Granatometchik"
@@ -50,7 +55,9 @@
 	head = /obj/item/clothing/head/sovietushanka
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
-	back = /obj/item/weapon/gun/projectile/automatic/aks74
+	back = /obj/item/weapon/gun/launcher/rocket/rpg7
+	l_hand = /obj/item/weapon/gun/projectile/automatic/aks74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_rpgassist
 	name = "Pomoshnik Granatometchika"
@@ -59,7 +66,9 @@
 	head = /obj/item/clothing/head/sovietushanka
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
-	back = /obj/item/weapon/gun/projectile/automatic/ak74
+	back = /obj/item/weapon/storage/backpack/rpgammo
+	l_hand = /obj/item/weapon/gun/projectile/automatic/ak74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_pltcom
 	name = "Komandir Vzvoda"
@@ -69,6 +78,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_pltcomdep
 	name = "Zamestitel Komandira Vzvoda"
@@ -77,7 +87,8 @@
 	head = /obj/item/clothing/head/ushankaofficer
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
-	back = /obj/item/weapon/gun/projectile/automatic/ak74
+	back = /obj/item/weapon/gun/projectile/automatic/ak74gl
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_doc
 	name = "Polevoi Doktor"
@@ -87,6 +98,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/aks74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/sa_medic
 	name = "Sanitar"
@@ -96,5 +108,6 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/aks74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 

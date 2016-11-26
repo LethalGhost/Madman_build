@@ -742,7 +742,7 @@
 	reagent_state = LIQUID
 	color = "#800080"
 	flags = IGNORE_MOB_SIZE
-	overdose = 5
+	overdose = 10
 	metabolism = 0.01
 
 /datum/reagent/morphine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
@@ -754,11 +754,11 @@
 
 /datum/reagent/morphine/overdose(var/mob/living/carbon/M, var/alien)
 	..()
-	M.hallucination = max(M.hallucination, 2)
-	M.make_dizzy(5)
-	M.make_jittery(5)
-	M.confused += 2
-	M.drowsyness += 2
+	M.hallucination = max(M.hallucination, 50)
+	M.make_dizzy(10)
+	M.make_jittery(10)
+	if(M.losebreath < 3)
+		M.losebreath++
 
 /datum/reagent/naloxone
 	name = "Naloxone"

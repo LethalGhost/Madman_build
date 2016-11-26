@@ -89,6 +89,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "tacknife"
 	w_class = 2
+	item_state = "knife"
 	applies_material_colour = 0
 	force_divisor = 0.2 // 12 with hardness 60 (steel)
 	thrown_force_divisor = 0.75 // 15 with weight 20 (steel)

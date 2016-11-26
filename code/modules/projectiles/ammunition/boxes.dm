@@ -192,6 +192,7 @@
 	ammo_type = /obj/item/ammo_casing/a762
 	max_ammo = 50
 	multiple_sprites = 1
+	w_class = 4
 
 /obj/item/ammo_magazine/box/a762/empty
 	initial_ammo = 0
@@ -250,6 +251,7 @@
 	ammo_type = /obj/item/ammo_casing/a762x51
 	max_ammo = 200
 	multiple_sprites = 1
+	w_class = 4
 
 /obj/item/ammo_magazine/c762x51b/ap
 	name = "AP magazine (7.62x51mm)"
@@ -263,6 +265,7 @@
 	ammo_type = /obj/item/ammo_casing/a762x39
 	max_ammo = 200
 	multiple_sprites = 1
+	w_class = 4
 
 /obj/item/ammo_magazine/c762x39b/ap
 	name = "AP magazine (7.62x39mm)"
@@ -315,6 +318,7 @@
 	ammo_type = /obj/item/ammo_casing/a762x54
 	max_ammo = 200
 	multiple_sprites = 1
+	w_class = 4
 
 /obj/item/ammo_magazine/c762x54b/ap
 	name = "ammo box (7.62x54mm)"
@@ -336,12 +340,13 @@
 
 /obj/item/ammo_magazine/c556x45b
 	name = "ammo box (5.56x45mm)"
-	icon_state = "7.62x39b"
+	icon_state = "7.62x51mb"
 	mag_type = MAGAZINE
 	caliber = "556x45"
 	ammo_type = /obj/item/ammo_casing/a556x45
 	max_ammo = 100
 	multiple_sprites = 1
+	w_class = 4
 
 /obj/item/ammo_magazine/c556x45b/ap
 	name = "AP magazine (5.56x45mm)"
@@ -396,6 +401,7 @@
 	ammo_type = /obj/item/ammo_casing/a127x99mm
 	max_ammo = 200
 	multiple_sprites = 1
+	w_class = 4
 
 /obj/item/ammo_magazine/c556x45s
 	name = "magazine (5.56x45mm)"

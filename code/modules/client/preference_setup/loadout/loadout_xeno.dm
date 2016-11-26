@@ -1,4 +1,4 @@
-// Alien clothing.
+/*// Alien clothing.
 /datum/gear/suit/zhan_furs
 	display_name = "Zhan-Khazan furs (Tajara)"
 	path = /obj/item/clothing/suit/tajaran/furs
@@ -122,3 +122,4 @@
 	sort_category = "Xenowear"
 	whitelisted = "Machine"
 	cost = 1
+*/

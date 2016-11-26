@@ -146,8 +146,8 @@
 /datum/job/warpac_radio
 	title = "Radiotelefonist"
 	faction = "Station"
-	total_positions = 4
-	spawn_positions = 4
+	total_positions = 3
+	spawn_positions = 3
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)

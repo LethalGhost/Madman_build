@@ -38,4 +38,6 @@
 	name = "spade"
 	desc = "A small tool for digging and moving dirt. It has a wooden handle"
 	icon = 'icons/obj/wood.dmi'
+	force = 15
 	matter = list(DEFAULT_WALL_MATERIAL = 300, "wood" = 300)
+	w_class = 2

@@ -270,3 +270,14 @@
 	icon_state = "britcup"
 	volume = 30
 	center_of_mass = "x=15;y=13"
+
+/obj/item/weapon/reagent_containers/food/drinks/flask/military
+	name = "water flask"
+	desc = "That's a generic flask covered in a protective-colored cloth."
+	icon_state = "milflask"
+
+/obj/item/weapon/reagent_containers/food/drinks/flask/military/New()
+	..()
+	reagents.add_reagent("iron", 10)
+	reagents.add_reagent("water", 50)
+

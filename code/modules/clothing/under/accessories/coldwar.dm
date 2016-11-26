@@ -5,20 +5,18 @@
 	slot_flags = SLOT_BELT | SLOT_ID
 	badge_string = "Soldat"
 
-/obj/item/clothing/accessory/badge/militaryid/efreitor
-	badge_string = "Yefreitor"
+/obj/item/clothing/accessory/badge/militaryid/officer
+	badge_string = "Ofitser"
 
-/obj/item/clothing/accessory/badge/militaryid/sergeant
-	badge_string = "Sergant"
+/obj/item/clothing/accessory/badge/dogtag
+	name = "dog tag"
+	desc = "That's the special token used for identification soldiers of USMC. Has a some words on it."
+	icon_state = "tags"
+	slot_flags = SLOT_BELT | SLOT_ID
+	badge_string = "Enlisted"
 
-/obj/item/clothing/accessory/badge/militaryid/lieutenant
-	badge_string = "Leitenant"
-
-/obj/item/clothing/accessory/badge/militaryid/jlieutenant
-	badge_string = "Mladshiy Leitenant"
-
-/obj/item/clothing/accessory/badge/militaryid/praporshik
-	badge_string = "Praporshik"
+/obj/item/clothing/accessory/badge/dogtag/officer
+	badge_string = "Officer"
 
 /obj/item/clothing/accessory/insignia
 	name = "Insignia"

@@ -42,7 +42,7 @@
 
 	else
 
-		M.heal_organ_damage((src.heal_brute/15), (src.heal_burn/15))
+		M.heal_organ_damage((src.heal_brute/5), (src.heal_burn/5))
 		user.visible_message( \
 			"<span class='notice'>[M] has been applied with [src] by [user].</span>", \
 			"<span class='notice'>You apply \the [src] to [M].</span>" \
@@ -85,7 +85,7 @@
 					continue
 				if(used == amount)
 					break
-				if(!do_mob(user, M, W.damage/30))
+				if(!do_mob(user, M, W.damage/1))
 					user << "<span class='notice'>You must stand still to bandage wounds.</span>"
 					break
 

@@ -338,6 +338,18 @@
 		W.update_icon()
 		return
 
+/obj/item/weapon/storage/box/matches/small
+	name = "matchbox"
+	desc = "A small box of windproof matches."
+	icon = 'icons/obj/cigarettes.dmi'
+	icon_state = "matchboxsmall"
+	item_state = "zippo"
+	w_class = 1
+	slot_flags = SLOT_BELT
+	can_hold = list(/obj/item/weapon/flame/match)
+	startswith = list(/obj/item/weapon/flame/match = 5)
+	storage_slots = 5
+
 /obj/item/weapon/storage/box/autoinjectors
 	name = "box of injectors"
 	desc = "Contains autoinjectors."
@@ -418,45 +430,77 @@
 
 /obj/item/weapon/storage/box/rations
 	name = "MRE"
+	w_class = 2
+	max_storage_space = 10
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
-	startswith = list(/obj/item/weapon/storage/box/matches = 1,
+	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/armychocolate = 2,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish = 2,
 				/obj/item/weapon/material/kitchen/utensil/forkospoon = 1)
 
 /obj/item/weapon/storage/box/rations/beef
 	name = "MRE"
+	max_storage_space = 10
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
-	startswith = list(/obj/item/weapon/storage/box/matches = 1,
+	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/armychocolate = 1,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/beef = 2,
 				/obj/item/weapon/material/kitchen/utensil/forkospoon = 1)
 
 /obj/item/weapon/storage/box/rations/vegan
 	name = "MRE"
+	max_storage_space = 10
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
-	startswith = list(/obj/item/weapon/storage/box/matches = 1,
+	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/armychocolate = 2,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/vegan = 2,
 				/obj/item/weapon/material/kitchen/utensil/forkospoon = 1)
 
 /obj/item/weapon/storage/box/rations/lasagna
 	name = "MRE"
+	max_storage_space = 10
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
-	startswith = list(/obj/item/weapon/storage/box/matches = 1,
+	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/armychocolate = 1,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/lasagna = 2,
 				/obj/item/weapon/material/kitchen/utensil/forkospoon = 1)
 
 /obj/item/weapon/storage/box/rations/breads
 	name = "MRE"
+	max_storage_space = 10
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
-	startswith = list(/obj/item/weapon/storage/box/matches = 1,
+	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/armychocolate = 2,
 				/obj/item/weapon/reagent_containers/food/snacks/armymaindish/breads = 2,
 				/obj/item/weapon/material/kitchen/utensil/forkospoon = 1)
+
+/obj/item/weapon/storage/box/irp/var1
+	name = "'Etalon-1' rations"
+	w_class = 2
+	max_storage_space = 10
+	desc = "That's a ration pack used by Soviet army."
+	icon_state = "irp"
+	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
+				/obj/item/weapon/reagent_containers/food/drinks/cans/stewbuckwheat = 1,
+				/obj/item/weapon/reagent_containers/food/drinks/cans/stewpearlbarley = 1,
+				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/zheldor = 1,
+				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/morflot = 1,
+				/obj/item/weapon/material/kitchen/utensil/spoon = 1)
+
+/obj/item/weapon/storage/box/irp/var2
+	name = "'Etalon-2' rations"
+	w_class = 2
+	max_storage_space = 10
+	desc = "That's a ration pack used by Soviet army."
+	icon_state = "irp"
+	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
+				/obj/item/weapon/reagent_containers/food/drinks/cans/stew = 1,
+				/obj/item/weapon/reagent_containers/food/drinks/cans/buckwheat = 1,
+				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/ = 1,
+				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/tsukor = 1,
+				/obj/item/weapon/material/kitchen/utensil/spoon = 1)

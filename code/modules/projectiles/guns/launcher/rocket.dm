@@ -175,3 +175,18 @@
 		icon_state = "rpg7"
 	else
 		icon_state = "rpg7_empty"
+
+/obj/item/weapon/gun/launcher/rocket/rpg7/proc/unload(mob/user)
+	if(rockets.len)
+		var/obj/item/ammo_casing/rocket/G = rockets[rockets.len]
+		rockets.len--
+		user.put_in_hands(G)
+		user.visible_message("\The [user] removes \a [G] from [src].", "<span class='notice'>You remove \a [G] from \the [src].</span>")
+	else
+		user << "<span class='warning'>\The [src] is empty.</span>"
+
+/obj/item/weapon/gun/launcher/rocket/rpg7/attack_hand(mob/user)
+	if(user.get_inactive_hand() == src)
+		unload(user)
+	else
+		..()

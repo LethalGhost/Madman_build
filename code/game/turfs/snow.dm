@@ -11,6 +11,9 @@
     temperature = T0C - 35
     var/list/crossed_dirs = list()
 
+/turf/snow/New()
+ 	set_light(1.5, 2, "#0B243B")
+
 #define FOOTSTEP_SPRITE_AMT 2
 
 /turf/snow/Entered(atom/A)

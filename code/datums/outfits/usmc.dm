@@ -5,6 +5,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbe/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/m16a1
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_ftleader
 	name = "Fireteam Leader"
@@ -12,14 +13,15 @@
 	shoes = /obj/item/clothing/shoes/steeltoed
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbeholster/usmc
-	back = /obj/item/weapon/gun/projectile/automatic/m16a1
+	back = /obj/item/weapon/gun/projectile/automatic/m16a1gl
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_ftlmg
 	name = "Fireteam Designated Machinegunner"
 	uniform = /obj/item/clothing/under/coldwar/usmc/winter/pfc
 	shoes = /obj/item/clothing/shoes/steeltoed
-	head = /obj/item/clothing/head/sovietushanka
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 	belt = /obj/item/weapon/storage/belt/lbeholster/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/m240
 
@@ -29,7 +31,9 @@
 	shoes = /obj/item/clothing/shoes/steeltoed
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbe/usmc
-	back = /obj/item/weapon/gun/projectile/automatic/m16a1
+	back = /obj/item/weapon/storage/backpack/ammo
+	l_hand = /obj/item/weapon/gun/projectile/automatic/m16a1
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_sqleader
 	name = "Squad Leader"
@@ -37,7 +41,8 @@
 	shoes = /obj/item/clothing/shoes/steeltoed
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbeholster/usmc
-	back = /obj/item/weapon/gun/projectile/automatic/m16a2
+	back = /obj/item/weapon/gun/projectile/automatic/m16a1gl
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_depplleader
 	name = "Platoon Leader Deputy"
@@ -46,6 +51,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbeholster/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/m16a2
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_plleader
 	name = "Platoon Leader"
@@ -54,6 +60,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbeholster/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/m16a2
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_messenger
 	name = "Messenger"
@@ -62,6 +69,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbe/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/coltmodel733
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_dm
 	name = "Designated Marksman"
@@ -70,6 +78,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbeholster/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/m14/scoped
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_commedic
 	name = "Combat Medic"
@@ -78,6 +87,7 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbe/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/coltmodel733
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 
 /decl/hierarchy/outfit/job/us_doc
 	name = "Hospital Corpsman"
@@ -86,3 +96,4 @@
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 	belt = /obj/item/weapon/storage/belt/lbeholster/usmc
 	back = /obj/item/weapon/gun/projectile/automatic/coltmodel733
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military

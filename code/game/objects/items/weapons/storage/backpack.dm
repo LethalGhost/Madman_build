@@ -139,6 +139,24 @@
 	desc = "It's an orange backpack which was designed to hold beakers, pill bottles and bottles."
 	icon_state = "chempack"
 
+/obj/item/weapon/storage/backpack/rpgammo
+	name = "RPG-7 ammo backpack"
+	icon_state = "rpgammopack"
+	can_hold = list(/obj/item/ammo_casing/rocket)
+	max_storage_space = DEFAULT_BACKPACK_STORAGE + 4
+
+/obj/item/weapon/storage/backpack/ammo
+	name = "LMG ammo backpack"
+	icon_state = "ammopack"
+	max_storage_space = DEFAULT_BACKPACK_STORAGE + 4
+	can_hold = list(
+		/obj/item/ammo_magazine/c762x51b,
+		/obj/item/ammo_magazine/c762x39b,
+		/obj/item/ammo_magazine/c762x54b,
+		/obj/item/ammo_magazine/c556x45b,
+		/obj/item/ammo_magazine/c127x99b
+		)
+
 /*
  * Duffle Types
  */
@@ -357,10 +375,9 @@
 			/obj/item/weapon/pill_pack/morphine = 3,
 			/obj/item/weapon/pill_pack/paracetamol = 2,
 			/obj/item/weapon/pill_pack/doxycycline = 2,
-			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/promedolum = 6,
 			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/quickclot = 6,
 			/obj/item/clothing/gloves/latex = 1,
 			/obj/item/weapon/gauze_pack/gauze = 6,
-			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/epinephrine = 3,
+			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/epinephrine = 6,
 			/obj/item/weapon/pill_pack/naloxone = 3,
-			/obj/item/weapon/pill_pack/promethazine = 2)
+			/obj/item/weapon/pill_pack/promethazine = 3)

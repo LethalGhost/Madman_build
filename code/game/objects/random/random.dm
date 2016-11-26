@@ -777,12 +777,57 @@ obj/random/material //Random materials for building stuff
 	name = "random dish"
 	desc = "This is a food"
 	icon = 'icons/obj/food.dmi'
-	icon_state = "x"
+	icon_state = "maindish-beef"
 	item_to_spawn()
 		return pick(/obj/item/weapon/reagent_containers/food/snacks/armymaindish/breads,
 					/obj/item/weapon/reagent_containers/food/snacks/armymaindish/lasagna,
 					/obj/item/weapon/reagent_containers/food/snacks/armymaindish/vegan,
 					/obj/item/weapon/reagent_containers/food/snacks/armymaindish/beef)
+
+/obj/random/tincan
+	name = "random tin can"
+	desc = "This is a food"
+	icon = 'icons/obj/food.dmi'
+	icon_state = "stew_closed"
+	item_to_spawn()
+		return pick(/obj/item/weapon/reagent_containers/food/drinks/cans/stewpearlbarley,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/stew,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/stewbuckwheat,
+					/obj/item/weapon/reagent_containers/food/drinks/cans/buckwheat)
+
+/obj/random/tsukor
+	name = "random tsukor"
+	desc = "This is a sugar"
+	icon = 'icons/obj/food.dmi'
+	icon_state = "aeroflotsugar"
+	item_to_spawn()
+		return pick(/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/,
+					/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/zheldor,
+					/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/morflot,
+					/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/tsukor)
+
+/obj/random/helmet
+	name = "random helmet"
+	desc = "This is a helmet"
+	icon = 'icons/obj/clothing/hats.dmi'
+	icon_state = "ssh68helmet"
+	item_to_spawn()
+		return pick(/obj/item/clothing/head/helmet/m1,
+					/obj/item/clothing/head/helmet/m1/winter,
+					/obj/item/clothing/head/helmet/pasgt,
+					/obj/item/clothing/head/helmet/pasgt/winter)
+
+
+/obj/random/armorvest
+	name = "random armor"
+	desc = "This is an armor"
+	icon = 'icons/obj/clothing/suits.dmi'
+	icon_state = "usmc_flakvest"
+	item_to_spawn()
+		return pick(/obj/item/clothing/suit/storage/vest/usflak,
+					/obj/item/clothing/suit/storage/vest/pasgt,
+					/obj/item/clothing/suit/storage/vest/pasgt/woodland)
+
 
 /obj/random/sovietunder
 	name = "random soviet uniform"

@@ -1817,6 +1817,7 @@
 #include "code\modules\projectiles\guns\launcher\rocket.dm"
 #include "code\modules\projectiles\guns\launcher\syringe_gun.dm"
 #include "code\modules\projectiles\guns\projectile\automatic.dm"
+#include "code\modules\projectiles\guns\projectile\coldwar.dm"
 #include "code\modules\projectiles\guns\projectile\dartgun.dm"
 #include "code\modules\projectiles\guns\projectile\detective.dm"
 #include "code\modules\projectiles\guns\projectile\minigun.dm"

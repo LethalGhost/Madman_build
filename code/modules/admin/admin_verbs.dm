@@ -74,6 +74,7 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/show_skills,
 	/client/proc/check_customitem_activity,
 	/client/proc/man_up,
+	/client/proc/set_daytime,
 	/client/proc/global_man_up,
 	/client/proc/response_team, // Response Teams admin verb,
 	/client/proc/toggle_antagHUD_use,
@@ -971,3 +972,23 @@ var/list/admin_verbs_mentor = list(
 	feedback_add_details("admin_verb","GS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] gave [key_name(T)] the spell [S].")
 	message_admins("\blue [key_name_admin(usr)] gave [key_name(T)] the spell [S].", 1)
+
+/client/proc/set_daytime()
+	set category = "Admin"
+	set name = "Set daytime"
+
+	var/list/modes = list("Brighty day" = "#FFFFFF", "Cloudy day" = "#999999", "Very cloudy day" = "#777777", "Sunset" = "#FFC966", "Bright night" = "#444444", "Dark night" = "#111111", "Sunrise" = "#DEDF64", "Special" = "#FF77FF")
+
+	var/daytime = input(usr, "Select daytime", "Daytime changing.") as null|anything in modes
+
+	if(!daytime)
+		return
+
+	var/color = modes[daytime]
+	config.starlight_color = color
+
+	world << "Changing daytime and weather to [daytime]. This may take a while. Be patient."
+	spawn(10)
+		for(var/turf/T)
+			if(T.z == 1)
+				T.update_starlight()

@@ -1,5 +1,5 @@
 /obj/item/projectile/bullet/pellet/fragment
-	damage = 7
+	damage = 9
 	range_step = 2 //controls damage falloff with distance. projectiles lose a "pellet" each time they travel this distance. Can be a non-integer.
 
 	base_spread = 0 //causes it to be treated as a shrapnel explosion instead of cone
@@ -11,7 +11,7 @@
 	muzzle_type = null
 
 /obj/item/projectile/bullet/pellet/fragment/strong
-	damage = 10
+	damage = 12
 
 /obj/item/weapon/grenade/frag
 	name = "fragmentation grenade"
@@ -94,7 +94,7 @@
 	throw_speed = 2
 	throw_range = 7
 	fragment_type = /obj/item/projectile/bullet/pellet/fragment/strong
-	num_fragments = 190  //total number of fragments produced by the grenade
+	num_fragments = 170  //total number of fragments produced by the grenade
 	explosion_size = 1
 
 /obj/item/weapon/grenade/frag/m67
@@ -104,6 +104,23 @@
 	throw_speed = 5
 	throw_range = 10
 	fragment_type = /obj/item/projectile/bullet/pellet/fragment/strong
-	num_fragments = 160  //total number of fragments produced by the grenade
+	num_fragments = 140  //total number of fragments produced by the grenade
 	explosion_size = 2
 
+/obj/item/weapon/grenade/frag/shell40mm
+	name = "40x46mm 'M381 HE' grenade shell"
+	desc = "Cannot be thrown as the usual grenade, by the way."
+	icon_state = "40x44mmshell"
+	num_fragments = 60 //less powerful than a regular frag grenade
+
+/obj/item/weapon/grenade/frag/shell40mm/attack_self(mob/user)
+	return
+
+/obj/item/weapon/grenade/frag/vog25
+	name = "40x103mm 'VOG-25' grenade shell"
+	desc = "Cannot be thrown as the usual grenade, by the way."
+	icon_state = "40x103mmshell"
+	num_fragments = 70 //less powerful than a regular frag grenade
+
+/obj/item/weapon/grenade/frag/vog25/attack_self(mob/user)
+	return

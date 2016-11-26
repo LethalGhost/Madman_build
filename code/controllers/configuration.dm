@@ -205,6 +205,7 @@ var/list/gamemode_cache = list()
 	var/dsay_allowed = 1
 
 	var/starlight = 0	// Whether space turfs have ambient light or not
+	var/starlight_color = "#FFFFFF"
 
 	var/list/ert_species = list("Human")
 
