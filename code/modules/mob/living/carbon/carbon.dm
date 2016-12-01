@@ -46,6 +46,15 @@
 		if(germ_level < GERM_LEVEL_MOVE_CAP && prob(8))
 			germ_level++
 
+
+		if(!lying)
+			var/turf/T = src.loc
+			if(istype(T) && T.stepsound)
+				if(istype(src, /mob/living/carbon/human))
+					var/mob/living/carbon/human/H = src
+					if(H.shoes)
+						playsound(src, T.stepsound, 30, 0, 3, 1)
+
 /mob/living/carbon/relaymove(var/mob/living/user, direction)
 	if((user in src.stomach_contents) && istype(user))
 		if(user.last_special <= world.time)

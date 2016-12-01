@@ -214,3 +214,48 @@
 	singular_name = "gauze length"
 	icon = 'icons/obj/medical.dmi'
 	icon_state = "gauze"
+
+/obj/item/weapon/storage/box/pill_box
+	name = "pill box"
+	icon_state = "pillbox"
+	icon = 'icons/obj/medical.dmi'
+	w_class = 2
+	max_w_class = 1
+	max_storage_space = 5
+	can_hold = list(/obj/item/weapon/pill_pack/)
+
+/obj/item/weapon/storage/box/pill_box/phenazepam
+	name = "phenamepam pill box"
+	startswith = list(/obj/item/weapon/pill_pack/phenazepam = 4)
+
+/obj/item/weapon/storage/box/pill_box/morphine
+	name = "morphine pill box"
+	startswith = list(/obj/item/weapon/pill_pack/morphine = 4)
+
+/obj/item/weapon/storage/box/pill_box/amidopyrinum
+	name = "amidopyrinum pill box"
+	startswith = list(/obj/item/weapon/pill_pack/amidopyrinum = 4)
+
+/obj/item/weapon/storage/box/pill_box/naloxone
+	name = "naloxone pill box"
+	startswith = list(/obj/item/weapon/pill_pack/naloxone = 4)
+
+/obj/item/weapon/storage/box/pill_box/promethazine
+	name = "promethazine pill box"
+	startswith = list(/obj/item/weapon/pill_pack/promethazine = 4)
+
+/obj/item/weapon/storage/box/pill_box/cystamine
+	name = "cystamine pill box"
+	startswith = list(/obj/item/weapon/pill_pack/cystamine = 4)
+
+/obj/item/weapon/storage/box/pill_box/doxycycline
+	name = "doxycycline pill box"
+	startswith = list(/obj/item/weapon/pill_pack/doxycycline = 4)
+
+/obj/item/weapon/storage/box/pill_box/sydnocarbum
+	name = "sydnocarbum pill box"
+	startswith = list(/obj/item/weapon/pill_pack/sydnocarbum = 4)
+
+/obj/item/weapon/storage/box/pill_box/paracetamol
+	name = "paracetamol pill box"
+	startswith = list(/obj/item/weapon/pill_pack/paracetamol = 4)

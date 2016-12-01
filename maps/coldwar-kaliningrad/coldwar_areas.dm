@@ -10,7 +10,7 @@
 	name = "outside"
 	icon_state = "outside"
 	sound_env = PLAIN
-	forced_ambience = list('sound/ambience/coldwar/windoutdoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinter.ogg')
 	ambience = list (
 	'sound/ambience/coldwar/battle_loop1.wav',
 	'sound/ambience/coldwar/battle_loop2.wav',
@@ -26,7 +26,7 @@
 	name = "forest"
 	icon_state = "forest"
 	sound_env = FOREST
-	forced_ambience = list('sound/ambience/coldwar/windoutdoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinter.ogg')
 	ambience = list (
 	'sound/ambience/coldwar/battle_loop1.wav',
 	'sound/ambience/coldwar/battle_loop2.wav',
@@ -49,13 +49,13 @@
 /area/coldwar/house1
 	name = "house"
 	icon_state = "house"
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 	sound_env = LIVINGROOM
 
 /area/coldwar/sawmill
 	name = "sawmill"
 	icon_state = "house"
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 	sound_env = LIVINGROOM
 
 
@@ -63,7 +63,7 @@
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/house3
 	name = "house"
@@ -75,73 +75,73 @@
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/house5
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/house6
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/house7
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/house8
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/house9
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/house10
 	name = "house"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/fobindoors
 	name = "USMC FOB"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/shop
 	name = "shop"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/gasoline
 	name = "gasoline"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/cafe
 	name = "cafe"
 	icon_state = "house"
 	sound_env = LIVINGROOM
-	forced_ambience = list('sound/ambience/coldwar/windindoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 
 /area/coldwar/usmcfob
 	name = "USMC FOB"
 	icon_state = "usmcfob"
 	sound_env = PLAIN
-	forced_ambience = list('sound/ambience/coldwar/windoutdoor.wav')
+	forced_ambience = list('sound/effects/wind/windwinterinside.ogg')
 	ambience = list (
 	'sound/ambience/coldwar/plane1.wav',
 	'sound/ambience/coldwar/plane2.wav',

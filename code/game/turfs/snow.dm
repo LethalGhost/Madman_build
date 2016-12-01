@@ -1,9 +1,9 @@
 /turf/snow
     name = "snow"
-
-    dynamic_lighting = 1
     icon = 'icons/turf/snow_new.dmi'
     icon_state = "snow"
+    stepsound = "snow"
+    interior = 0
 
     oxygen = MOLES_O2STANDARD * 1.15
     nitrogen = MOLES_N2STANDARD * 1.15
@@ -11,8 +11,6 @@
     temperature = T0C - 35
     var/list/crossed_dirs = list()
 
-/turf/snow/New()
- 	set_light(1.5, 2, "#0B243B")
 
 #define FOOTSTEP_SPRITE_AMT 2
 

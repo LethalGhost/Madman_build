@@ -45,9 +45,14 @@ var/list/clown_sound = list('sound/effects/clownstep1.ogg','sound/effects/clowns
 var/list/swing_hit_sound = list('sound/weapons/genhit1.ogg', 'sound/weapons/genhit2.ogg', 'sound/weapons/genhit3.ogg')
 var/list/hiss_sound = list('sound/voice/hiss1.ogg','sound/voice/hiss2.ogg','sound/voice/hiss3.ogg','sound/voice/hiss4.ogg')
 var/list/page_sound = list('sound/effects/pageturn1.ogg', 'sound/effects/pageturn2.ogg','sound/effects/pageturn3.ogg')
-var/list/bullet_flyby_sound = list('sound/weapons/bullet-flyby1.ogg','sound/weapons/bullet-flyby2.ogg','sound/weapons/bullet-flyby3.ogg','sound/weapons/bullet-flyby4.ogg')
+var/list/bullet_flyby_sound = list('sound/weapons/bullet-flyby1.wav','sound/weapons/bullet-flyby2.wav','sound/weapons/bullet-flyby3.wav','sound/weapons/bullet-flyby4.wav')
 var/list/bullet_hit_body_sound = list('sound/weapons/bullet-hit.ogg')
-var/list/bullet_hit_object_sound = list('sound/weapons/bullet-hit-something.ogg')
+var/list/bullet_hit_object_sound = list('sound/weapons/ric1.wav', 'sound/weapons/ric2.wav', 'sound/weapons/ric3.wav', 'sound/weapons/ric4.wav', 'sound/weapons/ric5.wav', 'sound/weapons/ric6.wav')
+var/list/wood_step_sound = list('sound/effects/footsteps/wood1.wav', 'sound/effects/footsteps/wood2.wav', 'sound/effects/footsteps/wood3.wav', 'sound/effects/footsteps/wood4.wav','sound/effects/footsteps/wood5.wav', 'sound/effects/footsteps/wood6.wav')
+var/list/snow_step_sound = list('sound/effects/footsteps/snow1.wav', 'sound/effects/footsteps/snow2.wav', 'sound/effects/footsteps/snow3.wav', 'sound/effects/footsteps/snow4.wav', 'sound/effects/footsteps/snow5.wav', 'sound/effects/footsteps/snow6.wav')
+var/list/concrete_step_sound = list('sound/effects/footsteps/concrete1.wav', 'sound/effects/footsteps/concrete2.wav', 'sound/effects/footsteps/concrete3.wav', 'sound/effects/footsteps/concrete4.wav', 'sound/effects/footsteps/concrete5.wav', 'sound/effects/footsteps/concrete6.wav')
+var/list/metal_step_sound = list('sound/effects/footsteps/metal1.wav', 'sound/effects/footsteps/metal2.wav', 'sound/effects/footsteps/metal3.wav', 'sound/effects/footsteps/metal4.wav')
+var/list/bodysplat_sound = list('sound/effects/bodysplat.wav', 'sound/effects/bodysplat2.wav', 'sound/effects/bodysplat3.wav')
 
 /proc/playsound(var/atom/source, soundin, vol as num, vary, extrarange as num, falloff, var/is_global)
 
@@ -181,5 +186,10 @@ var/const/FALLOFF_SOUNDS = 0.5
 			if ("swing_hit") soundin = pick(swing_hit_sound)
 			if ("hiss") soundin = pick(hiss_sound)
 			if ("pageturn") soundin = pick(page_sound)
+			if ("concrete") soundin = pick(concrete_step_sound)
+			if ("snow") soundin = pick(snow_step_sound)
+			if ("wood") soundin = pick(wood_step_sound)
+			if ("metal") soundin = pick(metal_step_sound)
+			if ("bodysplat") soundin = pick(bodysplat_sound)
 			//if ("gunshot") soundin = pick(gun_sound)
 	return soundin

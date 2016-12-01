@@ -56,6 +56,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		return
 	if(location)
 		location.hotspot_expose(700, 5)
+		playsound(loc, 'sound/items/flareOn.ogg', 75, 1, -3)
 		return
 
 /obj/item/weapon/flame/match/dropped(mob/user as mob)
@@ -476,9 +477,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			item_state = "[base_state]on"
 			if(istype(src, /obj/item/weapon/flame/lighter/zippo) )
 				user.visible_message("<span class='rose'>Without even breaking stride, [user] flips open and lights [src] in one smooth movement.</span>")
+				playsound(loc, 'sound/items/zippo_on.ogg', 75, 1, -3)
 			else
-				if(prob(95))
+				if(prob(75))
 					user.visible_message("<span class='notice'>After a few attempts, [user] manages to light the [src].</span>")
+					playsound(loc, 'sound/items/lighter_on.ogg', 75, 1, -3)
 				else
 					user << "<span class='warning'>You burn yourself while lighting the lighter.</span>"
 					if (user.l_hand == src)
@@ -495,8 +498,10 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 			item_state = "[base_state]"
 			if(istype(src, /obj/item/weapon/flame/lighter/zippo) )
 				user.visible_message("<span class='rose'>You hear a quiet click, as [user] shuts off [src] without even looking at what they're doing.</span>")
+				playsound(loc, 'sound/items/zippo_off.ogg', 75, 1, -3)
 			else
 				user.visible_message("<span class='notice'>[user] quietly shuts off the [src].</span>")
+				playsound(loc, 'sound/items/lighter_off.ogg', 75, 1, -3)
 
 			set_light(0)
 			processing_objects.Remove(src)

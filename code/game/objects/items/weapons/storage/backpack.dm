@@ -345,11 +345,11 @@
 	max_w_class = 2
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	startswith = list(
-			/obj/item/weapon/pill_pack/doxycycline = 2,
-			/obj/item/weapon/pill_pack/phenazepam = 1,
-			/obj/item/weapon/pill_pack/amidopyrinum = 2,
-			/obj/item/weapon/pill_pack/sydnocarbum = 4,
-			/obj/item/weapon/pill_pack/cystamine = 2,
+			/obj/item/weapon/storage/box/pill_box/doxycycline = 2,
+			/obj/item/weapon/storage/box/pill_box/phenazepam = 2,
+			/obj/item/weapon/storage/box/pill_box/amidopyrinum = 2,
+			/obj/item/weapon/storage/box/pill_box/sydnocarbum = 4,
+			/obj/item/weapon/storage/box/pill_box/cystamine= 2,
 			/obj/item/clothing/gloves/latex = 1,
 			/obj/item/weapon/gauze_pack/ipp = 6)
 
@@ -372,12 +372,12 @@
 	max_w_class = 2
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	startswith = list(
-			/obj/item/weapon/pill_pack/morphine = 3,
-			/obj/item/weapon/pill_pack/paracetamol = 2,
-			/obj/item/weapon/pill_pack/doxycycline = 2,
+			/obj/item/weapon/storage/box/pill_box/morphine = 5,
+			/obj/item/weapon/storage/box/pill_box/paracetamol = 2,
+			/obj/item/weapon/storage/box/pill_box/doxycycline = 2,
 			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/quickclot = 6,
 			/obj/item/clothing/gloves/latex = 1,
 			/obj/item/weapon/gauze_pack/gauze = 6,
 			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/epinephrine = 6,
-			/obj/item/weapon/pill_pack/naloxone = 3,
-			/obj/item/weapon/pill_pack/promethazine = 3)
+			/obj/item/weapon/storage/box/pill_box/naloxone = 2,
+			/obj/item/weapon/storage/box/pill_box/promethazine = 2)

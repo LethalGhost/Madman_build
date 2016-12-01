@@ -263,6 +263,25 @@ area/space/atmosalert()
 	icon_state = "shuttle"
 	base_turf = /turf/space/transit/east/shuttlespace_ew1
 
+/area/shuttle/uh1
+	requires_power = 0
+	sound_env = SMALL_ENCLOSED
+	base_turf = /turf/snow
+
+/area/shuttle/uh1/lz1
+	icon_state = "shuttle2"
+
+/area/shuttle/uh1/lz2
+	icon_state = "shuttle2"
+
+/area/shuttle/uh1/lz3
+	icon_state = "shuttle2"
+
+/area/shuttle/uh1/transit
+	icon_state = "shuttle2"
+
+
+
 // === Trying to remove these areas:
 
 /area/shuttle/research

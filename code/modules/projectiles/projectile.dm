@@ -87,8 +87,13 @@
 //called when the projectile stops flying because it collided with something
 /obj/item/projectile/proc/on_impact(var/atom/A)
 	impact_effect(effect_transform)		// generate impact effect
-	playsound(src, "hitobject", 50, 1, -2)
 	return
+
+/obj/item/projectile/on_impact(var/turf/A)
+	playsound(src.loc, "hitobject", 70, 1, -2)
+
+/obj/item/projectile/on_impact(var/obj/A)
+	playsound(src.loc, "hitobject", 70, 1, -2)
 
 //Checks if the projectile is eligible for embedding. Not that it necessarily will.
 /obj/item/projectile/proc/can_embed()
@@ -192,10 +197,10 @@
 	//hit messages
 	if(silenced)
 		target_mob << "<span class='danger'>You've been hit in the [parse_zone(def_zone)] by \the [src]!</span>"
-		playsound(src, "hit", 50, 1, -5)
+		playsound(src.loc, "hit", 70, 1, -5)
 	else
 		target_mob.visible_message("<span class='danger'>\The [target_mob] is hit by \the [src] in the [parse_zone(def_zone)]!</span>")//X has fired Y is now given by the guns so you cant tell who shot you if you could not see the shooter
-		playsound(src, "hit", 50, 1, -5)
+		playsound(src.loc, "hit", 70, 1, -5)
 
 	//admin logs
 	if(!no_attack_log)

@@ -25,8 +25,10 @@
 	if(fullblock >= 1 || prob(fullblock*100))
 		if(absorb_text)
 			show_message("<span class='warning'>[absorb_text]</span>")
+			playsound(src.loc, "sound/items/armorhit.wav", 60, 1)
 		else
 			show_message("<span class='warning'>Your armor absorbs the blow!</span>")
+			playsound(src.loc, "sound/items/armorhit.wav", 60, 1)
 		return 100
 
 	//this makes it so that X armour blocks X% damage, when including the chance of hard block.
@@ -40,8 +42,10 @@
 		//Should we show this every single time?
 		if(soften_text)
 			show_message("<span class='warning'>[soften_text]</span>")
+			playsound(src.loc, "sound/items/armorhit.wav", 60, 1)
 		else
 			show_message("<span class='warning'>Your armor softens the blow!</span>")
+			playsound(src.loc, "sound/items/armorhit.wav", 60, 1)
 
 	return round(blocked, 1)
 

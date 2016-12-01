@@ -32,6 +32,7 @@
 		return 0
 	on = !on
 	update_icon()
+	playsound(loc, 'sound/items/flashlight_on.ogg', 75, 1, -3)
 	user.update_action_buttons()
 	return 1
 
@@ -191,6 +192,7 @@
 /obj/item/device/flashlight/flare/attack_self(mob/user)
 	if(turn_on(user))
 		user.visible_message("<span class='notice'>\The [user] activates \the [src].</span>", "<span class='notice'>You pull the cord on the flare, activating it!</span>")
+		playsound(loc, 'sound/items/flareOn.ogg', 75, 1, -3)
 
 /obj/item/device/flashlight/flare/proc/turn_on(var/mob/user)
 	if(on)

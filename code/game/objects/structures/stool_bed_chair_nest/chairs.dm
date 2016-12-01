@@ -199,19 +199,19 @@
 	base_icon = "wooden_chair_wings"
 	icon_state = "wooden_chair_wings_preview"
 
-/obj/structure/stool/bed/chair/helichair
+/obj/structure/bed/chair/helichair
 	name = "Passenger Seat"
 	desc = "Holds you in place during high altitude drops."
 	icon_state = "helichair"
 	var/image/chairbar = null
 
-/obj/structure/stool/bed/chair/helichair/New()
+/obj/structure/bed/chair/helichair/New()
 	chairbar = image("icons/obj/objects.dmi", "heli_bars")
 	chairbar.layer = MOB_LAYER + 0.1
 
 	return ..()
 
-/obj/structure/stool/bed/chair/helichair/buckle_mob()
+/obj/structure/bed/chair/helichair/buckle_mob()
 	if(buckled_mob)
 		icon_state = "helichair_buckled"
 		overlays += chairbar

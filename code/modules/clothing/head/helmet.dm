@@ -17,6 +17,21 @@
 	siemens_coefficient = 0.7
 	w_class = 3
 
+
+/obj/item/clothing/head/helmet/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(istype(W, /obj/item/weapon/material/knife/bayonet))
+		var/tmp_label = ""
+		var/label_text = sanitizeSafe(input(user, "Inscribe some text into \the [initial(name)]","Inscription",tmp_label), MAX_NAME_LEN)
+		if(length(label_text) > 20)
+			user << "\red The inscription can be at most 20 characters long."
+		else if(!label_text)
+			user << "\blue You scratch the inscription off of [initial(name)]."
+			name = initial(name)
+		else
+			user << "\blue You inscribe \"[label_text]\" into \the [initial(name)]."
+			name = "[initial(name)] (\"[label_text]\")"
+	else ..()
+
 /obj/item/clothing/head/helmet/solgov
 	name = "\improper Sol Central Government helmet"
 	desc = "A helmet painted in Peacekeeper blue. Stands out like a sore thumb."

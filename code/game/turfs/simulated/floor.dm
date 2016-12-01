@@ -2,6 +2,7 @@
 	name = "plating"
 	icon = 'icons/turf/flooring/plating.dmi'
 	icon_state = "plating"
+	stepsound = "concrete"
 
 	// Damage to flooring.
 	var/broken

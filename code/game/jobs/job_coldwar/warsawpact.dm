@@ -197,3 +197,21 @@
 	if(prob(3))
 		H.add_language("English")
 		H << "<b>Yay! You know english language!</b>"
+
+/datum/job/warpac_prap
+	title = "Praporshik"
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	selection_color = "#770e0e"
+//	access = list(access_ru_soldier)
+//	minimal_access = list(access_ru_soldier)
+//	spawn_location = "JoinLateRussia"
+	outfit_type = /decl/hierarchy/outfit/job/sa_prap
+
+/datum/job/warpac_prap/update_character(var/mob/living/carbon/human/H)
+	H.add_language("Russian")
+	H.default_language = all_languages["Russian"]
+	if(prob(3))
+		H.add_language("English")
+		H << "<b>Yay! You know english language!</b>"

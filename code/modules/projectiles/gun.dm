@@ -147,7 +147,7 @@
 	set waitfor = 0
 	if(cocked_sound)
 		sleep(5)
-		if(user && loc) playsound(user, cocked_sound, 100, 1)
+		if(user && loc) playsound(src.loc, cocked_sound, 100, 1)
 
 /obj/item/weapon/gun/emp_act(severity)
 	for(var/obj/O in contents)
@@ -244,7 +244,7 @@
 		user.visible_message("*click click*", "<span class='danger'>*click*</span>")
 	else
 		src.visible_message("*click click*")
-	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
+	playsound(src.loc, 'sound/weapons/gunempty.wav', 100, 1)
 
 //called after successfully firing
 /obj/item/weapon/gun/proc/handle_post_fire(mob/user, atom/target, var/pointblank=0, var/reflex=0)
@@ -310,7 +310,7 @@
 			if(grabstate >= GRAB_NECK)
 				damage_mult = 2.5
 			else if(grabstate >= GRAB_AGGRESSIVE)
-				damage_mult = 1.5
+				damage_mult = 1.7
 	P.damage *= damage_mult
 
 /obj/item/weapon/gun/proc/process_accuracy(obj/projectile, mob/user, atom/target, var/burst, var/held_twohanded)
@@ -363,9 +363,9 @@
 	if(launched)
 		var/shot_sound = P.fire_sound? P.fire_sound : fire_sound
 		if(silenced)
-			playsound(user, shot_sound, 10, 1)
+			playsound(src.loc, shot_sound, 10, 1)
 		else
-			playsound(user, shot_sound, 50, 1)
+			playsound(src.loc, shot_sound, 60, 1)
 
 	return launched
 
@@ -387,9 +387,9 @@
 		user.visible_message("<span class = 'warning'>[user] pulls the trigger.</span>")
 		var/shot_sound = in_chamber.fire_sound? in_chamber.fire_sound : fire_sound
 		if(silenced)
-			playsound(user, shot_sound, 10, 1)
+			playsound(src.loc, shot_sound, 10, 1)
 		else
-			playsound(user, shot_sound, 50, 1)
+			playsound(src.loc, shot_sound, 70, 1)
 		if(istype(in_chamber, /obj/item/projectile/beam/lastertag))
 			user.show_message("<span class = 'warning'>You feel rather silly, trying to commit suicide with a toy.</span>")
 			mouthshoot = 0

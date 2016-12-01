@@ -16,6 +16,7 @@
 	//Properties for both
 	var/temperature = T20C      // Initial turf temperature.
 	var/blocks_air = 0          // Does this turf contain air/let air through?
+	var/stepsound = ""
 
 	// General properties.
 	var/icon_old = null
@@ -56,6 +57,7 @@
 		spawn( 0 )
 			src.Entered(AM)
 			return
+	turfs |= src
 
 	if(loc.type in interior_areas)
 		interior = 1
@@ -63,11 +65,6 @@
 	//	interior = 0
 	else
 		interior = 0
-
-	if(dynamic_lighting)
-		luminosity = 0
-	else
-		luminosity = 1
 
 	update_starlight()
 

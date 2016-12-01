@@ -410,3 +410,64 @@
 	icon = 'icons/obj/decorations.dmi'
 	icon_state = "carpet2"
 	desc = "That's a carpet"
+
+/obj/structure/sign/alpha1
+	name = "ALPHA-1"
+	icon_state = "alpha1"
+
+/obj/structure/sign/alpha2
+	name = "ALPHA-2"
+	icon_state = "alpha2"
+
+/obj/structure/sign/bravo2
+	name = "BRAVO-2"
+	icon_state = "bravo2"
+
+/obj/structure/sign/bravo1
+	name = "BRAVO-1"
+	icon_state = "bravo1"
+
+/obj/structure/sign/charlie1
+	name = "CHARLIE-1"
+	icon_state = "charlie1"
+
+/obj/structure/sign/charlie2
+	name = "CHARLIE-2"
+	icon_state = "charlie2"
+
+/obj/structure/sign/hospital
+	name = "HOSPITAL"
+	icon_state = "hospital"
+
+/obj/structure/sign/command
+	name = "COMMAND"
+	icon_state = "command"
+
+/obj/structure/sign/raduzhnoe
+	name = "Raduzhnoe village"
+	icon = 'icons/obj/decals48.dmi'
+	icon_state = "raduzhnoe"
+
+/obj/structure/sign/stogovka
+	name = "Stogovka river"
+	icon = 'icons/obj/decals48.dmi'
+	icon_state = "stogovka"
+
+/obj/structure/sign/cafe
+	name = "cafe sign"
+	icon_state = "cafesign"
+
+/obj/structure/sign/gasoline
+	name = "gasoline sign"
+	icon_state = "gasolinesign"
+
+/obj/structure/sign/human
+	name = "'human on the road' sign"
+	icon_state = "humansign"
+
+/obj/structure/sign/way
+	name = "direction sign"
+	icon_state = "waysign"
+
+
+

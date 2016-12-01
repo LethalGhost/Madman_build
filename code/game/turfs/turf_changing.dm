@@ -61,8 +61,9 @@
 	if(air_master)
 		air_master.mark_for_update(src) //handle the addition of the new turf.
 
-	for(var/turf/space/S in range(W,1))
-		S.update_starlight()
+
+	for(var/turf/T in range(W,1))
+		T.update_starlight()
 
 	W.post_change()
 	. = W

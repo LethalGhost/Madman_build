@@ -49,7 +49,7 @@
 /obj/item/clothing/under/coldwar/afganka/winter/var3/star
 	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/star, /obj/item/clothing/accessory/badge/militaryid)
 
-/obj/item/clothing/under/coldwar/afganka/winter/var2/prap
+/obj/item/clothing/under/coldwar/afganka/winter/prap
 	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/prap, /obj/item/clothing/accessory/badge/militaryid)
 
 /obj/item/clothing/under/coldwar/afganka/winter/var3/stpr

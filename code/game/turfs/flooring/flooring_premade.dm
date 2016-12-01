@@ -3,6 +3,7 @@
 	name = "plating"
 	icon = 'icons/turf/flooring/plating.dmi'
 	icon_state = "plating"
+	stepsound = "metal"
 
 /turf/simulated/floor/carpet
 	name = "carpet"
@@ -27,6 +28,7 @@
 	icon = 'icons/turf/flooring/wood.dmi'
 	icon_state = "wood"
 	initial_flooring = /decl/flooring/wood
+	stepsound = "wood"
 
 /turf/simulated/floor/grass
 	name = "grass patch"

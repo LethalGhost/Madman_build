@@ -72,6 +72,9 @@
 /obj/structure/flora/tree/pine/New()
 	..()
 	icon_state = "pine_[rand(1, 3)]"
+	if(isturf(src.loc))
+		var/turf/T = src.loc
+		T.stepsound = "snow"
 
 /obj/structure/flora/tree/pine/xmas
 	name = "xmas tree"
@@ -89,6 +92,9 @@
 /obj/structure/flora/tree/dead/New()
 	..()
 	icon_state = "tree_[rand(1, 6)]"
+	if(isturf(src.loc))
+		var/turf/T = src.loc
+		T.stepsound = "concrete"
 
 
 //grass
@@ -98,6 +104,11 @@
 	anchored = 1
 	var/indestructable = 0
 	var/stump = 0
+
+/obj/structure/flora/grass/New()
+	if(isturf(src.loc))
+		var/turf/T = src.loc
+		T.stepsound = "snow"
 
 /obj/structure/flora/grass/attackby(var/obj/I as obj, var/mob/user as mob)
 	//hatchets can clear away undergrowth

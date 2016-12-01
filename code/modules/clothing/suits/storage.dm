@@ -67,6 +67,7 @@
 
 /obj/item/clothing/suit/storage/vest/chicom/New()
 	..()
+	pockets = new/obj/item/weapon/storage/internal/pockets(src, slots = 6, slot_size = 2)
 
 /obj/item/clothing/suit/storage/vest/vest6b2webbed/New()
 	..()

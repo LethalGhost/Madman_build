@@ -43,6 +43,7 @@
 	icon_state = "scarf"
 	item_state = "scarf"
 	flags_inv = HIDEFACE
+	cold_protection = FACE
 
 /obj/item/clothing/mask/scarf/alt
 	icon_state = "scarf_alt"
@@ -54,12 +55,14 @@
 	icon_state = "coif"
 	item_state = "coif"
 	flags_inv = HIDEFACE|BLOCKHAIR
+	cold_protection = FACE | HEAD
 
 /obj/item/clothing/mask/scarf/coifhalf
 	name = "cutted heat absorbent coif"
 	desc = "A close-fitting cap used by military forces at the winter ops. This one is cutted up."
 	icon_state = "halfcoif"
 	item_state = "halfcoif"
+	cold_protection = FACE
 
 /obj/item/clothing/mask/scarf/coifscarf
 	name = "cutted heat absorbent coif with a scarf"

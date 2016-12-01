@@ -727,3 +727,13 @@ obj/machinery/light/proc/burn_out()
 		sharp = 1
 		playsound(src.loc, 'sound/effects/Glasshit.ogg', 75, 1)
 		update_icon()
+
+//experiment - object-based sunlight.
+/obj/effect/sun
+	name = "sun"
+	desc = "You really shouldn't be seeing this."
+//	invisibility = 101
+	anchored = 1
+	light_color = "#fcfcb6"
+	light_power = 1
+	light_range = 255

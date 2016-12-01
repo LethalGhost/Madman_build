@@ -7,6 +7,7 @@
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
 
 /decl/hierarchy/outfit/job/sa_comdeputy
 	name = "Starshiy Strelok"
@@ -17,6 +18,7 @@
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74gl
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch/grenade
 
 /decl/hierarchy/outfit/job/sa_com
 	name = "Komandir Otdeleniya"
@@ -27,6 +29,7 @@
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch/medical
 
 /decl/hierarchy/outfit/job/sa_radio
 	name = "Radiotelefonist"
@@ -37,6 +40,7 @@
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/aks74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
 
 /decl/hierarchy/outfit/job/sa_lmg
 	name = "Pulemetchik"
@@ -47,6 +51,7 @@
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/rpk74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
 
 /decl/hierarchy/outfit/job/sa_rpg
 	name = "Granatometchik"
@@ -58,6 +63,7 @@
 	back = /obj/item/weapon/gun/launcher/rocket/rpg7
 	l_hand = /obj/item/weapon/gun/projectile/automatic/aks74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
 
 /decl/hierarchy/outfit/job/sa_rpgassist
 	name = "Pomoshnik Granatometchika"
@@ -69,6 +75,7 @@
 	back = /obj/item/weapon/storage/backpack/rpgammo
 	l_hand = /obj/item/weapon/gun/projectile/automatic/ak74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
 
 /decl/hierarchy/outfit/job/sa_pltcom
 	name = "Komandir Vzvoda"
@@ -79,6 +86,7 @@
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
 
 /decl/hierarchy/outfit/job/sa_pltcomdep
 	name = "Zamestitel Komandira Vzvoda"
@@ -89,6 +97,7 @@
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/ak74gl
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch/grenade
 
 /decl/hierarchy/outfit/job/sa_doc
 	name = "Polevoi Doktor"
@@ -99,6 +108,7 @@
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/aks74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
 
 /decl/hierarchy/outfit/job/sa_medic
 	name = "Sanitar"
@@ -109,5 +119,17 @@
 	belt = /obj/item/weapon/storage/belt/lbeholster/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/aks74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
+
+/decl/hierarchy/outfit/job/sa_prap
+	name = "Praporshik"
+	uniform = /obj/item/clothing/under/coldwar/afganka/winter/prap
+	shoes = /obj/item/clothing/shoes/steeltoed
+	head = /obj/item/clothing/head/ushanka
+	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
+	belt = /obj/item/weapon/storage/belt/lbe/soviet
+	back = /obj/item/weapon/gun/projectile/automatic/aks74
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch/medical
 
 

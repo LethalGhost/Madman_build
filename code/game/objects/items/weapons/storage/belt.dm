@@ -229,7 +229,7 @@
 	item_state = "lbe_soviet_officer"
 	use_sound = null
 	w_class = 4
-	storage_slots = 8
+	storage_slots = 9
 	can_hold = list(
 		/obj/item/weapon/gun/projectile/makarov,
 		/obj/item/ammo_magazine/a9x18,
@@ -264,7 +264,7 @@
 	item_state = "lbe_usmc_officer"
 	use_sound = null
 	w_class = 4
-	storage_slots = 8
+	storage_slots = 9
 	can_hold = list(
 		/obj/item/weapon/gun/projectile/berettam9,
 		/obj/item/ammo_magazine/a9x18,
@@ -297,7 +297,7 @@
 	item_state = "lbe_soviet"
 	use_sound = null
 	w_class = 4
-	storage_slots = 5
+	storage_slots = 6
 	can_hold = list(
 		/obj/item/ammo_magazine/a9x18,
 		/obj/item/ammo_magazine/a9x19,
@@ -317,6 +317,10 @@
 		/obj/item/weapon/shovel/spade/wood
 		)
 
+/obj/item/weapon/storage/belt/lbe/soviet/New()
+	..()
+	new /obj/item/weapon/shovel/spade/wood(src)
+
 
 /obj/item/weapon/storage/belt/lbe/usmc
 	name = "load bearing equipment"
@@ -325,7 +329,7 @@
 	item_state = "lbe_usmc"
 	use_sound = null
 	w_class = 4
-	storage_slots = 5
+	storage_slots = 6
 	can_hold = list(
 		/obj/item/ammo_magazine/a9x18,
 		/obj/item/ammo_magazine/a9x19,
@@ -343,4 +347,59 @@
 		/obj/item/weapon/gauze_pack,
 		/obj/item/weapon/material/knife/bayonet,
 		/obj/item/weapon/shovel/spade/wood
+		)
+
+/obj/item/weapon/storage/belt/lbe/usmc/New()
+	..()
+	new /obj/item/weapon/shovel/spade/wood(src)
+
+/obj/item/weapon/storage/pouch
+	name = "pouch"
+	desc = "Can hold various things."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "stuffpouch"
+	item_state = "pouch"
+	storage_slots = 2
+	max_w_class = 2
+	slot_flags = SLOT_ID
+
+/obj/item/weapon/storage/pouch/grenade
+	name = "underslung grenade pouch"
+	desc = "Can hold grenades."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "40mmgrenpouch"
+	item_state = "pouch"
+	storage_slots = 4
+	can_hold = list(
+		/obj/item/weapon/grenade/frag/shell40mm,
+		/obj/item/weapon/grenade/frag/vog25
+		)
+
+/obj/item/weapon/storage/pouch/medical
+	name = "medical pouch"
+	desc = "Can hold medical stuff."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "firstaidpouch"
+	item_state = "pouch"
+	storage_slots = 4
+	can_hold = list(
+		/obj/item/weapon/pill_pack/,
+		/obj/item/weapon/gauze_pack/,
+		/obj/item/weapon/reagent_containers/hypospray/autoinjector/
+		)
+
+/obj/item/weapon/storage/pouch/lmg
+	name = "LMG ammo pouch"
+	desc = "Can hold one LMG box."
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "lmgpouch"
+	item_state = "pouch"
+	storage_slots = 1
+	max_w_class = 4
+	can_hold = list(
+		/obj/item/ammo_magazine/c127x99b,
+		/obj/item/ammo_magazine/c556x45b,
+		/obj/item/ammo_magazine/c762x54b,
+		/obj/item/ammo_magazine/c762x39b,
+		/obj/item/ammo_magazine/c762x51b
 		)

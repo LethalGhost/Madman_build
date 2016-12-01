@@ -6,7 +6,7 @@
 	w_class = 5
 	force = 10
 
-	fire_sound = 'sound/weapons/empty.ogg'
+	fire_sound = 'sound/weapons/gunshot/grenadelaunch.ogg'
 	fire_sound_text = "a metallic thunk"
 	screen_shake = 0
 	throw_distance = 7

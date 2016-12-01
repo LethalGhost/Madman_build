@@ -10,6 +10,7 @@
 	w_class = 2
 	caliber = "9x19"
 	fire_delay = 1
+	jam_chance = 1
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a9x19
 	allowed_magazines = /obj/item/ammo_magazine/a9x19
@@ -33,6 +34,7 @@
 	icon_state = "makarov"
 	item_state = "gun"
 	w_class = 2
+	jam_chance = 2
 	caliber = "9x18"
 	fire_delay = 1
 	load_method = MAGAZINE
@@ -63,7 +65,7 @@
 	w_class = 4
 	load_method = MAGAZINE
 	caliber = "545x39"
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_BACK | SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/a545x39
 	allowed_magazines = /obj/item/ammo_magazine/c545x39m
 	requires_two_hands = 2
@@ -96,9 +98,10 @@
 	icon_state = "coltmodel733-m"
 	item_state = "m16"
 	w_class = 4
+	jam_chance = 2
 	load_method = MAGAZINE
 	caliber = "556x45"
-	slot_flags = SLOT_BACK
+	slot_flags = SLOT_BACK | SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/a556x45
 	allowed_magazines = list(/obj/item/ammo_magazine/c556x45m, /obj/item/ammo_magazine/c556x45s)
 	requires_two_hands = 2
@@ -136,6 +139,7 @@
 	slot_flags = SLOT_BACK
 	w_class = 5
 	force = 10
+	jam_chance = 0.3
 	max_shells = 20
 	caliber = "762x51"
 	ammo_type = /obj/item/ammo_casing/a762x51
@@ -174,6 +178,7 @@
 	icon_state = "m14scoped"
 	item_state = "m14"
 	accuracy = 5
+	jam_chance = 0.1
 	fire_delay = 3
 	wielded_item_state = "sniper_wielded"
 
@@ -204,6 +209,7 @@
 	item_state = "m14"
 	slot_flags = SLOT_BACK
 	w_class = 5
+	jam_chance = 0.2
 	force = 10
 	max_shells = 10
 	caliber = "762x54"
@@ -237,10 +243,11 @@
 
 /obj/item/weapon/gun/projectile/automatic/m16a1
 	name = "M16A1"
-	desc = "That's the outdated weapon of the USMC"
+	desc = "That's the standard-issue weapon of the USMC"
 	icon_state = "m16a1-m"
 	item_state = "m16"
 	w_class = 5
+	jam_chance = 3
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK
@@ -278,6 +285,7 @@
 	icon_state = "ak74"
 	item_state = "ak"
 	w_class = 5
+	jam_chance = 0.3
 	load_method = MAGAZINE
 	caliber = "545x39"
 	slot_flags = SLOT_BACK
@@ -314,6 +322,7 @@
 	icon_state = "m16a2-m"
 	item_state = "m16"
 	w_class = 5
+	jam_chance = 1.5
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK
@@ -350,6 +359,7 @@
 	desc = "That's the Ruchnoi Pulemet Kalashnikova, a standard-issue squad assault weapon of the VDV."
 	icon_state = "rpk74"
 	item_state = "ak"
+	jam_chance = 0.2
 	slot_flags = SLOT_BACK
 	w_class = 5
 	force = 10
@@ -387,6 +397,7 @@
 	item_state = "lmg"
 	w_class = 5
 	force = 15
+	jam_chance = 0.3
 	slot_flags = SLOT_BACK
 	max_shells = 200
 	caliber = "762x54"
@@ -459,6 +470,7 @@
 	item_state = "lmg"
 	w_class = 5
 	force = 15
+	jam_chance = 0.4
 	slot_flags = SLOT_BACK
 	max_shells = 100
 	caliber = "556x45"
@@ -532,6 +544,7 @@
 	item_state = "m16"
 	w_class = 5
 	force = 10
+	jam_chance = 1.7
 	caliber = "556x45"
 	ammo_type = /obj/item/ammo_casing/a556x45
 	slot_flags = SLOT_BACK
@@ -600,6 +613,7 @@
 	item_state = "ak"
 	w_class = 5
 	force = 10
+	jam_chance = 0.4
 	caliber = "545x39"
 	ammo_type = /obj/item/ammo_casing/a545x39
 	slot_flags = SLOT_BACK

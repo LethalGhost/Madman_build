@@ -431,7 +431,7 @@
 /obj/item/weapon/storage/box/rations
 	name = "MRE"
 	w_class = 2
-	max_storage_space = 10
+	max_storage_space = 8
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
 	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
@@ -441,7 +441,7 @@
 
 /obj/item/weapon/storage/box/rations/beef
 	name = "MRE"
-	max_storage_space = 10
+	max_storage_space = 8
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
 	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
@@ -451,7 +451,7 @@
 
 /obj/item/weapon/storage/box/rations/vegan
 	name = "MRE"
-	max_storage_space = 10
+	max_storage_space = 8
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
 	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
@@ -461,7 +461,7 @@
 
 /obj/item/weapon/storage/box/rations/lasagna
 	name = "MRE"
-	max_storage_space = 10
+	max_storage_space = 8
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
 	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
@@ -471,7 +471,7 @@
 
 /obj/item/weapon/storage/box/rations/breads
 	name = "MRE"
-	max_storage_space = 10
+	max_storage_space = 8
 	desc = "That's a meal-ready-to eat, a 12-hour ration pack used by US army."
 	icon_state = "rations"
 	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
