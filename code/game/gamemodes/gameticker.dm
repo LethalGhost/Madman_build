@@ -46,7 +46,7 @@ var/global/datum/controller/gameticker/ticker
 	'sound/music/traitor.ogg',\
 	'sound/music/title2.ogg',\
 	'sound/music/clouds.s3m',\*/
-	'sound/music/devil.ogg')
+	'sound/music/Lobby.ogg')
 	do
 		if(!gamemode_voted)
 			pregame_timeleft = 180
@@ -157,8 +157,8 @@ var/global/datum/controller/gameticker/ticker
 			//Deleting Startpoints but we need the ai point to AI-ize people later
 			if (S.name != "AI")
 				qdel(S)
-		world << "<FONT color='blue'><B>Enjoy the game!</B></FONT>"
-		world << sound('sound/AI/welcome.ogg') // Skie
+		world << "<FONT color='blue'><B>Enjoy the game.</B></FONT>"
+//		world << sound('sound/AI/welcome.ogg') // Skie
 		//Holiday Round-start stuff	~Carn
 		Holiday_Game_Start()
 

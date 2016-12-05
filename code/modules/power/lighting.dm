@@ -734,6 +734,7 @@ obj/machinery/light/proc/burn_out()
 	desc = "You really shouldn't be seeing this."
 //	invisibility = 101
 	anchored = 1
-	light_color = "#fcfcb6"
+	//light_color = "#fcfcb6"
+	light_color = "#676775"
 	light_power = 1
-	light_range = 255
+	light_range = 355

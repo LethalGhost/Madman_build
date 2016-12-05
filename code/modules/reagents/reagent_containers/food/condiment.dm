@@ -55,7 +55,7 @@
 		user << "<span class='notice'>You swallow some of contents of \the [src].</span>"
 
 	on_reagent_change()
-		if(icon_state == "saltshakersmall" || icon_state == "peppermillsmall" || icon_state == "flour")
+		if(icon_state == "saltshakersmall" || icon_state == "peppermillsmall" || icon_state == "flour" || icon_state == "tsukor" || icon_state == "aeroflotsugar" || icon_state == "zheldorsugar" || icon_state == "morflotsugar")
 			return
 		if(reagents.reagent_list.len > 0)
 			switch(reagents.get_master_reagent_id())
@@ -100,8 +100,8 @@
 					icon_state = "oliveoil"
 					center_of_mass = "x=16;y=6"
 				if("sugar")
-					name = "Sugar"
-					desc = "Tastey space sugar!"
+					name = "Sugar pack"
+					desc = "Tastey sugar!"
 					center_of_mass = "x=16;y=6"
 				else
 					name = "Misc Condiment Bottle"

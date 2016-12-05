@@ -9,7 +9,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sa_pltcom
 //	access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook, access_ru_commander)
 //	minimal_access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook, access_ru_commander)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 
 /datum/job/commander_russian/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -29,7 +29,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sa_pltcomdep
 //	access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook, access_ru_commander)
 //	minimal_access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook, access_ru_commander)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 
 /datum/job/commander_russian/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -49,7 +49,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sa_com
 //	access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook)
 //	minimal_access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 
 /datum/job/warpac_squadleadern/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -66,6 +66,7 @@
 	spawn_positions = 2
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_medic
+	spawn_location = "JoinLateSA"
 
 /datum/job/warpac_medic/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -82,6 +83,7 @@
 	spawn_positions = 1
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_doc
+	spawn_location = "JoinLateSA"
 
 /datum/job/warpac_surgeon/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -98,6 +100,7 @@
 	spawn_positions = 3
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_lmg
+	spawn_location = "JoinLateSA"
 
 /datum/job/warpac_lmg/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -116,7 +119,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sa_rifleman
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 
 /datum/job/warpac_private/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -134,7 +137,7 @@
 	outfit_type = /decl/hierarchy/outfit/job/sa_comdeputy
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 
 /datum/job/warpac_corporal/update_character(var/mob/living/carbon/human/H)
 	H.add_language("Russian")
@@ -151,7 +154,7 @@
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 	outfit_type = /decl/hierarchy/outfit/job/sa_radio
 
 /datum/job/warpac_radio/update_character(var/mob/living/carbon/human/H)
@@ -170,7 +173,7 @@
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 	outfit_type = /decl/hierarchy/outfit/job/sa_rpg
 
 /datum/job/warpac_gren/update_character(var/mob/living/carbon/human/H)
@@ -188,7 +191,7 @@
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 	outfit_type = /decl/hierarchy/outfit/job/sa_rpgassist
 
 /datum/job/warpac_rpgsup/update_character(var/mob/living/carbon/human/H)
@@ -206,7 +209,7 @@
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
-//	spawn_location = "JoinLateRussia"
+	spawn_location = "JoinLateSA"
 	outfit_type = /decl/hierarchy/outfit/job/sa_prap
 
 /datum/job/warpac_prap/update_character(var/mob/living/carbon/human/H)

@@ -8,7 +8,7 @@
     oxygen = MOLES_O2STANDARD * 1.15
     nitrogen = MOLES_N2STANDARD * 1.15
 
-    temperature = T0C - 35
+    temperature = T0C - 30
     var/list/crossed_dirs = list()
 
 
@@ -92,6 +92,20 @@
 /turf/snow/gravsnow
 	name = "frozen ground"
 	icon_state = "ground_frozen"
+
+/turf/frozenground
+	name = "frozen ground"
+	dynamic_lighting = 1
+	icon = 'icons/turf/snow_new.dmi'
+	icon_state = "wground1"
+
+	oxygen = MOLES_O2STANDARD * 1.15
+	nitrogen = MOLES_N2STANDARD * 1.15
+	temperature = T0C - 30
+
+/turf/frozenground/New()
+	icon_state = "wground[rand(1,3)]"
+	..()
 
 /turf/snow/plating
 	name = "snowy plating"

@@ -95,6 +95,9 @@
 /obj/item/projectile/on_impact(var/obj/A)
 	playsound(src.loc, "hitobject", 70, 1, -2)
 
+
+
+
 //Checks if the projectile is eligible for embedding. Not that it necessarily will.
 /obj/item/projectile/proc/can_embed()
 	//embed must be enabled and damage type must be brute

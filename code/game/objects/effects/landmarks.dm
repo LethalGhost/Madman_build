@@ -65,6 +65,12 @@
 			endgame_exits += loc
 			delete_me = 1
 			return
+		if("JoinLate")
+			if(!latejoin[name])
+				latejoin[name] = list()
+			latejoin[name] += loc
+			qdel(src)
+			return
 
 	landmarks_list += src
 	return 1
@@ -235,3 +241,10 @@
 	new /obj/item/clothing/mask/gas/sexymime(src.loc)
 	new /obj/item/clothing/under/sexymime(src.loc)
 	delete_me = 1
+
+/obj/effect/landmark/joinlate/New()
+	..()
+	if(!latejoin[name])
+		latejoin[name] = list()
+	latejoin[name] += loc
+	qdel(src)

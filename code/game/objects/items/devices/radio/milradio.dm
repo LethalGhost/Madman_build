@@ -20,6 +20,7 @@
 	desc = "That's the military shortwave portable radiostation"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "an/prc77-armed"
+	item_state = "an/prc77"
 	randpixel = 0
 	anchored = 1
 	w_class = 5
@@ -59,6 +60,7 @@
 	desc = "That's the military shortwave portable radiostation"
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "r109d-armed"
+	item_state = "r109d"
 	randpixel = 0
 	anchored = 1
 	w_class = 5

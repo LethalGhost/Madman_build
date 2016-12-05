@@ -2,7 +2,7 @@
 
 	#include "coldwar-1.dmm"
 	#include "coldwar-2.dmm"
-	#include "coldwar-3.dmm"
+//	#include "coldwar-3.dmm"
 
 	#define USING_MAP_DATUM /datum/map/kaliningrad
 
