@@ -150,3 +150,13 @@
 /obj/item/device/radio/intercom/locked/confessional
 	name = "confessional intercom"
 	frequency = 1480
+
+/obj/item/device/radio/intercom/soviet
+	name = "radio set"
+	icon_state = "sovintercomm"
+	frequency = 1311
+
+/obj/item/device/radio/intercom/usa
+	name = "radio set"
+	icon_state = "usintercomm"
+	frequency = 1332

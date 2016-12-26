@@ -72,3 +72,9 @@
 
 /obj/item/clothing/suit/storage/vest/pasgt/woodland
 	icon_state = "pasgt_woodland"
+
+/obj/item/clothing/suit/storage/vest/usflak/pilot
+	name = "helicopter pilot vest"
+	icon_state = "pilotvest"
+	desc = "That's the flak vest with a lot of pouches.."
+

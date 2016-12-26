@@ -13,7 +13,7 @@
 	icon_state = "spikethrower3"
 	item_state = "spikethrower"
 	fire_sound_text = "a strange noise"
-	fire_sound = 'sound/weapons/bladeslice.ogg'
+	fire_sound = 'sound/weapons/cut2.wav'
 
 /obj/item/weapon/gun/launcher/spikethrower/New()
 	..()

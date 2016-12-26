@@ -148,7 +148,7 @@
 
 	if(istype(target) && target.should_have_organ(BP_HEART))
 		affected.status |= ORGAN_BLEEDING
-	playsound(target.loc, 'sound/weapons/bladeslice.ogg', 50, 1)
+	playsound(target.loc, 'sound/weapons/cut.wav', 50, 1)
 
 	affected.createwound(CUT, 1)
 

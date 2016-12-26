@@ -38,6 +38,7 @@
 /turf/simulated/wall/sandstonediamond/New(var/newloc)
 	..(newloc,"sandstone","diamond")
 
+
 // Kind of wondering if this is going to bite me in the butt.
 /turf/simulated/wall/voxshuttle/New(var/newloc)
 	..(newloc,"voxalloy")
@@ -77,6 +78,17 @@
 	icon_state = null
 	color = null
 	..(newloc, "concrete", "steel")
+
+/turf/simulated/wall/tentcloth
+	icon = 'icons/turf/wall_masks.dmi'
+	icon_state = "concrete_preview"
+	color = "#5E5C4E"
+
+/turf/simulated/wall/tentcloth/New(var/newloc)
+	icon_state = null
+	color = null
+	..(newloc, "tent cloth")
+
 
 /turf/simulated/wall/titanium
 	icon = 'icons/turf/wall_masks.dmi'

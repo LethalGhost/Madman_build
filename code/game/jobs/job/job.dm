@@ -30,6 +30,8 @@
 	var/list/allowed_branches			  // For Torch, also expandable for other purposes
 	var/list/allowed_ranks				  // Ditto
 
+	var/whitelist_only = 1
+
 /datum/job/proc/equip(var/mob/living/carbon/human/H, var/alt_title)
 	var/decl/hierarchy/outfit/outfit = get_outfit(H, alt_title)
 	if(!outfit)

@@ -8,6 +8,7 @@
 	oxygen requirements to support their robust metabolism."
 	icobase = 'icons/mob/human_races/subspecies/r_gravworlder.dmi'
 	health_hud_intensity = 3
+	spawn_flags = IS_RESTRICTED
 
 	flash_mod =     0.9
 	oxy_mod =       1.1
@@ -22,6 +23,7 @@
 	lack both light and atmosphere. As such, they're quite resistant to asphyxiation as well as \
 	toxins, but they suffer from weakened bone structure and a marked vulnerability to bright lights."
 	icobase = 'icons/mob/human_races/subspecies/r_spacer.dmi'
+	spawn_flags = IS_RESTRICTED
 
 	oxy_mod =   0.8
 	toxins_mod =   0.9
@@ -36,6 +38,7 @@
 	of bodies is a very real and rather ethically grey industry. Vat-grown humans tend to be paler than \
 	baseline, with no appendix and fewer inherited genetic disabilities, but a weakened metabolism."
 	icobase = 'icons/mob/human_races/subspecies/r_vatgrown.dmi'
+	spawn_flags = IS_RESTRICTED
 
 	toxins_mod =   1.1
 	has_organ = list(

@@ -23,7 +23,7 @@ var/wlg_selected_deadtree = 0
 	wlg_selected_deadtree = 0
 	spawn(100)
 		for(var/turf/T in world)
-			if(T.z != 1)
+			if(T.z != 2)
 				continue
 			if(!istype(T, /turf/snow))
 				continue

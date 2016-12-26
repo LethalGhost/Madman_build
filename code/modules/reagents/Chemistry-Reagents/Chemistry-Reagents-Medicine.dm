@@ -638,7 +638,7 @@
 	description = "That's the powerful tranquilizer."
 	reagent_state = LIQUID
 	color = "#FF80BF"
-	metabolism = 0.03
+	metabolism = 0.04
 	data = 0
 	overdose = 10
 
@@ -651,8 +651,8 @@
 	else
 		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
 			data = world.time
-			if(prob(90))
-				M << "<span class='notice'>You didn't afraid of anything.</span>"
+			if(prob(95))
+				M << "<span class='notice'>You feel yourself pretty calm.</span>"
 			else
 				M << "<span class='warning'>Everything is terrible!</span>"
 				M.emote(pick("twitch", "drool", "moan", "gasp"))
@@ -851,3 +851,29 @@
 	M.drowsyness += 2
 	M.emote(pick("twitch", "drool", "moan", "gasp"))
 	M.adjustToxLoss(3)
+
+/datum/reagent/ethaperazine
+	name = "Ethaperazine"
+	id = "ethaperazine"
+	description = "That's the low-powerful neuroleptic. Also used as anti-vomit drug."
+	taste_description = "sourness"
+	reagent_state = LIQUID
+	color = "#BF80BF"
+	metabolism = 0.06
+	data = 0
+
+/datum/reagent/ethaperazine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
+	if(alien == IS_DIONA)
+		return
+	if(volume <= 0.1 && dose >= 0.5 && world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
+		data = world.time
+		M << "<span class='warning'>You lose focus...</span>"
+	else
+		if(world.time > data + ANTIDEPRESSANT_MESSAGE_DELAY)
+			data = world.time
+			M << "<span class='notice'>Your mind feels focused and undivided.</span>"
+			M.adjustToxLoss(-1 * removed)
+			M.drowsyness = max(0, M.drowsyness - 2 * removed)
+
+
+

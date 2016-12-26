@@ -264,3 +264,21 @@
 	projectile_type = /obj/item/projectile/bullet/rifle/a127x99mm
 	icon_state = "rifle-casing"
 	spent_icon = "rifle-casing-spent"
+
+/obj/item/ammo_casing/newrocket
+	name = "rocket"
+	desc = "A rocket."
+	projectile_type = /obj/item/projectile/bullet/newrocket
+	icon_state = "rocket"
+	spent_icon = null
+	caliber = "rocket"
+	caseless = 1
+
+/obj/item/ammo_casing/oneuserocket
+	name = "rocket"
+	desc = "A rocket."
+	projectile_type = /obj/item/projectile/bullet/oneuserocket
+	icon_state = null
+	spent_icon = null
+	caliber = "rocket"
+	caseless = 1

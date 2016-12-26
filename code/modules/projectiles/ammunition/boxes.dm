@@ -297,6 +297,20 @@
 	name = "AP magazine (7.62x39mm)"
 	ammo_type = /obj/item/ammo_casing/a762x39/ap
 
+/obj/item/ammo_magazine/c762x39br
+	name = "drum magazine (7.62x39mm)"
+	icon_state = "7.62x39br"
+	mag_type = MAGAZINE
+	caliber = "762x39"
+	ammo_type = /obj/item/ammo_casing/a762x39
+	max_ammo = 75
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/c762x39br/ap
+	name = "drum AP magazine (7.62x39mm)"
+	ammo_type = /obj/item/ammo_casing/a762x39/ap
+
+
 /obj/item/ammo_magazine/c762x54s
 	name = "magazine (7.62x54mm)"
 	icon_state = "7.62x54s"
@@ -415,3 +429,88 @@
 /obj/item/ammo_magazine/c556x45s/ap
 	name = "AP magazine (5.56x45mm)"
 	ammo_type = /obj/item/ammo_casing/a556x45/ap
+
+
+
+
+
+//Large ammo boxes
+
+/obj/item/ammo_magazine/crate/
+	desc = "That's a bulky ammo box."
+	name = "ammo box"
+
+/obj/item/ammo_magazine/crate/attack_self(mob/user as mob)
+	user << "<span class='notice'>Unloading that all ammo would be pretty dumb act.</span>"
+	return
+
+/obj/item/ammo_magazine/crate/attack_hand(mob/user as mob)
+	if(user.get_inactive_hand() == src)
+		if(src.contents.len > 0)
+			var/obj/item/ammo_casing/casing = contents[1]
+			user << "<span class='notice'>You took one bullet from [src.name]</span>"
+			user.put_in_active_hand(casing)
+			stored_ammo -= 1
+		else
+			user << "<span class='warning'>It's empty!</span>"
+	else
+		..()
+
+/obj/item/ammo_magazine/crate/box556x45
+	icon_state = "ammoboxnato"
+	caliber = "556x45"
+	ammo_type = /obj/item/ammo_casing/a556x45
+	max_ammo = 200
+	w_class = 4
+	slot_flags = null
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/crate/box762x51
+	name = "ammo box (7.62x51mm)"
+	icon_state = "ammoboxnato"
+	caliber = "762x51"
+	ammo_type = /obj/item/ammo_casing/a762x51
+	max_ammo = 200
+	w_class = 4
+	slot_flags = null
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/crate/box9x19
+	name = "ammo box (9x19mm)"
+	icon_state = "ammoboxnato"
+	caliber = "9x19"
+	ammo_type = /obj/item/ammo_casing/a9x19
+	max_ammo = 200
+	w_class = 4
+	slot_flags = null
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/crate/box762x39
+	name = "ammo box (7.62x39mm)"
+	icon_state = "ammoboxsa"
+	caliber = "762x39"
+	ammo_type = /obj/item/ammo_casing/a762x39
+	max_ammo = 400
+	w_class = 5
+	slot_flags = null
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/crate/box545x39
+	name = "ammo box (5.45x39mm)"
+	icon_state = "ammoboxsa"
+	caliber = "762x39"
+	ammo_type = /obj/item/ammo_casing/a545x39
+	max_ammo = 400
+	w_class = 5
+	slot_flags = null
+	multiple_sprites = 1
+
+/obj/item/ammo_magazine/crate/box9x19
+	name = "ammo box (9x18mm)"
+	icon_state = "ammoboxsa"
+	caliber = "9x18"
+	ammo_type = /obj/item/ammo_casing/a9x18
+	max_ammo = 400
+	w_class = 5
+	slot_flags = null
+	multiple_sprites = 1

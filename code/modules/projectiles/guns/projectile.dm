@@ -150,8 +150,8 @@
 /obj/item/weapon/gun/projectile/proc/unload_ammo(mob/user, var/allow_dump=1)
 	if(is_jammed)
 		user.visible_message("\The [user] begins to unjam [src].", "You clear the jam and unload [src]")
-		playsound(user, unload_sound, 20, 1)
-		if(!do_after(user, 4, src))
+		playsound(user, unload_sound, 60, 1)
+		if(!do_after(user, 8, src))
 			return
 		is_jammed = 0
 	if(ammo_magazine)
@@ -159,7 +159,7 @@
 		user.visible_message("[user] removes [ammo_magazine] from [src].", "<span class='notice'>You remove [ammo_magazine] from [src].</span>")
 		ammo_magazine.update_icon()
 		ammo_magazine = null
-		playsound(user, unload_sound, 20, 1)
+		playsound(user, unload_sound, 60, 1)
 	else if(loaded.len)
 		//presumably, if it can be speed-loaded, it can be speed-unloaded.
 		if(allow_dump && (load_method & SPEEDLOADER))

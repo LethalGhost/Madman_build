@@ -298,6 +298,16 @@
 		mymob.nutrition_icon.screen_loc = ui_nutrition
 		hud_elements |= mymob.nutrition_icon
 
+	mymob.whitenoise = new /obj/screen()
+	mymob.whitenoise.icon = 'icons/mob/screen_full.dmi'
+	mymob.whitenoise.icon_state = "whitenoise"
+	mymob.whitenoise.name = "white noise"
+	mymob.whitenoise.blend_mode = BLEND_MULTIPLY
+	mymob.whitenoise.screen_loc = "CENTER-7,CENTER-7"
+	mymob.whitenoise.mouse_opacity = 0
+	mymob.whitenoise.layer = 19
+	mymob.whitenoise.alpha = 0
+
 	mymob.pain = new /obj/screen( null )
 
 	mymob.zone_sel = new /obj/screen/zone_sel( null )

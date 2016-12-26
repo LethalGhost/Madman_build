@@ -342,3 +342,25 @@
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 40
 	armor_penetration = 15
+
+/obj/item/projectile/bullet/newrocket
+	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
+	icon_state = "rocket"
+	damage = 60
+	armor_penetration = 100
+
+/obj/item/projectile/bullet/newrocket/Bump(var/atom/A)
+	explosion(A, -1, 1, 3, 4)
+	if(!gcDestroyed)
+		qdel(src)
+
+/obj/item/projectile/bullet/oneuserocket
+	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
+	icon_state = "rocket"
+	damage = 60
+	armor_penetration = 100
+
+/obj/item/projectile/bullet/oneuserocket/Bump(var/atom/A)
+	explosion(A, 0, 3, 5, 8)
+	if(!gcDestroyed)
+		qdel(src)

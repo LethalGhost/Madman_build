@@ -70,7 +70,7 @@ var/global/list/ores_by_type = list()
 
 /ore/coal
 	name = "carbon"
-	display_name = "raw carbon"
+	display_name = "coal"
 	icon_tag = "coal"
 	smelts_to = "plastic"
 	alloy = 1

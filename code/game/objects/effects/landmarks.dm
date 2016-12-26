@@ -25,7 +25,7 @@
 			latejoin += loc
 			delete_me = 1
 			return
-		if("JoinLateGateway")
+/*		if("JoinLateGateway")
 			latejoin_gateway += loc
 			delete_me = 1
 			return
@@ -37,6 +37,7 @@
 			latejoin_cyborg += loc
 			delete_me = 1
 			return
+*/
 		if("prisonwarp")
 			prisonwarp += loc
 			delete_me = 1

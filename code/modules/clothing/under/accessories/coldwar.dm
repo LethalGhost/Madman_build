@@ -1,9 +1,15 @@
 /obj/item/clothing/accessory/badge/militaryid
-	name = "Military identification token"
-	desc = "That's the special token used for identification soldiers of Soviet army. Has a some number on it."
+	name = "Military identification token "
+	desc = "That's the special token used for identification soldiers of Soviet army. Has a number on it."
 	icon_state = "sovtoken"
 	slot_flags = SLOT_BELT | SLOT_ID
 	badge_string = "Soldat"
+	var/number = null
+
+/obj/item/clothing/accessory/badge/militaryid/New()
+	number = rand(1111111,9999999)
+	desc += "[number]"
+
 
 /obj/item/clothing/accessory/badge/militaryid/officer
 	badge_string = "Ofitser"

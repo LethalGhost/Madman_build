@@ -31,7 +31,7 @@
 			H.do_attack_animation(src)
 			var/damage = rand(0, 9)
 			if(!damage)
-				playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+				playsound(loc, "punchmiss", 100, 1, -1)
 				visible_message("\red <B>[H] has attempted to punch [src]!</B>")
 				return 0
 			var/obj/item/organ/external/affecting = get_organ(ran_zone(H.zone_sel.selecting))
@@ -40,7 +40,7 @@
 			if(HULK in H.mutations)
 				damage += 5
 
-			playsound(loc, "punch", 25, 1, -1)
+			playsound(loc, "punch", 100, 1, -1)
 
 			visible_message("\red <B>[H] has punched [src]!</B>")
 
@@ -255,7 +255,7 @@
 			if(!(species.flags & NO_SLIP) && randn <= 25)
 				var/armor_check = run_armor_check(affecting, "melee")
 				apply_effect(3, WEAKEN, armor_check)
-				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				playsound(loc, "punchmiss", 100, 1, -1)
 				if(armor_check < 100)
 					visible_message("<span class='danger'>[M] has pushed [src]!</span>")
 				else
@@ -265,7 +265,7 @@
 			if(randn <= 60)
 				//See about breaking grips or pulls
 				if(break_all_grabs(M))
-					playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+					playsound(loc, "punchmiss", 100, 1, -1)
 					return
 
 				//Actually disarm them
@@ -273,10 +273,10 @@
 					if(I)
 						drop_from_inventory(I)
 						visible_message("<span class='danger'>[M] has disarmed [src]!</span>")
-						playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+						playsound(loc, "punchmiss", 100, 1, -1)
 						return
 
-			playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+			playsound(loc, "punchmiss", 100, 1, -1)
 			visible_message("\red <B>[M] attempted to disarm [src]!</B>")
 	return
 

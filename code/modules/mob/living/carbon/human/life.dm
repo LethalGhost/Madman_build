@@ -795,6 +795,12 @@
 		else
 			clear_fullscreen("brute")
 
+		var/whitenoisealpha = 0
+		if(stat != DEAD)
+			whitenoisealpha = 100 - health + radiation
+		whitenoise.alpha = whitenoisealpha
+
+
 		if(healths)
 			if (analgesic > 100)
 				healths.icon_state = "health_numb"

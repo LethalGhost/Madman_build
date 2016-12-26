@@ -13,6 +13,7 @@
 	var/dry = 0
 	var/nutriment_amt = 0
 	var/list/nutriment_desc = list("food" = 1)
+	var/wrapped = 0
 	center_of_mass = "x=16;y=16"
 	w_class = 2
 
@@ -43,6 +44,10 @@
 		user << "<span class='danger'>None of [src] left!</span>"
 		user.drop_from_inventory(src)
 		qdel(src)
+		return 0
+
+	if(wrapped)
+		M << "<span class='warning'>How do you propose to eat wrapped food?</span>"
 		return 0
 
 	if(istype(M, /mob/living/carbon))
@@ -76,6 +81,10 @@
 			if(!M.can_force_feed(user, src))
 				return
 
+			if(wrapped)
+				return 0
+
+
 			if (fullness <= 550)
 				user.visible_message("<span class='danger'>[user] attempts to feed [M] [src].</span>")
 			else
@@ -103,6 +112,16 @@
 			return 1
 
 	return 0
+
+/obj/item/weapon/reagent_containers/food/snacks/attack_self(mob/user)
+	if(wrapped)
+		Unwrap(user)
+	else
+		..()
+
+/obj/item/weapon/reagent_containers/food/snacks/proc/Unwrap(mob/user)
+		user.visible_message("<span class='danger'>[user] unwraps the [src.name].</span>")
+		wrapped = 0
 
 /obj/item/weapon/reagent_containers/food/snacks/examine(mob/user)
 	if(!..(user, 1))
@@ -1592,7 +1611,7 @@
 	filling_color = "#ADAC7F"
 	center_of_mass = "x=16;y=14"
 
-	var/wrapped = 0
+	var/cubewrapped = 0
 	var/monkey_type = "Monkey"
 
 	New()
@@ -1600,8 +1619,8 @@
 		reagents.add_reagent("protein", 10)
 
 	attack_self(mob/user as mob)
-		if(wrapped)
-			Unwrap(user)
+		if(cubewrapped)
+			Unwrapcube(user)
 
 	proc/Expand()
 		src.visible_message("<span class='notice'>\The [src] expands!</span>")
@@ -1613,11 +1632,11 @@
 		qdel(src)
 		return 1
 
-	proc/Unwrap(mob/user as mob)
+	proc/Unwrapcube(mob/user as mob)
 		icon_state = "monkeycube"
 		desc = "Just add water!"
 		user << "You unwrap the cube."
-		wrapped = 0
+		cubewrapped = 0
 		flags |= OPENCONTAINER
 		return
 
@@ -1629,7 +1648,7 @@
 	desc = "Still wrapped in some paper."
 	icon_state = "monkeycubewrap"
 	flags = 0
-	wrapped = 1
+	cubewrapped = 1
 
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/farwacube
 	name = "farwa cube"
@@ -3285,6 +3304,7 @@
 	icon_state = "maindish"
 	trash = /obj/item/trash/frp
 	filling_color = "#A66829"
+	wrapped = 1
 	center_of_mass = list("x"=15, "y"=12)
 
 /obj/item/weapon/reagent_containers/food/snacks/armymaindish/New()
@@ -3337,6 +3357,7 @@
 	icon_state = "chocolatebarpack"
 	trash = /obj/item/trash/chocolate
 	w_class = 1
+	wrapped = 1
 
 /obj/item/weapon/reagent_containers/food/snacks/armymaindish/armychocolate/New()
 	..()

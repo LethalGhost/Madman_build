@@ -412,7 +412,7 @@ var/global/datum/controller/occupations/job_master
 
 		H.job = rank
 
-/*		if(!joined_late)
+		if(!joined_late)
 			var/obj/S = null
 			var/list/loc_list = new()
 			for(var/obj/effect/landmark/start/sloc in landmarks_list)
@@ -427,24 +427,6 @@ var/global/datum/controller/occupations/job_master
 				H.forceMove(S.loc)
 			else
 				LateSpawn(H.client, rank)
-
-*/
-
-		if(!joined_late)
-
-			if(!job)
-				H << "Your job doesn't exists. You fucked. Report to administator."
-			else
-				var/list/turfs = latejoin[job.spawn_location]
-				if(turfs && turfs.len > 0)
-					H.loc = pick(turfs)
-				else
-					H << "\red Oh god. Bug with spawning! We are doomed!"
-
-			// Moving wheelchair if they have one
-			if(H.buckled && istype(H.buckled, /obj/structure/bed/chair/wheelchair))
-				H.buckled.forceMove(H.loc)
-				H.buckled.set_dir(H.dir)
 
 		// If they're head, give them the account info for their department
 		if(H.mind && job.head_position)

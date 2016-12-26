@@ -79,3 +79,8 @@
 /obj/item/clothing/head/helmet/pasgt/winter
 	icon_state = "pasgtm81-winter"
 	cold_protection = HEAD
+
+/obj/item/clothing/head/helmet/pasgt/pilot
+	icon_state = "pilothelm"
+	desc = "That's the helmet used by USMC pilots."
+	cold_protection = HEAD

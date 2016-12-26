@@ -18,3 +18,10 @@
 	req_access = list(access_syndicate)
 	shuttle_tag = "Ninja"
 
+/obj/machinery/computer/shuttle_control/multi/hue
+	name = "UH-1 helm"
+	req_access = null
+	shuttle_tag = "Hue"
+	icon_state = "helmleft"
+	icon_keyboard = null
+	icon_screen = null

@@ -142,7 +142,7 @@
 /obj/item/weapon/storage/backpack/rpgammo
 	name = "RPG-7 ammo backpack"
 	icon_state = "rpgammopack"
-	can_hold = list(/obj/item/ammo_casing/rocket)
+	can_hold = list(/obj/item/ammo_casing/newrocket)
 	max_storage_space = DEFAULT_BACKPACK_STORAGE + 4
 
 /obj/item/weapon/storage/backpack/ammo
@@ -327,8 +327,8 @@
 
 
 /obj/item/weapon/storage/box/summedsan
-	name = "SMS"
-	desc = "That's the Sumka Medicinskaya Sanitarnaya."
+	name = "first-aid bag"
+	desc = "That's the Sumka Medicinskaya Sanitarnaya, a standard-issued first-aid kit used by the Soviet military forces."
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_backpacks.dmi',
 		slot_r_hand_str = 'icons/mob/items/righthand_backpacks.dmi',
@@ -345,17 +345,17 @@
 	max_w_class = 2
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	startswith = list(
-			/obj/item/weapon/storage/box/pill_box/doxycycline = 2,
+			/obj/item/weapon/storage/box/pill_box/doxycycline = 1,
 			/obj/item/weapon/storage/box/pill_box/phenazepam = 2,
-			/obj/item/weapon/storage/box/pill_box/amidopyrinum = 2,
-			/obj/item/weapon/storage/box/pill_box/sydnocarbum = 4,
-			/obj/item/weapon/storage/box/pill_box/cystamine= 2,
-			/obj/item/clothing/gloves/latex = 1,
-			/obj/item/weapon/gauze_pack/ipp = 6)
+			/obj/item/weapon/storage/box/pill_box/cystamine = 1,
+			/obj/item/weapon/storage/box/pill_box/ethaperazine = 1,
+			/obj/item/weapon/gauze_pack/ipp = 8,
+			/obj/item/weapon/paper = 2,
+			/obj/item/weapon/pen = 1)
 
 /obj/item/weapon/storage/box/comlifbag
-	name = "CLB"
-	desc = "That's the Combat Lifesaver Bag."
+	name = "first-aid bag"
+	desc = "That's the Combat Lifesaver Bag, a standard-issue first-aid kit used by US infantry"
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_backpacks.dmi',
 		slot_r_hand_str = 'icons/mob/items/righthand_backpacks.dmi',
@@ -372,12 +372,13 @@
 	max_w_class = 2
 	max_storage_space = DEFAULT_LARGEBOX_STORAGE
 	startswith = list(
-			/obj/item/weapon/storage/box/pill_box/morphine = 5,
-			/obj/item/weapon/storage/box/pill_box/paracetamol = 2,
-			/obj/item/weapon/storage/box/pill_box/doxycycline = 2,
-			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/quickclot = 6,
+			/obj/item/weapon/storage/box/pill_box/morphine = 3,
+			/obj/item/weapon/storage/box/pill_box/paracetamol = 1,
+			/obj/item/weapon/storage/box/pill_box/doxycycline = 1,
+			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/quickclot = 2,
 			/obj/item/clothing/gloves/latex = 1,
-			/obj/item/weapon/gauze_pack/gauze = 6,
-			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/epinephrine = 6,
-			/obj/item/weapon/storage/box/pill_box/naloxone = 2,
-			/obj/item/weapon/storage/box/pill_box/promethazine = 2)
+			/obj/item/weapon/gauze_pack/gauze = 8,
+			/obj/item/weapon/reagent_containers/hypospray/autoinjector/combat/epinephrine = 2,
+			/obj/item/weapon/storage/box/pill_box/naloxone = 1,
+			/obj/item/weapon/paper = 2,
+			/obj/item/weapon/pen = 1)

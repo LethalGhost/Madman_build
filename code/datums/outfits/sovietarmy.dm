@@ -120,12 +120,13 @@
 	back = /obj/item/weapon/gun/projectile/automatic/aks74
 	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
 	id = /obj/item/weapon/storage/pouch
+	suit = /obj/item/clothing/suit/surgicalapron
 
 /decl/hierarchy/outfit/job/sa_prap
 	name = "Praporshik"
 	uniform = /obj/item/clothing/under/coldwar/afganka/winter/prap
 	shoes = /obj/item/clothing/shoes/steeltoed
-	head = /obj/item/clothing/head/ushanka
+	head = /obj/item/clothing/head/sovietushanka
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
 	belt = /obj/item/weapon/storage/belt/lbe/soviet
 	back = /obj/item/weapon/gun/projectile/automatic/aks74

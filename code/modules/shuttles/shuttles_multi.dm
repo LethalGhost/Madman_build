@@ -102,8 +102,8 @@
 	else
 		dat += "<font color='green'>Engines ready.</font><br>"
 
-	dat += "<br><b><A href='?src=\ref[src];toggle_cloak=[1]'>Toggle cloaking field</A></b><br>"
-	dat += "<b><A href='?src=\ref[src];move_multi=[1]'>Move ship</A></b><br>"
+//	dat += "<br><b><A href='?src=\ref[src];toggle_cloak=[1]'>Toggle cloaking field</A></b><br>"
+	dat += "<b><A href='?src=\ref[src];move_multi=[1]'>Move helicopter</A></b><br>"
 	dat += "<b><A href='?src=\ref[src];start=[1]'>Return to base</A></b></center>"
 
 	//Docking
@@ -147,7 +147,7 @@
 	if(choice == "Cancel")
 		return 0
 
-	choice = alert("Forcing a shuttle launch while docked may result in severe injury, death and/or damage to property. Are you sure you wish to continue?", "Force Launch", "Force Launch", "Cancel")
+	choice = alert("Forcing a launch while landing may result a severe injury. Are you sure you wish to continue?", "Force Launch", "Force Launch", "Cancel")
 	if(choice == "Cancel")
 		return 0
 
@@ -205,14 +205,9 @@
 		MS.last_location = MS.start_location
 		MS.at_origin = 1
 
-	if(href_list["toggle_cloak"])
-
-		MS.cloaked = !MS.cloaked
-		usr << "\red Ship stealth systems have been [(MS.cloaked ? "activated. The station will not" : "deactivated. The station will")] be warned of our arrival."
-
 	if(href_list["move_multi"])
 		if((MS.last_move + MS.cooldown*10) > world.time)
-			usr << "\red The ship's drive is inoperable while the engines are charging."
+			usr << "\red The helicopter engine are inoperable now."
 			return
 
 		if(!check_docking(MS))

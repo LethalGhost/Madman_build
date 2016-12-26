@@ -57,6 +57,10 @@
 	color = "#ACD1E9"
 	alpha = 200
 
+/obj/structure/curtain/tent
+	name = "tent door"
+	color = "#5E5C4E"
+
 /obj/structure/curtain/open/shower/engineering
 	color = "#FFA500"
 

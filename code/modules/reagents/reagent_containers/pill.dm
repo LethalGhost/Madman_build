@@ -320,3 +320,11 @@
 	New()
 		..()
 		reagents.add_reagent("promethazine", 5)
+
+/obj/item/weapon/reagent_containers/pill/ethaperazine
+	name = "ethaperazine pill"
+	desc = "That's a pill."
+	icon_state = "pill21"
+	New()
+		..()
+		reagents.add_reagent("ethaperazine", 5)

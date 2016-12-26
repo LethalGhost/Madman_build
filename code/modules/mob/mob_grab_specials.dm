@@ -113,7 +113,7 @@
 		target.apply_effect(20, PARALYZE)
 		target.visible_message("<span class='danger'>[target] [target.species.get_knockout_message(target)]</span>")
 
-	playsound(attacker.loc, "swing_hit", 25, 1, -1)
+	playsound(attacker.loc, "swing_hit", 60, 1, -1)
 	attacker.attack_log += text("\[[time_stamp()]\] <font color='red'>Headbutted [target.name] ([target.ckey])</font>")
 	target.attack_log += text("\[[time_stamp()]\] <font color='orange'>Headbutted by [attacker.name] ([attacker.ckey])</font>")
 	msg_admin_attack("[key_name(attacker)] has headbutted [key_name(target)]")
@@ -128,7 +128,7 @@
 		attacker << "<span class='warning'>You require a better grab to do this.</span>"
 		return
 	if(target.grab_joint(attacker, target_zone))
-		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		playsound(loc, 'sound/weapons/thudswoosh.ogg', 100, 1, -1)
 		return
 
 /obj/item/weapon/grab/proc/pin_down(mob/target, mob/attacker)

@@ -84,10 +84,64 @@
 	oxygen = MOLES_O2STANDARD * 1.15
 	nitrogen = MOLES_N2STANDARD * 1.15
 	temperature = T0C - 35
+	var/bridge = 0 //has there been a bridge built?
 
 /turf/ice/New()
 	icon_state = "ice[rand(1,6)]"
 	..()
+
+/turf/ice/attackby(var/obj/item/I, mob/user as mob)
+	if(istype(I, /obj/item/stack/material/wood))
+		if(!bridge)
+
+			var/obj/item/stack/material/wood/R = I
+
+			if(R.amount >= 3)
+				user << "<span class='notice'>You build a makeshift platform to cross the river safely.</span>"
+				desc = "A thick ice. There's a makeshift platform over it."
+				R.use(3)
+				bridge = 1
+				density = 0
+				src.overlays += image('icons/turf/snow_new.dmi', "bridge", layer=2.1)
+			else
+				user << "<span class='notice'>You do not have enough wood to build a bridge.</span>"
+
+	else if(istype(I, /obj/item/stack/material/r_wood))
+		if(!bridge)
+			var/obj/item/stack/material/r_wood/R = I
+
+			if(R.amount >= 3)
+				user << "<span class='notice'>You build a makeshift platform to cross the river safely.</span>"
+				desc = "A thick ice. There's a makeshift platform over it."
+				R.use(3)
+
+				src.overlays += image('icons/turf/snow_new.dmi', "bridge2", layer=2.1)
+				bridge = 2
+				density = 0
+			else
+				user << "<span class='notice'>You do not have enough wood to build a bridge.</span>"
+
+	else if(istype(I, /obj/item/weapon/crowbar))
+		if(bridge)
+			user << "<span class='notice'>You begin to disassemble the bridge.</span>"
+			spawn(rand(15,30))
+				if(get_dist(user,src) < 2)
+					playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
+
+					user << "<span class='notice'>You disassemble the bridge.</span>"
+
+					src.overlays = null
+
+					if(bridge == 1)
+						var/obj/item/stack/material/wood/S =  new /obj/item/stack/material/wood(get_turf(src))
+						S.amount = 3
+
+					else if(bridge == 2)
+						var/obj/item/stack/material/r_wood/S =  new /obj/item/stack/material/r_wood/(get_turf(src))
+						S.amount = 3
+
+					bridge = 0
+					density = 0
 
 /turf/snow/gravsnow
 	name = "frozen ground"
@@ -111,6 +165,7 @@
 	name = "snowy plating"
 	icon_state = "plating"
 
-/turf/snow/drift
-	name = "snowy plating"
-	icon_state = "platingdrift"
+/turf/snowtransit
+	name = "snow"
+	icon = 'icons/turf/snow_new.dmi'
+	icon_state = "transit"

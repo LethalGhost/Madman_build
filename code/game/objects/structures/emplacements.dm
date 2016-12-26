@@ -1,5 +1,5 @@
 /mob/living/carbon/human
-	var/obj/structure/emplacement/mounted
+	var/obj/structure/machinegun/mounted
 
 	ClickOn(var/atom/A, params)
 		if(mounted)
@@ -12,16 +12,16 @@
 			..()
 
 
-/obj/structure/emplacement
+/obj/structure/machinegun
 	name = "machine gun"
 	desc = "A stationary machine gun."
-	icon = 'icons/obj/emplacements.dmi'
-	icon_state = "mgun"
-	var/fire_sound = 'sound/weapons/gunshot/gunshot_strong.ogg'
+	icon = 'icons/obj/structures.dmi'
+	icon_state = "mgun+barrier"
+	var/fire_sound = 'sound/weapons/gunshot/50calm2.wav'
 	var/empty_sound = 'sound/weapons/empty.ogg'
-	var/ammo_type = /obj/item/projectile/bullet/rifle/a762
-	var/ammo = 500
-	var/ammomax = 500
+	var/ammo_type = "/obj/item/projectile/bullet/rifle/a127x99mm"
+	var/ammo = 300
+	var/ammomax = 300
 	var/list/row1 = list()
 	var/list/row2 = list()
 	var/list/row3 = list()
@@ -30,11 +30,10 @@
 	var/FIRETIME = 1 //tenths of seconds
 	density = 1
 	anchored = 0
-	layer = 9
 	flags = ON_BORDER
 	var/health = 500
 
-/obj/structure/emplacement/process()
+/obj/structure/machinegun/process()
 	var/mob/living/carbon/human/U
 	for(var/mob/living/carbon/human/H in range(0, src))
 		if(H)
@@ -50,18 +49,18 @@
 			User.mounted = null
 			User = null
 	sleep(1)
-/obj/structure/emplacement/New()
+/obj/structure/machinegun/New()
 	..()
 	processing_objects.Add(src)
 
-/obj/structure/emplacement/proc/shoot(var/turf/T)
+/obj/structure/machinegun/proc/shoot(var/turf/T)
 	if(ammo <= 0)
 		if(User)
 			playsound(src, empty_sound, 70, 1)
-			User << "This [src] is out of ammo!"
+			User << "This machine gun is out of ammo!"
 
 		return
-	if(T && User && User.stat == CONSCIOUS && !User.stunned && !User.weakened)
+	if(T && User && User.stat == CONSCIOUS)
 		var/row = 0
 		if(row1.Find(T))
 			row = 1
@@ -92,7 +91,7 @@
 				if (!istype(targloc) || !istype(curloc))
 					return
 				playsound(src, fire_sound, 50, 1)
-				var/obj/item/projectile/B = new ammo_type(shootfrom)
+				var/obj/item/projectile/bullet/rifle/a127x99mm/B = new ammo_type(shootfrom)
 				B.firer = User
 				B.def_zone = User.zone_sel.selecting
 				B.original = T
@@ -109,8 +108,7 @@
 						B.process()
 				nextshot = world.time + FIRETIME
 
-
-/obj/structure/emplacement/proc/update_rows()
+/obj/structure/machinegun/proc/update_rows()
 	row1 = list()
 	row2 = list()
 	row3 = list()
@@ -138,7 +136,7 @@
 		row3.Add(get_turf(get_step(row3[i - 1], dir)))
 
 
-/obj/structure/emplacement/machinegun/attackby(obj/item/W as obj, mob/user as mob)
+/obj/structure/machinegun/attackby(obj/item/W as obj, mob/user as mob)
 	var/obj/item/machinegunammo/Ammo = W
 	if(istype(W, /obj/item/weapon/wrench))
 		if(anchored)
@@ -166,13 +164,14 @@
 				Ammo.desc = "Machine gun ammo. It has [Ammo.count] rounds remaining"
 			else
 				amt = Ammo.count
-				qdel(Ammo)
+				del(Ammo)
 			ammo = ammo + amt
 
 	else
 		return ..()
 
-/obj/structure/emplacement/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+
+/obj/structure/machinegun/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
 	if(air_group || (height==0)) return 1
 	if(istype(mover,/obj/item/projectile))
 		return (check_cover(mover,target))
@@ -183,10 +182,8 @@
 	return 0
 
 //checks if projectile 'P' from turf 'from' can hit whatever is behind the table. Returns 1 if it can, 0 if bullet stops.
-/obj/structure/emplacement/proc/check_cover(obj/item/projectile/P, turf/from)
+/obj/structure/machinegun/proc/check_cover(obj/item/projectile/P, turf/from)
 	var/turf/cover = get_turf(src)
-/*	if(istype(P, /obj/item/projectile/energy/acid))
-		return 0*/
 	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
 		return 1
 	if (get_turf(P.original) == cover)
@@ -207,11 +204,11 @@
 				return 0
 			else
 				visible_message("<span class='warning'>[src] breaks down!</span>")
-				qdel(src)
+				del(src)
 				return 1
 	return 1
 
-/obj/structure/emplacement/CheckExit(atom/movable/O as mob|obj, target as turf)
+/obj/structure/machinegun/CheckExit(atom/movable/O as mob|obj, target as turf)
 
 	if (get_dir(loc, target) == dir)
 		return !density
@@ -220,9 +217,14 @@
 	return 1
 
 /obj/item/machinegunammo
-	icon = 'icons/obj/emplacements.dmi'
+	icon = 'icons/obj/structures.dmi'
 	icon_state = "mgun_crate"
 	name = "machinegun ammo"
 	desc = "Machine gun ammo. It has 500 rounds remaining"
 	var/count = 500
-	w_class = 3
+	w_class = 2
+	New()
+		..()
+		var/matrix/M = matrix()
+		M.Scale(0.8, 0.8)
+		src.transform = M

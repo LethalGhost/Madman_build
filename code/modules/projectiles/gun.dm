@@ -67,6 +67,7 @@
 	var/unload_sound 	= 'sound/weapons/flipblade.ogg'
 	var/reload_sound 	= null //We don't want these for guns that don't have them.
 	var/cocked_sound 	= null
+	var/safety = 1
 
 	var/next_fire_time = 0
 
@@ -143,6 +144,19 @@
 		return 0
 	return 1
 
+/obj/item/weapon/gun/AltClick(var/mob/user)
+
+	if(!ishuman(user)) return
+
+	if(!user.canmove || user.stat || user.restrained() || !user.loc || !isturf(user.loc))
+		user << "Not right now."
+		return
+
+	user << "<span class='notice'>You toggle the safety [safety ? "<b>off</b>" : "<b>on</b>"].</span>"
+	playsound(usr,'sound/machines/click.ogg', 15, 1)
+	safety = !safety
+	return
+
 /obj/item/weapon/gun/proc/cock_gun(mob/user)
 	set waitfor = 0
 	if(cocked_sound)
@@ -163,8 +177,9 @@
 		PreFire(A,user,params) //They're using the new gun system, locate what they're aiming at.
 		return
 
-	if(user && user.a_intent == I_HELP) //regardless of what happens, refuse to shoot if help intent is on
-		user << "<span class='warning'>You refrain from firing your [src] as your intent is set to help.</span>"
+	if(safety & 1)
+		user << "<span class='warning'>The safety is on!</span>"
+		return
 	else
 		Fire(A,user,params) //Otherwise, fire normally.
 
@@ -454,3 +469,7 @@
 	if(new_mode)
 		user << "<span class='notice'>\The [src] is now set to [new_mode.name].</span>"
 
+
+
+/obj/item/weapon/gun/proc/rpg_post_fire(mob/user)  //сила костылей!
+	return

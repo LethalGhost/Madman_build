@@ -203,3 +203,23 @@
 	if(prob(10))
 		H.add_language("Russian")
 		H << "<b>So you know russian language.</b>"
+
+/datum/job/nato_pilot
+	title = "Helicopter Pilot"
+	faction = "Station"
+	total_positions = 1
+	spawn_positions = 1
+	head_position = 1
+	selection_color = "#4c4ca5"
+	outfit_type = /decl/hierarchy/outfit/job/us_pilot
+//	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
+//	minimal_access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
+	spawn_location = "JoinLateNATO"
+
+/datum/job/nato_pilot/update_character(var/mob/living/carbon/human/H)
+	H.add_language("English")
+	H.default_language = all_languages["English"]
+	if(prob(10))
+		H.add_language("Russian")
+		H << "<b>So you know russian language.</b>"
+

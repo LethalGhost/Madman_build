@@ -8,8 +8,8 @@
 	slot_flags = SLOT_BELT | SLOT_EARS
 	throwforce = 1
 	w_class = 1
-	randpixel = 1
 
+	var/caseless = 0
 	var/leaves_residue = 1
 	var/caliber = ""					//Which kind of guns it can be loaded into
 	var/projectile_type					//The bullet type to create when New() is called
@@ -25,6 +25,8 @@
 /obj/item/ammo_casing/proc/expend()
 	. = BB
 	BB = null
+	if(caseless) // I honestly wasn't sure where to stick this part.
+		del(src)
 	set_dir(pick(alldirs)) //spin spent casings
 
 	// Aurora forensics port, gunpowder residue.

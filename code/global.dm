@@ -30,8 +30,8 @@ var/list/hit_appends = list("-OOF", "-ACK", "-UGH", "-HRNK", "-HURGH", "-GLORF")
 
 var/diary               = null
 var/href_logfile        = null
-var/station_name        = "Harroway Station"
-var/station_short       = "Harroway"
+var/station_name        = "NSS Exodus"
+var/station_short       = "Exodus"
 var/const/dock_name     = "N.A.S. Crescent"
 var/const/boss_name     = "Central Command"
 var/const/boss_short    = "Centcomm"
@@ -61,10 +61,12 @@ var/list/wizardstart     = list()
 var/list/newplayer_start = list()
 
 //Spawnpoints.
-var/list/latejoin         = list()
+/*
 var/list/latejoin_gateway = list()
 var/list/latejoin_cryo    = list()
 var/list/latejoin_cyborg  = list()
+*/
+var/list/latejoin         = list()
 
 var/list/prisonwarp         = list() // Prisoners go to these
 var/list/xeno_spawn         = list() // Aliens spawn at at these.

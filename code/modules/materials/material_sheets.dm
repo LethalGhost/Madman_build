@@ -188,6 +188,14 @@
 /obj/item/stack/material/wood/fifty
 	amount = 50
 
+/obj/item/stack/material/tentcloth
+	name = "tentcloth"
+	icon_state = "sheet-cloth"
+	default_type = "tent cloth"
+
+/obj/item/stack/material/tentcloth/attack_self(var/mob/user)
+	return
+
 /obj/item/stack/material/cloth
 	name = "cloth"
 	icon_state = "sheet-cloth"

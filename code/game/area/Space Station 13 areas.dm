@@ -265,8 +265,8 @@ area/space/atmosalert()
 
 /area/shuttle/uh1
 	requires_power = 0
-	sound_env = SMALL_ENCLOSED
 	base_turf = /turf/snow
+	sound_env = FOREST
 
 /area/shuttle/uh1/lz1
 	icon_state = "shuttle2"
@@ -279,6 +279,8 @@ area/space/atmosalert()
 
 /area/shuttle/uh1/transit
 	icon_state = "shuttle2"
+	base_turf = /turf/snowtransit
+	forced_ambience = list('sound/ambience/coldwar/heliloop.wav')
 
 
 

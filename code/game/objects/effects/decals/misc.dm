@@ -12,3 +12,17 @@
 	density = 0
 	anchored = 1
 	layer = 50
+
+/obj/effect/decal/snow
+	name = "snow"
+	density = 0
+	anchored = 1
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "bsnow"
+
+/obj/effect/decal/heli
+	name = "helicopter"
+	density = 0
+	anchored = 1
+	icon = 'icons/turf/helicopter.dmi'
+	icon_state = "11"

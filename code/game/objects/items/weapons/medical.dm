@@ -128,6 +128,11 @@
 	desc = "You have no idea what's that."
 	pill_type = /obj/item/weapon/reagent_containers/pill/promethazine
 
+/obj/item/weapon/pill_pack/ethaperazine
+	name = "ethaperazine pill pack"
+	desc = "You have no idea what's that."
+	pill_type = /obj/item/weapon/reagent_containers/pill/ethaperazine
+
 
 //////////////////////////
 ////Gauze Packs Define////
@@ -259,3 +264,7 @@
 /obj/item/weapon/storage/box/pill_box/paracetamol
 	name = "paracetamol pill box"
 	startswith = list(/obj/item/weapon/pill_pack/paracetamol = 4)
+
+/obj/item/weapon/storage/box/pill_box/ethaperazine
+	name = "ethaperazine pill box"
+	startswith = list(/obj/item/weapon/pill_pack/ethaperazine = 4)

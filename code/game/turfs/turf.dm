@@ -27,10 +27,7 @@
 	var/list/decals
 	var/interior = 1
 
-	var/list/exterior_areas = list(/area/coldwar/outside,
-							/area/coldwar/forest,
-							/area/coldwar/usmcfob
-							)
+	var/list/exterior_areas = null
 
 	var/list/interior_areas = list(/area/coldwar/civdef,
 							/area/coldwar/sawmill,

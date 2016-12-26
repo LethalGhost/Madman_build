@@ -161,7 +161,7 @@
 		occupant.apply_effect(6, WEAKEN, blocked)
 		occupant.apply_effect(6, STUTTER, blocked)
 		occupant.apply_damage(10, BRUTE, def_zone, blocked)
-		playsound(src.loc, 'sound/weapons/punch1.ogg', 50, 1, -1)
+		playsound(src.loc, 'sound/weapons/punch.wav', 75, 1, -1)
 		if(istype(A, /mob/living))
 			var/mob/living/victim = A
 			def_zone = ran_zone()
@@ -200,21 +200,17 @@
 	icon_state = "wooden_chair_wings_preview"
 
 /obj/structure/bed/chair/helichair
-	name = "Passenger Seat"
+	name = "passenger seat"
 	desc = "Holds you in place during high altitude drops."
 	icon_state = "helichair"
-	var/image/chairbar = null
+	base_icon = "helichair"
 
-/obj/structure/bed/chair/helichair/New()
-	chairbar = image("icons/obj/objects.dmi", "heli_bars")
-	chairbar.layer = MOB_LAYER + 0.1
+/obj/structure/bed/chair/helichair/New(var/newloc)
+  ..(newloc, "plastic", "plastic")
 
-	return ..()
 
-/obj/structure/bed/chair/helichair/buckle_mob()
+/obj/structure/bed/chair/helichair/set_dir()
+	..()
+	update_icon()
 	if(buckled_mob)
-		icon_state = "helichair_buckled"
-		overlays += chairbar
-	else
-		icon_state = "helichair"
-		overlays -= chairbar
+		buckled_mob.set_dir(dir)

@@ -37,6 +37,7 @@
 	secondary_langs = list(LANGUAGE_UNATHI)
 	name_language = LANGUAGE_UNATHI
 	health_hud_intensity = 2
+	spawn_flags = IS_RESTRICTED
 
 	min_age = 18
 	max_age = 60
@@ -99,6 +100,7 @@
 	secondary_langs = list(LANGUAGE_SIIK_MAAS)
 	name_language = LANGUAGE_SIIK_MAAS
 	health_hud_intensity = 1.75
+	spawn_flags = IS_RESTRICTED
 
 	min_age = 17
 	max_age = 80
@@ -155,6 +157,7 @@
 	secondary_langs = list(LANGUAGE_SKRELLIAN)
 	name_language = null
 	health_hud_intensity = 1.75
+	spawn_flags = IS_RESTRICTED
 
 	min_age = 19
 	max_age = 90
@@ -199,6 +202,7 @@
 	name_language = LANGUAGE_ROOTSPEAK
 	spawns_with_stack = 0
 	health_hud_intensity = 2
+	spawn_flags = IS_RESTRICTED
 
 	min_age = 1
 	max_age = 300

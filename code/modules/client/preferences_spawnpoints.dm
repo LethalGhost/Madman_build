@@ -34,7 +34,7 @@ var/list/spawntypes = list()
 	display_name = "Gateway"
 	msg = "has completed translation from offsite gateway"
 
-/datum/spawnpoint/gateway/New()
+/*datum/spawnpoint/gateway/New()
 	..()
 	turfs = latejoin_gateway
 
@@ -55,3 +55,5 @@ var/list/spawntypes = list()
 /datum/spawnpoint/cyborg/New()
 	..()
 	turfs = latejoin_cyborg
+
+*/

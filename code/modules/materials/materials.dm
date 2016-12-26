@@ -760,6 +760,19 @@ var/list/name_to_material
 	melting_point = T0C+300
 	conductive = 0
 
+/material/cloth_tent
+	name = "tent cloth"
+	icon_colour = "#5E5C4E"
+	use_name = "tent cloth"
+	flags = MATERIAL_PADDING
+	ignition_point = T0C+232
+	melting_point = T0C+300
+	conductive = 0
+	icon_base = "tent"
+	icon_reinf = "reinf_over"
+	weight = 10
+	hardness = 10
+
 /material/cloth_puple
 	name = "purple"
 	display_name = "purple"

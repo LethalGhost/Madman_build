@@ -878,7 +878,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 			var/matrix/M = matrix()
 			M.Turn(rand(180))
 			src.transform = M
-			playsound(src, "bodysplat", 50, 1, -3)
+			playsound(src, "bodysplat", 100, 1, -3)
 			forceMove(get_turf(src))
 			if(!clean)
 				// Throw limb around.
@@ -897,7 +897,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 				gore = new /obj/effect/decal/cleanable/blood/gibs/robot(get_turf(victim))
 			else
 				gore = new /obj/effect/decal/cleanable/blood/gibs(get_turf(victim))
-				playsound(src, "bodysplat", 50, 1, -3)
+				playsound(src, "bodysplat", 100, 1, -3)
 				if(species)
 					if(species.get_flesh_colour())
 						gore.fleshcolor = species.get_flesh_colour()
@@ -1015,6 +1015,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 
 	status |= ORGAN_BROKEN
 	broken_description = pick("broken","fracture","hairline fracture")
+	playsound(loc, "bonebreak", 100, 1, -3)
 
 	// Fractures have a chance of getting you out of restraints
 	if (prob(25))

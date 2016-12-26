@@ -18,7 +18,7 @@
 	melee_damage_upper = 25
 	attacktext = "slashed"
 	a_intent = I_HURT
-	attack_sound = 'sound/weapons/bladeslice.ogg'
+	attack_sound = 'sound/weapons/cut.wav'
 	min_oxy = 0
 	max_oxy = 0
 	min_tox = 0

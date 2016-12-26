@@ -125,7 +125,7 @@
 	density = 0
 	update_icon()
 	update_nearby_tiles()
-	
+
 	if(operating == 1) //emag again
 		src.operating = 0
 	return 1
@@ -335,3 +335,15 @@
 	dir = SOUTH
 	icon_state = "rightsecure"
 	base_state = "rightsecure"
+
+/obj/machinery/door/window/brigdoor/helicopterleft
+	dir = EAST
+	icon_state = "helileft"
+	base_state = "helileft"
+
+
+/obj/machinery/door/window/brigdoor/helicopterright
+	dir = WEST
+	icon_state = "helileft"
+	base_state = "helileft"
+

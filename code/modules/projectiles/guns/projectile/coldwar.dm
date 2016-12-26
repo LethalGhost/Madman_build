@@ -10,7 +10,7 @@
 	w_class = 2
 	caliber = "9x19"
 	fire_delay = 1
-	jam_chance = 1
+	jam_chance = 0.25
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a9x19
 	allowed_magazines = /obj/item/ammo_magazine/a9x19
@@ -34,7 +34,7 @@
 	icon_state = "makarov"
 	item_state = "gun"
 	w_class = 2
-	jam_chance = 2
+	jam_chance = 0.5
 	caliber = "9x18"
 	fire_delay = 1
 	load_method = MAGAZINE
@@ -98,7 +98,7 @@
 	icon_state = "coltmodel733-m"
 	item_state = "m16"
 	w_class = 4
-	jam_chance = 2
+	jam_chance = 0.5
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK | SLOT_BELT
@@ -247,7 +247,7 @@
 	icon_state = "m16a1-m"
 	item_state = "m16"
 	w_class = 5
-	jam_chance = 3
+	jam_chance = 0.8
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK
@@ -322,7 +322,7 @@
 	icon_state = "m16a2-m"
 	item_state = "m16"
 	w_class = 5
-	jam_chance = 1.5
+	jam_chance = 0.5
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK
@@ -367,7 +367,7 @@
 	caliber = "762x39"
 	ammo_type = /obj/item/ammo_casing/a762x39
 	load_method = MAGAZINE
-	allowed_magazines = /obj/item/ammo_magazine/c762x39r
+	allowed_magazines = list(/obj/item/ammo_magazine/c762x39r, /obj/item/ammo_magazine/c762x39br)
 	requires_two_hands = 6
 	accuracy = 3
 	wielded_item_state = "ak-wielded"
@@ -383,12 +383,13 @@
 		list(mode_name="long bursts",	burst=8, move_delay=10, requires_two_hands=9, burst_accuracy = list(2,2,2,1,0,-1,-2,-3), dispersion = list(0.3, 0.3, 0.6, 1.0, 1.2)),
 		)
 
-/obj/item/weapon/gun/projectile/automatic/rpk74/update_icon()
+/obj/item/weapon/gun/projectile/automatic/rpk74/update_icon(var/ignore_inhands)
 	..()
-	if(ammo_magazine)
+	if(istype(ammo_magazine,/obj/item/ammo_magazine/c762x39r))
 		icon_state = "rpk74"
 	else
-		icon_state = "rpk74-empty"
+		icon_state = (ammo_magazine)? "rpk74-eggmag" : "rpk74-empty"
+	if(!ignore_inhands) update_held_icon()
 
 /obj/item/weapon/gun/projectile/automatic/pkm
 	name = "PKM"
@@ -411,6 +412,7 @@
 	cocked_sound = 'sound/weapons/gunporn/m249_charge.wav'
 
 	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, requires_two_hands=6, burst_accuracy=null, dispersion=null),
 		list(mode_name="short bursts",	burst=5, move_delay=12, requires_two_hands=8, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2)),
 		list(mode_name="long bursts",	burst=8, move_delay=15, requires_two_hands=9, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
 		)
@@ -484,6 +486,7 @@
 	cocked_sound = 'sound/weapons/gunporn/m249_charge.wav'
 
 	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, requires_two_hands=6, burst_accuracy=null, dispersion=null),
 		list(mode_name="short bursts",	burst=5, move_delay=10, requires_two_hands=8, burst_accuracy = list(0,-1,-1,-2,-2),          dispersion = list(0.6, 1.0, 1.0, 1.0, 1.2)),
 		list(mode_name="long bursts",	burst=8, move_delay=12, requires_two_hands=9, burst_accuracy = list(0,-1,-1,-2,-2,-2,-3,-3), dispersion = list(1.0, 1.0, 1.0, 1.0, 1.2)),
 		)
@@ -666,9 +669,100 @@
 	else
 		icon_state = "ak74-gl-empty"
 
-/obj/item/weapon/gun/projectile/automatic/m16a1gl/examine(mob/user)
+/obj/item/weapon/gun/projectile/automatic/ak74gl/examine(mob/user)
 	..()
 	if(launcher.chambered)
 		user << "\The [launcher] has \a [launcher.chambered] loaded."
 	else
 		user << "\The [launcher] is empty."
+
+/obj/item/weapon/gun/projectile/rpg18
+	name = "RPG-18"
+	desc = "Also known as 'Mukha'."
+	icon_state = "rpg18"
+	item_state = "rpg"
+	w_class = 4
+	caliber = "rocket"
+	throw_speed = 2
+	throw_range = 10
+	ammo_type = /obj/item/ammo_casing/oneuserocket
+	force = 5.0
+	flags =  CONDUCT
+	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
+	slot_flags = SLOT_BACK
+	load_method = SINGLE_CASING
+	requires_two_hands = 10
+	max_shells = 1
+
+/obj/item/weapon/gun/projectile/rpg18/attack_self(mob/user)
+	return
+
+
+/obj/item/weapon/gun/projectile/m72
+	name = "M72 LAW"
+	desc = "Destroying tanks since Vietnam."
+	icon_state = "m72law"
+	item_state = "rpg"
+	w_class = 4
+	caliber = "rocket"
+	throw_speed = 2
+	throw_range = 10
+	ammo_type = /obj/item/ammo_casing/oneuserocket
+	force = 5.0
+	flags = CONDUCT
+	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
+	slot_flags = SLOT_BACK
+	load_method = SINGLE_CASING
+	requires_two_hands = 10
+	max_shells = 1
+
+/obj/item/weapon/gun/projectile/m72/attack_self(mob/user)
+	return
+
+
+/obj/item/weapon/gun/projectile/rpg7
+	name = "RPG-7"
+	desc = "Destroying those capitalistic APC's since Vietnam."
+	icon_state = "rpg7"
+	item_state = "rocket"
+	w_class = 5
+	caliber = "rocket"
+	throw_speed = 2
+	throw_range = 10
+	ammo_type = /obj/item/ammo_casing/newrocket
+	force = 5.0
+	flags =  CONDUCT
+	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
+	slot_flags = SLOT_BACK
+	requires_two_hands = 10
+	max_shells = 1
+	load_method = SINGLE_CASING
+	var/datum/effect/effect/system/smoke_spread/puff
+
+	New()
+		..()
+		puff = new /datum/effect/effect/system/smoke_spread()
+		puff.attach(src)
+
+
+	rpg_post_fire(mob/user)
+		set waitfor = 0
+		sleep(1)
+		var/smoke_dir = user.dir
+		if(user)
+			switch(smoke_dir) //We want the opposite of their direction.
+				if(2,8)
+					smoke_dir /= 2
+				if(1,4)
+					smoke_dir *= 2
+		puff.set_up(1,,,smoke_dir)
+		puff.start()
+		return 1
+
+
+/obj/item/weapon/gun/projectile/rpg7/update_icon()
+	..()
+	if(loaded.len)
+		icon_state = "rpg7"
+	else
+		icon_state = "rpg7_empty"
