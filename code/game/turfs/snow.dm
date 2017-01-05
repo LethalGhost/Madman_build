@@ -4,13 +4,14 @@
     icon_state = "snow"
     stepsound = "snow"
     interior = 0
+    blend_with_neighbors = 1
+    diggable = 1
 
     oxygen = MOLES_O2STANDARD * 1.15
     nitrogen = MOLES_N2STANDARD * 1.15
 
     temperature = T0C - 30
     var/list/crossed_dirs = list()
-
 
 #define FOOTSTEP_SPRITE_AMT 2
 
@@ -66,7 +67,6 @@
 //			overlays += icon(icon, "footprint[i]", text2num(d))
 
 
-
 /turf/snow/snow2
 	name = "snow"
 	icon = 'icons/turf/snow.dmi'
@@ -80,6 +80,7 @@
 
 	density = 1
 	dynamic_lighting = 1
+	blend_with_neighbors = -1
 
 	oxygen = MOLES_O2STANDARD * 1.15
 	nitrogen = MOLES_N2STANDARD * 1.15
@@ -146,12 +147,16 @@
 /turf/snow/gravsnow
 	name = "frozen ground"
 	icon_state = "ground_frozen"
+	blend_with_neighbors = 3
+	diggable = 1
 
 /turf/frozenground
 	name = "frozen ground"
 	dynamic_lighting = 1
 	icon = 'icons/turf/snow_new.dmi'
 	icon_state = "wground1"
+	blend_with_neighbors = 3
+	diggable = 1
 
 	oxygen = MOLES_O2STANDARD * 1.15
 	nitrogen = MOLES_N2STANDARD * 1.15
@@ -169,3 +174,5 @@
 	name = "snow"
 	icon = 'icons/turf/snow_new.dmi'
 	icon_state = "transit"
+	blend_with_neighbors = -1
+

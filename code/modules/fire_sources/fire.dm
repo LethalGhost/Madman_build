@@ -64,7 +64,6 @@ var/list/fire_sounds = list(
 /obj/structure/fire_source/hearth/update_icon()
 	..()
 	if(lit == FIRE_LIT)
-		opacity = 1
 		density = 1
 
 /obj/structure/fire_source/stove

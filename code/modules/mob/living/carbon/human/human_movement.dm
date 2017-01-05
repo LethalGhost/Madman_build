@@ -4,6 +4,9 @@
 	if(species.slowdown)
 		tally += species.slowdown
 
+	if(resting)
+		tally += 10
+
 	if (istype(loc, /turf/space)) return -1 // It's hard to be slowed down in space by... anything
 
 	if(embedded_flag || (stomach_contents && stomach_contents.len))

@@ -790,10 +790,10 @@ obj/random/material //Random materials for building stuff
 	icon = 'icons/obj/food.dmi'
 	icon_state = "stew_closed"
 	item_to_spawn()
-		return pick(/obj/item/weapon/reagent_containers/food/drinks/cans/stewpearlbarley,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/stew,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/stewbuckwheat,
-					/obj/item/weapon/reagent_containers/food/drinks/cans/buckwheat)
+		return pick(/obj/item/weapon/reagent_containers/food/snacks/tincan/stewpearlbarley,
+					/obj/item/weapon/reagent_containers/food/snacks/tincan/stew,
+					/obj/item/weapon/reagent_containers/food/snacks/tincan/stewbuckwheat,
+					/obj/item/weapon/reagent_containers/food/snacks/tincan/buckwheat)
 
 /obj/random/tsukor
 	name = "random tsukor"

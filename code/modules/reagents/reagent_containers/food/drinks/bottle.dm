@@ -200,7 +200,7 @@
 		reagents.add_reagent("specialwhiskey", 100)
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/vodka
-	name = "Tunguska Triple Distilled"
+	name = "'Stolichnaya' vodka"
 	desc = "Aah, vodka. Prime choice of drink AND fuel by Russians worldwide."
 	icon_state = "vodkabottle"
 	center_of_mass = "x=17;y=3"

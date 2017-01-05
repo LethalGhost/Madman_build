@@ -177,9 +177,10 @@
 	desc = "That's the M21, an marksman rifle used by USMC."
 	icon_state = "m14scoped"
 	item_state = "m14"
-	accuracy = 5
 	jam_chance = 0.1
 	fire_delay = 3
+	accuracy = 3
+	scoped_accuracy = 5
 	wielded_item_state = "sniper_wielded"
 
 	firemodes = list(
@@ -217,7 +218,8 @@
 	load_method = MAGAZINE
 	allowed_magazines = /obj/item/ammo_magazine/c762x54s
 	requires_two_hands = 4
-	accuracy = 5
+	accuracy = 3
+	scoped_accuracy = 8
 	fire_delay = 1
 	fire_sound = 'sound/weapons/gunshot/svd.wav'
 	wielded_item_state = "sniper_wielded"
@@ -235,6 +237,14 @@
 		icon_state = "svd"
 	else
 		icon_state = "svd-empty"
+
+/obj/item/weapon/gun/projectile/automatic/svd/scoped/verb/scope()
+	set category = "Object"
+	set name = "Use Scope"
+	set popup_menu = 1
+
+	toggle_scope(usr, 2.0)
+
 
 
 //////////////////////////Assault Rifles//////////////////////////
@@ -691,8 +701,9 @@
 	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING
-	requires_two_hands = 10
+	requires_two_hands = 20
 	max_shells = 1
+	accuracy = -3
 
 /obj/item/weapon/gun/projectile/rpg18/attack_self(mob/user)
 	return
@@ -713,8 +724,10 @@
 	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
 	slot_flags = SLOT_BACK
 	load_method = SINGLE_CASING
-	requires_two_hands = 10
+	requires_two_hands = 20
 	max_shells = 1
+	accuracy = -3
+
 
 /obj/item/weapon/gun/projectile/m72/attack_self(mob/user)
 	return
@@ -734,8 +747,9 @@
 	flags =  CONDUCT
 	fire_sound = 'sound/weapons/gunshot/rocketfire1.wav'
 	slot_flags = SLOT_BACK
-	requires_two_hands = 10
+	requires_two_hands = 20
 	max_shells = 1
+	accuracy = -3
 	load_method = SINGLE_CASING
 	var/datum/effect/effect/system/smoke_spread/puff
 

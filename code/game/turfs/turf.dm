@@ -1,3 +1,6 @@
+var/list/turf_edge_cache = list()
+
+
 /turf
 	icon = 'icons/turf/floors.dmi'
 	level = 1
@@ -26,6 +29,8 @@
 
 	var/list/decals
 	var/interior = 1
+	var/diggable = 0
+	var/blend_with_neighbors = 0
 
 	var/list/exterior_areas = null
 
@@ -55,6 +60,11 @@
 			src.Entered(AM)
 			return
 	turfs |= src
+	if(blend_with_neighbors)
+		if(ticker && ticker.current_state >= GAME_STATE_PLAYING)
+			initialize()
+		else
+			return
 
 	if(loc.type in interior_areas)
 		interior = 1
@@ -66,10 +76,26 @@
 	update_starlight()
 
 /turf/proc/initialize()
-	return
+	update_icon(1)
 
-/turf/proc/update_icon()
-	return
+/turf/proc/update_icon(var/update_neighbors, var/list/previously_added = list())
+	var/list/overlays_to_add = previously_added
+	if(blend_with_neighbors)
+		for(var/checkdir in cardinal)
+			var/turf/T = get_step(src, checkdir)
+			if(istype(T) && T.blend_with_neighbors && blend_with_neighbors < T.blend_with_neighbors && icon_state != T.icon_state)
+				var/cache_key = "[T.icon_state]-[checkdir]"
+				if(!turf_edge_cache[cache_key])
+					turf_edge_cache[cache_key] = image(icon = 'icons/turf/blending_overlays.dmi', icon_state = "[T.icon_state]-edge", dir = checkdir)
+				overlays_to_add += turf_edge_cache[cache_key]
+
+	overlays = overlays_to_add
+	if(update_neighbors)
+		for(var/check_dir in alldirs)
+			var/turf/T = get_step(src, check_dir)
+			if(istype(T))
+				T.update_icon()
+
 
 /turf/Destroy()
 	turfs -= src
@@ -272,3 +298,19 @@ var/const/enterloopsanity = 100
 			continue
 		if(T.interior && !T.opacity)
 			T.set_light(config.starlight, 1, config.starlight_color)
+
+/turf/attackby(obj/item/C, mob/user)
+	if(diggable && istype(C,/obj/item/weapon/shovel/))
+		var/obj/structure/pit/P = locate(/obj/structure/pit) in src
+		if(P)
+			P.attackby(C, user)
+		else
+			visible_message("<span class='notice'>\The [user] starts digging \the [src]</span>")
+			if(do_after(user, 50))
+				user << "<span class='notice'>You dig a deep pit.</span>"
+				if(!(locate(/obj/structure/pit) in src))
+					new /obj/structure/pit(src)
+			else
+				user << "<span class='notice'>You stop shoveling.</span>"
+	else
+		..()

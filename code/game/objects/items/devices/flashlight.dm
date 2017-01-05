@@ -105,7 +105,7 @@
 
 /obj/item/device/flashlight/pen
 	name = "penlight"
-	desc = "A pen-sized light, used by medical staff."
+	desc = "A pen-sized light."
 	icon_state = "penlight"
 	item_state = ""
 	flags = CONDUCT
@@ -121,6 +121,15 @@
 	flags = CONDUCT
 	brightness_on = 2
 	w_class = 1
+
+/obj/item/device/flashlight/usmc
+	name = "military flashlight"
+	desc = "A small flashlight used by US military."
+	icon_state = "uslight"
+	item_state = ""
+	flags = CONDUCT
+	brightness_on = 6
+	w_class = 2
 
 
 // the desk lamps are a bit special

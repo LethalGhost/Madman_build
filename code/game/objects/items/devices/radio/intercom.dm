@@ -124,9 +124,9 @@
 				on = A.powered(EQUIP) // set "on" to the power status
 
 		if(!on)
-			icon_state = "intercom-p"
+			icon_state = "[icon_state]-p"
 		else
-			icon_state = "intercom"
+			icon_state = "[icon_state]"
 
 /obj/item/device/radio/intercom/broadcasting
 	broadcasting = 1
@@ -160,3 +160,43 @@
 	name = "radio set"
 	icon_state = "usintercomm"
 	frequency = 1332
+
+/obj/item/device/radio/intercom/locked/soviet/transmitter
+	name = "\improper transmitter"
+	icon_state = "transmitter"
+	desc = "Used to send messages on the all loudspeakers."
+	frequency = 1309
+	broadcasting = 1
+	listening = 1
+
+/obj/item/device/radio/intercom/locked/soviet/receiver
+	name = "\improper loudspeaker"
+	desc = "Listen through this."
+	icon_state = "loudspeaker"
+	frequency = 1309
+	broadcasting = 0
+	listening = 1
+	canhear_range = 8
+
+/obj/item/device/radio/intercom/locked/soviet/receiver/attack_self(mob/user)
+	return
+
+/obj/item/device/radio/intercom/locked/usmc/transmitter
+	name = "\improper transmitter"
+	desc = "Used to send messages on the all loudspeakers."
+	frequency = 1329
+	icon_state = "transmitter"
+	broadcasting = 1
+	listening = 1
+
+/obj/item/device/radio/intercom/locked/usmc/receiver
+	name = "\improper loudspeaker"
+	desc = "Listen through this."
+	icon_state = "loudspeaker"
+	frequency = 1329
+	broadcasting = 0
+	listening = 1
+	canhear_range = 8
+
+/obj/item/device/radio/intercom/locked/usmc/receiver/attack_self(mob/user)
+	return

@@ -257,6 +257,10 @@
 	name = "AP magazine (7.62x51mm)"
 	ammo_type = /obj/item/ammo_casing/a762x51/ap
 
+/obj/item/ammo_magazine/c762x51b/hp
+	name = "HP magazine (7.62x51mm)"
+	ammo_type = /obj/item/ammo_casing/a762x51/hp
+
 /obj/item/ammo_magazine/c762x39b
 	name = "magazine box (7.62x39mm)"
 	icon_state = "7.62x39b"
@@ -324,6 +328,10 @@
 	name = "AP magazine (7.62x54mm)"
 	ammo_type = /obj/item/ammo_casing/a762x54/ap
 
+/obj/item/ammo_magazine/c762x54s/hp
+	name = "HP magazine (7.62x54mm)"
+	ammo_type = /obj/item/ammo_casing/a762x54/hp
+
 /obj/item/ammo_magazine/c762x54b
 	name = "ammo box (7.62x54mm)"
 	icon_state = "7.62x39b"
@@ -338,6 +346,7 @@
 	name = "ammo box (7.62x54mm)"
 	icon_state = "7.62x39b"
 	ammo_type = /obj/item/ammo_casing/a762x54/ap
+
 
 /obj/item/ammo_magazine/c556x45m
 	name = "magazine (5.56x45mm)"

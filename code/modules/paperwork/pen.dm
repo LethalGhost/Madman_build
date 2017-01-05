@@ -29,6 +29,11 @@
 	icon_state = "pen_blue"
 	colour = "blue"
 
+/obj/item/weapon/pen/pencil
+	desc = "It's a pencil!"
+	icon_state = "pencil"
+	colour = "black"
+
 /obj/item/weapon/pen/red
 	desc = "It's a normal red ink pen."
 	icon_state = "pen_red"

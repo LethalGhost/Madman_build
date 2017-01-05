@@ -191,6 +191,10 @@
 	desc = "A 7.62x51mm AP bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/a762x51/ap
 
+/obj/item/ammo_casing/a762x51/hp
+	desc = "A 7.62x51mm HP bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a762x51/hp
+
 /obj/item/ammo_casing/a762x39
 	desc = "A 7.62x39mm bullet casing."
 	caliber = "762x39"
@@ -212,6 +216,10 @@
 /obj/item/ammo_casing/a762x54/ap
 	desc = "A 7.62x54mm AP bullet casing."
 	projectile_type = /obj/item/projectile/bullet/rifle/a762x54/ap
+
+/obj/item/ammo_casing/a762x54/hp
+	desc = "A 7.62x54mm HP bullet casing."
+	projectile_type = /obj/item/projectile/bullet/rifle/a762x54/hp
 
 /obj/item/ammo_casing/a545x39
 	desc = "A 5.45x39mm bullet casing."
@@ -238,20 +246,20 @@
 /obj/item/ammo_casing/a9x19
 	desc = "A 9x19mm bullet casing."
 	caliber = "9x19"
-	projectile_type = /obj/item/projectile/bullet/rifle/a9x19
+	projectile_type = /obj/item/projectile/bullet/a9x19
 
 /obj/item/ammo_casing/a9x19/ap
 	desc = "A 9x19mm AP bullet casing."
-	projectile_type = /obj/item/projectile/bullet/rifle/a9x19/ap
+	projectile_type = /obj/item/projectile/bullet/a9x19/ap
 
 /obj/item/ammo_casing/a9x18
 	desc = "A 9x18mm bullet casing."
 	caliber = "9x18"
-	projectile_type = /obj/item/projectile/bullet/rifle/a9x18
+	projectile_type = /obj/item/projectile/bullet/a9x18
 
 /obj/item/ammo_casing/a9x18/ap
 	desc = "A 9x18mm AP bullet casing."
-	projectile_type = /obj/item/projectile/bullet/rifle/a9x18/ap
+	projectile_type = /obj/item/projectile/bullet/a9x18/ap
 
 /obj/item/ammo_casing/a4mm
 	desc = "A 4mm bullet casing."
@@ -273,6 +281,7 @@
 	spent_icon = null
 	caliber = "rocket"
 	caseless = 1
+	w_class = 4
 
 /obj/item/ammo_casing/oneuserocket
 	name = "rocket"

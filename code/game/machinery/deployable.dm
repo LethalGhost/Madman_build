@@ -57,7 +57,7 @@ for reference:
 /obj/structure/barricade
 	name = "barricade"
 	desc = "This space is blocked off by a barricade."
-	icon = 'icons/obj/structures.dmi'
+	icon = 'icons/obj/barricade.dmi'
 	icon_state = "barricade"
 	anchored = 1.0
 	density = 1.0
@@ -269,3 +269,30 @@ for reference:
 		s.start()
 		visible_message("<span class='warning'>BZZzZZzZZzZT</span>")
 		return 1
+
+/obj/structure/barricade/oneside
+	name = "one-side barricade"
+	desc = "This space is blocked off by a barricade."
+	icon = 'icons/obj/barricade.dmi'
+	icon_state = "barricadehalf"
+	density = 1
+	health = 50
+	maxhealth = 50
+
+/obj/structure/barricade/oneside/set_dir(direction)
+	dir = direction
+	if(dir == NORTH)
+		layer = OBJ_LAYER
+	else
+		layer = FLY_LAYER
+
+/obj/structure/barricade/oneside/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if (get_dir(loc, target) == dir)
+		return !density
+	else
+		return 1
+
+/obj/structure/barricade/oneside/New()
+	flags |= ON_BORDER
+	set_dir(dir)
+	..()

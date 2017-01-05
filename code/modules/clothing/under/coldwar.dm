@@ -32,34 +32,34 @@
 	worn_state = "afganka_winter_var3"
 
 /obj/item/clothing/under/coldwar/afganka/winter/var3/pvt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/pvt, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/pvt)
 
 /obj/item/clothing/under/coldwar/afganka/winter/var3/gefr
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/gefr, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/gefr)
 
 /obj/item/clothing/under/coldwar/afganka/winter/var2/jsgt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/jsgt, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/jsgt)
 
 /obj/item/clothing/under/coldwar/afganka/winter/var2/sgt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/sgt, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/sgt)
 
 /obj/item/clothing/under/coldwar/afganka/winter/var3/ssgt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/ssgt, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/ssgt)
 
 /obj/item/clothing/under/coldwar/afganka/winter/var3/star
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/star, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/star)
 
 /obj/item/clothing/under/coldwar/afganka/winter/prap
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/prap, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/prap)
 
 /obj/item/clothing/under/coldwar/afganka/winter/var3/stpr
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/stpr, /obj/item/clothing/accessory/badge/militaryid)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/stpr)
 
 /obj/item/clothing/under/coldwar/afganka/winter/mllt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/mllt, /obj/item/clothing/accessory/badge/militaryid/officer)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/mllt)
 
 /obj/item/clothing/under/coldwar/afganka/winter/lt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/lt, /obj/item/clothing/accessory/badge/militaryid/officer)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/soviet/lt)
 
 
 
@@ -88,25 +88,33 @@
 	worn_state = "usmc_grenwin"
 
 /obj/item/clothing/under/coldwar/usmc/winter/pfc
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/pfc, /obj/item/clothing/accessory/badge/dogtag)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/pfc)
 
 /obj/item/clothing/under/coldwar/usmc/winter/lcpl
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/lcpl, /obj/item/clothing/accessory/badge/dogtag)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/lcpl)
 
 /obj/item/clothing/under/coldwar/usmc/winter/cpl
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/cpl, /obj/item/clothing/accessory/badge/dogtag)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/cpl)
 
 /obj/item/clothing/under/coldwar/usmc/winter/sgt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/sgt, /obj/item/clothing/accessory/badge/dogtag)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/sgt)
 
 /obj/item/clothing/under/coldwar/usmc/winter/ssgt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/ssgt, /obj/item/clothing/accessory/badge/dogtag)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/ssgt)
 
 /obj/item/clothing/under/coldwar/usmc/winter/msgt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/msgt, /obj/item/clothing/accessory/badge/dogtag)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/msgt)
 
 /obj/item/clothing/under/coldwar/usmc/winter/frstsgt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/frstsgt, /obj/item/clothing/accessory/badge/dogtag)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/frstsgt)
 
 /obj/item/clothing/under/coldwar/usmc/winter/scndlt
-	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/scndlt, /obj/item/clothing/accessory/badge/dogtag/officer)
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/scndlt)
+
+
+/obj/item/clothing/under/coldwar/usmc/winter/doc
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/ssgt, /obj/item/clothing/accessory/armband/medblue)
+
+
+/obj/item/clothing/under/coldwar/usmc/winter/medic
+	starting_accessories = list(/obj/item/clothing/accessory/insignia/usmc/cpl, /obj/item/clothing/accessory/armband/med)

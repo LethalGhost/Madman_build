@@ -307,6 +307,7 @@
 	mymob.whitenoise.mouse_opacity = 0
 	mymob.whitenoise.layer = 19
 	mymob.whitenoise.alpha = 0
+	hud_elements |= mymob.whitenoise
 
 	mymob.pain = new /obj/screen( null )
 

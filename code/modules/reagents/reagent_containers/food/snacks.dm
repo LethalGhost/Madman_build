@@ -3364,3 +3364,93 @@
 	reagents.add_reagent("nutriment", 5)
 	reagents.add_reagent("sugar", 3)
 	bitesize = 4
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan
+	name = "tin can"
+	desc = "That's should now be here!"
+	icon = 'icons/obj/food.dmi'
+	filling_color = "#A66829"
+	center_of_mass = list("x"=15, "y"=12)
+	var/closed = 1
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/proc/openfood(mob/user)
+	user.visible_message("<span class='danger'>[user] opens the [src.name].</span>")
+	closed = 0
+	icon_state = "[initial(name)]_open"
+	update_icon()
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/attack(mob/M as mob, mob/user as mob, def_zone)
+	if(closed = 1)
+		M << "<span class='warning'>How do you propose to eat closed food?</span>"
+		return 0
+
+	if(istype(M, /mob/living/carbon))
+		if(closed = 1)
+			return 0
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/attackby(obj/item/weapon/W, mob/user)
+	if(istype(W, /obj/item/weapon/material/knife))
+		if(closed = 1)
+			openfood(user)
+		else
+			user << "<span class='notice'>[src] is already opened.</span>"
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/condensedmilk
+	name = "condensed milk"
+	desc = "Tasty tasty sguschenka!"
+	icon_state = "condensedmilk"
+	trash = /obj/item/trash/tincan/condensedmilk
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/condensedmilk/New()
+	..()
+	reagents.add_reagent("milk", 30)
+	reagents.add_reagent("sugar", 10)
+	bitesize = 14
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/stew
+	name = "stew"
+	desc = "That's the so-called 'tushenka'."
+	icon_state = "stewcan"
+	trash = /obj/item/trash/tincan
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/stew/New()
+	..()
+	reagents.add_reagent("nutriment", 25)
+	reagents.add_reagent("protein", 15)
+	bitesize = 14
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/stewpearlbarley
+	name = "stew with pearl barley"
+	desc = "Now with 'perlovka'!."
+	icon_state = "pearlbarleystew"
+	trash = /obj/item/trash/tincan/pearlbarleystew
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/stewpearlbarley/New()
+	..()
+	reagents.add_reagent("pearlbarley", 30)
+	reagents.add_reagent("protein", 10)
+	bitesize = 14
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/stewbuckwheat
+	name = "stew with buckwheat"
+	desc = "That's the 'grechka'. Still better than 'perlovka'!"
+	icon_state = "stewbuckwheat"
+	trash = /obj/item/trash/tincan/stewbuckwheat
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/stewbuckwheat/New()
+	..()
+	reagents.add_reagent("buckwheat", 30)
+	reagents.add_reagent("protein", 10)
+	bitesize = 14
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/buckwheat
+	name = "buckwheat"
+	desc = "No 'tushenka'. Better luck next time, comrade!"
+	icon_state = "buckwheat"
+	trash = /obj/item/trash/tincan/buckwheat
+	bitesize = 14
+
+/obj/item/weapon/reagent_containers/food/snacks/tincan/buckwheat/New()
+	..()
+	reagents.add_reagent("buckwheat", 40)
+	bitesize = 14

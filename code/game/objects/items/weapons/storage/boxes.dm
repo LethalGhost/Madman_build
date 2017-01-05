@@ -482,25 +482,27 @@
 /obj/item/weapon/storage/box/irp/var1
 	name = "'Etalon-1' rations"
 	w_class = 2
-	max_storage_space = 10
+	max_storage_space = 12
 	desc = "That's a ration pack used by Soviet army."
 	icon_state = "irp"
 	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
-				/obj/item/weapon/reagent_containers/food/drinks/cans/stewbuckwheat = 1,
-				/obj/item/weapon/reagent_containers/food/drinks/cans/stewpearlbarley = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/tincan/stewbuckwheat = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/tincan/stewpearlbarley = 1,
 				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/zheldor = 1,
 				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/morflot = 1,
+				/obj/item/weapon/storage/fancy/cigarettes/prima = 1,
 				/obj/item/weapon/material/kitchen/utensil/spoon = 1)
 
 /obj/item/weapon/storage/box/irp/var2
 	name = "'Etalon-2' rations"
 	w_class = 2
-	max_storage_space = 10
+	max_storage_space = 12
 	desc = "That's a ration pack used by Soviet army."
 	icon_state = "irp"
 	startswith = list(/obj/item/weapon/storage/box/matches/small = 1,
-				/obj/item/weapon/reagent_containers/food/drinks/cans/stew = 1,
-				/obj/item/weapon/reagent_containers/food/drinks/cans/buckwheat = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/tincan/stew = 1,
+				/obj/item/weapon/reagent_containers/food/snacks/tincan/buckwheat = 1,
 				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/ = 1,
 				/obj/item/weapon/reagent_containers/food/condiment/sovietsugar/tsukor = 1,
+				/obj/item/weapon/storage/fancy/cigarettes/prima = 1,
 				/obj/item/weapon/material/kitchen/utensil/spoon = 1)

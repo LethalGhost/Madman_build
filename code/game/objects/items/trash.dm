@@ -84,5 +84,25 @@
 	name = "chocolate bar pack"
 	icon_state = "chocolate"
 
+/obj/item/trash/tincan
+	name = "tin can"
+	icon_state = "stew_empty"
+
+/obj/item/trash/tincan/pearlbarleystew
+	name = "tin can"
+	icon_state = "pearlbarleystew_empty"
+
+/obj/item/trash/tincan/condensedmilk
+	name = "tin can"
+	icon_state = "condensedmilk_empty"
+
+/obj/item/trash/tincan/stewbuckwheat
+	name = "tin can"
+	icon_state = "stewbuckwheat_empty"
+
+/obj/item/trash/tincan/buckwheat
+	name = "tin can"
+	icon_state = "buckwheat_empty"
+
 /obj/item/trash/attack(mob/M as mob, mob/living/user as mob)
 	return

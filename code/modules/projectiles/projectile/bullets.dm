@@ -263,6 +263,7 @@
 	damage = 30
 	agony = 10
 	fire_sound = 'sound/weapons/gunshot/rpk47.wav'
+	armor_penetration = -5
 
 /obj/item/projectile/bullet/rifle/a762x39/ap
 	damage = 20
@@ -274,17 +275,25 @@
 	damage = 35
 	agony = 10
 	fire_sound = 'sound/weapons/gunshot/m60.wav'
+	armor_penetration = 5
 
 /obj/item/projectile/bullet/rifle/a762x51/ap
 	damage = 25
 	agony = 10
-	armor_penetration = 10
+	armor_penetration = 15
+	sharp = 0
+
+/obj/item/projectile/bullet/rifle/a762x51/hp
+	damage = 45
+	agony = 10
+	armor_penetration = -10
 	sharp = 0
 
 /obj/item/projectile/bullet/rifle/a762x54
 	damage = 40
 	agony = 15
 	fire_sound = 'sound/weapons/gunshot/svd.wav'
+	armor_penetration = 5
 
 /obj/item/projectile/bullet/rifle/a762x54/ap
 	damage = 25
@@ -292,10 +301,18 @@
 	armor_penetration = 25
 	sharp = 0
 
+/obj/item/projectile/bullet/rifle/a762x51/hp
+	damage = 40
+	agony = 10
+	armor_penetration = -5
+	sharp = 0
+
 /obj/item/projectile/bullet/rifle/a545x39
 	damage = 25
 	agony = 20
 	fire_sound = 'sound/weapons/gunshot/ak74.wav'
+	penetrating = 0
+	armor_penetration = -3
 
 /obj/item/projectile/bullet/rifle/a545x39/ap
 	damage = 20
@@ -307,6 +324,8 @@
 	damage = 25
 	agony = 20
 	fire_sound = 'sound/weapons/gunshot/m16.wav'
+	penetrating = 0
+	armor_penetration = -3
 
 /obj/item/projectile/bullet/rifle/a556x45/ap
 	damage = 20
@@ -316,20 +335,22 @@
 
 //Pistol caliber
 
-/obj/item/projectile/bullet/rifle/a9x19
+/obj/item/projectile/bullet/a9x19
 	damage = 15
 	fire_sound = 'sound/weapons/gunshot/m9.wav'
+	sharp = 0
 
-/obj/item/projectile/bullet/rifle/a9x19/ap
+/obj/item/projectile/bullet/a9x19/ap
 	damage = 15
 	armor_penetration = 15
 
-/obj/item/projectile/bullet/rifle/a9x18
+/obj/item/projectile/bullet/a9x18
 	damage = 15
 	fire_sound = 'sound/weapons/gunshot/makarov.wav'
+	sharp = 0
 
 
-/obj/item/projectile/bullet/rifle/a9x18/ap
+/obj/item/projectile/bullet/a9x18/ap
 	damage = 15
 	armor_penetration = 15
 
@@ -337,6 +358,7 @@
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'
 	damage = 15
 	armor_penetration = 15
+	sharp = 0
 
 /obj/item/projectile/bullet/rifle/a127x99mm
 	fire_sound = 'sound/weapons/gunshot/gunshot2.ogg'

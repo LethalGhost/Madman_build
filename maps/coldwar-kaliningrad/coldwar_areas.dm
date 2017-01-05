@@ -7,7 +7,19 @@
 	base_turf = /turf/snow/gravsnow
 
 /area/coldwar/surrounding
-	name = "outside"
+	name = "outside (right side)"
+	icon_state = "outside"
+	sound_env = FOREST
+	forced_ambience = list('sound/ambience/coldwar/windoutdoor.wav')
+	ambience = list (
+	'sound/ambience/coldwar/plane1.wav',
+	'sound/ambience/coldwar/plane2.wav',
+	'sound/ambience/coldwar/hel1.wav',
+	'sound/ambience/coldwar/hel2.wav'
+	)
+
+/area/coldwar/surroundingleftside
+	name = "outside (left side)"
 	icon_state = "outside"
 	sound_env = FOREST
 	forced_ambience = list('sound/ambience/coldwar/windoutdoor.wav')

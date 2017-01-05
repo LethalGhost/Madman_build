@@ -229,7 +229,7 @@
 	item_state = "lbe_soviet_officer"
 	use_sound = null
 	w_class = 4
-	storage_slots = 9
+	storage_slots = 6
 	can_hold = list(
 		/obj/item/weapon/gun/projectile/makarov,
 		/obj/item/ammo_magazine/a9x18,
@@ -247,7 +247,8 @@
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
 		/obj/item/weapon/material/knife/bayonet,
-		/obj/item/weapon/shovel/spade/wood
+		/obj/item/weapon/shovel/spade/wood,
+		/obj/item/weapon/storage/tablet
 		)
 
 /obj/item/weapon/storage/belt/lbeholster/soviet/New()
@@ -255,6 +256,7 @@
 	new /obj/item/weapon/gun/projectile/makarov(src)
 	new /obj/item/ammo_magazine/a9x18(src)
 	new /obj/item/ammo_magazine/a9x18(src)
+	new /obj/item/weapon/storage/tablet(src)
 
 
 /obj/item/weapon/storage/belt/lbeholster/usmc
@@ -264,7 +266,7 @@
 	item_state = "lbe_usmc_officer"
 	use_sound = null
 	w_class = 4
-	storage_slots = 9
+	storage_slots = 6
 	can_hold = list(
 		/obj/item/weapon/gun/projectile/berettam9,
 		/obj/item/ammo_magazine/a9x18,
@@ -282,13 +284,16 @@
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
 		/obj/item/weapon/material/knife/bayonet,
-		/obj/item/weapon/shovel/spade/wood
+		/obj/item/weapon/shovel/spade/wood,
+		/obj/item/device/flashlight/usmc,
 		)
 
 /obj/item/weapon/storage/belt/lbeholster/usmc/New()
 	..()
 	new /obj/item/weapon/gun/projectile/berettam9(src)
 	new /obj/item/ammo_magazine/a9x19(src)
+	new /obj/item/device/flashlight/usmc(src)
+	new /obj/item/weapon/material/knife/bayonet/bayonetm9(src)
 
 /obj/item/weapon/storage/belt/lbe/soviet
 	name = "load bearing equipment"
@@ -297,7 +302,7 @@
 	item_state = "lbe_soviet"
 	use_sound = null
 	w_class = 4
-	storage_slots = 6
+	storage_slots = 4
 	can_hold = list(
 		/obj/item/ammo_magazine/a9x18,
 		/obj/item/ammo_magazine/a9x19,
@@ -314,12 +319,18 @@
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
 		/obj/item/weapon/material/knife/bayonet,
-		/obj/item/weapon/shovel/spade/wood
+		/obj/item/weapon/shovel/spade/wood,
+		/obj/item/weapon/storage/tablet
 		)
 
 /obj/item/weapon/storage/belt/lbe/soviet/New()
 	..()
 	new /obj/item/weapon/shovel/spade/wood(src)
+
+
+/obj/item/weapon/storage/belt/lbe/soviet/sergeant/New()
+	..()
+	new /obj/item/weapon/storage/tablet(src)
 
 
 /obj/item/weapon/storage/belt/lbe/usmc
@@ -329,7 +340,8 @@
 	item_state = "lbe_usmc"
 	use_sound = null
 	w_class = 4
-	storage_slots = 6
+	max_w_class = 3
+	storage_slots = 4
 	can_hold = list(
 		/obj/item/ammo_magazine/a9x18,
 		/obj/item/ammo_magazine/a9x19,
@@ -346,12 +358,30 @@
 		/obj/item/weapon/pill_pack,
 		/obj/item/weapon/gauze_pack,
 		/obj/item/weapon/material/knife/bayonet,
-		/obj/item/weapon/shovel/spade/wood
+		/obj/item/weapon/shovel/spade/wood,
+		/obj/item/device/flashlight/usmc
 		)
 
 /obj/item/weapon/storage/belt/lbe/usmc/New()
 	..()
-	new /obj/item/weapon/shovel/spade/wood(src)
+	new /obj/item/device/flashlight/usmc(src)
+	new /obj/item/weapon/material/knife/bayonet/bayonetm9(src)
+
+/obj/item/weapon/storage/tablet
+	name = "tablet"
+	desc = "That's the tablet can hold various things. Used by Soviet Army commanders"
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "tablet"
+	item_state = "pouch"
+	storage_slots = 6
+	max_w_class = 1
+	slot_flags = SLOT_BELT
+
+/obj/item/weapon/storage/tablet/New()
+	..()
+	new /obj/item/weapon/pen/blue(src)
+	new /obj/item/weapon/pen/pencil(src)
+	new /obj/item/device/flashlight/pen(src)
 
 /obj/item/weapon/storage/pouch
 	name = "pouch"
