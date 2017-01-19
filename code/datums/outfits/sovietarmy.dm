@@ -149,4 +149,16 @@
 	id = /obj/item/weapon/storage/pouch/medical
 	r_hand = /obj/item/clothing/accessory/badge/militaryid
 
+/decl/hierarchy/outfit/job/sa_saper
+	name = "Sapyor"
+	uniform = /obj/item/clothing/under/coldwar/afganka/winter/var3/gefr
+	shoes = /obj/item/clothing/shoes/steeltoed
+	head = /obj/item/clothing/head/sovietushanka
+	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonet6h4
+	belt = /obj/item/weapon/storage/belt/utility/full
+	back = /obj/item/weapon/gun/projectile/automatic/aks74u
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
+	r_hand = /obj/item/clothing/accessory/badge/militaryid
+	suit = /obj/item/clothing/suit/storage/vest/chicom
 

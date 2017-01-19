@@ -68,7 +68,8 @@
 	new /obj/item/weapon/crowbar(src)
 	new /obj/item/weapon/wirecutters(src)
 	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
-
+	new /obj/item/device/flashlight(src)
+	new /obj/item/weapon/material/hatchet(src)
 
 /obj/item/weapon/storage/belt/utility/atmostech/New()
 	..()
@@ -371,7 +372,7 @@
 	name = "tablet"
 	desc = "That's the tablet can hold various things. Used by Soviet Army commanders"
 	icon = 'icons/obj/storage.dmi'
-	icon_state = "tablet"
+	icon_state = "officertablet"
 	item_state = "pouch"
 	storage_slots = 6
 	max_w_class = 1

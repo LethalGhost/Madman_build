@@ -14,6 +14,7 @@
 	var/nutriment_amt = 0
 	var/list/nutriment_desc = list("food" = 1)
 	var/wrapped = 0
+	var/closed = 0
 	center_of_mass = "x=16;y=16"
 	w_class = 2
 
@@ -50,6 +51,14 @@
 		M << "<span class='warning'>How do you propose to eat wrapped food?</span>"
 		return 0
 
+	if(closed)
+		M << "<span class='warning'>How do you propose to eat closed food?</span>"
+		return 0
+
+	if(istype(M, /mob/living/carbon))
+		if(closed)
+			return 0
+
 	if(istype(M, /mob/living/carbon))
 		//TODO: replace with standard_feed_mob() call.
 		var/mob/living/carbon/C = M
@@ -82,6 +91,9 @@
 				return
 
 			if(wrapped)
+				return 0
+
+			if(closed)
 				return 0
 
 
@@ -119,9 +131,24 @@
 	else
 		..()
 
+/obj/item/weapon/reagent_containers/food/snacks/attackby(obj/item/weapon/W, mob/user)
+	if(istype(W, /obj/item/weapon/material/knife))
+		if(closed)
+			openfood(user)
+		else
+			user << "<span class='notice'>[src] is already opened.</span>"
+
+/obj/item/weapon/reagent_containers/food/snacks/proc/openfood(mob/user)
+		user.visible_message("<span class='danger'>[user] opens the [src.name].</span>")
+		closed = 0
+		icon_state = "[initial(icon_state)]_open"
+		update_icon()
+
+
 /obj/item/weapon/reagent_containers/food/snacks/proc/Unwrap(mob/user)
 		user.visible_message("<span class='danger'>[user] unwraps the [src.name].</span>")
 		wrapped = 0
+
 
 /obj/item/weapon/reagent_containers/food/snacks/examine(mob/user)
 	if(!..(user, 1))
@@ -3371,29 +3398,7 @@
 	icon = 'icons/obj/food.dmi'
 	filling_color = "#A66829"
 	center_of_mass = list("x"=15, "y"=12)
-	var/closed = 1
-
-/obj/item/weapon/reagent_containers/food/snacks/tincan/proc/openfood(mob/user)
-	user.visible_message("<span class='danger'>[user] opens the [src.name].</span>")
-	closed = 0
-	icon_state = "[initial(name)]_open"
-	update_icon()
-
-/obj/item/weapon/reagent_containers/food/snacks/tincan/attack(mob/M as mob, mob/user as mob, def_zone)
-	if(closed = 1)
-		M << "<span class='warning'>How do you propose to eat closed food?</span>"
-		return 0
-
-	if(istype(M, /mob/living/carbon))
-		if(closed = 1)
-			return 0
-
-/obj/item/weapon/reagent_containers/food/snacks/tincan/attackby(obj/item/weapon/W, mob/user)
-	if(istype(W, /obj/item/weapon/material/knife))
-		if(closed = 1)
-			openfood(user)
-		else
-			user << "<span class='notice'>[src] is already opened.</span>"
+	closed = 1
 
 /obj/item/weapon/reagent_containers/food/snacks/tincan/condensedmilk
 	name = "condensed milk"

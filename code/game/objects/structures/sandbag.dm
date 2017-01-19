@@ -1,7 +1,7 @@
 /obj/structure/sandbag
 	name = "sandbag"
 	icon = 'icons/obj/sandbags.dmi'
-	icon_state = "sandbag"
+	icon_state = "sandbag_empty"
 	anchored = 1
 	climbable = 1
 	density = 1
@@ -51,19 +51,13 @@
 
 /obj/structure/sandbag/ex_act(severity)
 	switch(severity)
-		if(1.0)
-			PoolOrNew(/obj/structure/sandbag, src.loc)
-			PoolOrNew(/obj/structure/sandbag, src.loc)
-			PoolOrNew(/obj/structure/sandbag, src.loc)
-			qdel(src)
-			return
+		if(1.0) qdel(src)
 		if(2.0)
-			PoolOrNew(/obj/structure/sandbag, src.loc)
-			PoolOrNew(/obj/structure/sandbag, src.loc)
-			qdel(src)
-			return
-		else
-	return
+			if (prob(50))
+				qdel(src)
+			else
+				return
+
 
 /obj/item/weapon/sandbag
 	name = "sandbags"
@@ -74,9 +68,6 @@
 /obj/item/weapon/sandbag/attack_self(mob/user as mob)
 	if(sand_amount < 4)
 		user << "\red You need more sand to make wall."
-		return
-	if(!isturf(src.loc))
-		user << "\red Haha. Nice try."
 		return
 	for(var/obj/structure/sandbag/baggy in src.loc)
 		if(baggy.dir == user.dir)
@@ -107,3 +98,129 @@
 		icon_state = "sandbag_empty"
 
 //obj/item/weapon/ore/glass
+
+
+/obj/structure/foxhole
+	name = "foxhole"
+	icon = 'icons/obj/sandbags.dmi'
+	icon_state = "foxhole"
+	anchored = 1
+	climbable = 1
+	density = 1
+
+/obj/structure/foxhole
+	name = "foxhole"
+	icon = 'icons/obj/sandbags.dmi'
+	icon_state = "foxhole"
+	anchored = 1
+	climbable = 1
+	density = 1
+
+/obj/structure/foxhole/New()
+	flags |= ON_BORDER
+	update_icon()
+	..()
+
+/obj/structure/foxhole/update_icon()
+	..()
+	overlays += image('icons/obj/sandbags.dmi', src, "foxhole-over", FLY_LAYER)
+
+/obj/structure/foxhole/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(istype(mover, /obj/item/))
+		return check_cover(mover, target)
+	else
+		return 0
+
+/obj/structure/foxhole/proc/check_cover(obj/item/projectile/P, turf/from)
+	var/turf/cover
+	cover = get_turf(src)
+	if(!cover)
+		return 1
+	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
+		return 1
+
+	var/chance = 20
+	if(ismob(P.original) && get_turf(P.original) == cover)
+		var/mob/M = P.original
+		if (M.lying)
+			chance += 60				//Lying down lets you catch less bullets
+		if(get_dir(loc, from) == dir)	//Flipped tables catch mroe bullets
+			chance += 40
+		else
+			return 1					//But only from one side
+
+	if(prob(chance))
+		return 0 //blocked
+	return 1
+
+
+/obj/structure/foxhole/ex_act(severity)
+	switch(severity)
+		if(1.0) qdel(src)
+		if(2.0)
+			if (prob(50))
+				qdel(src)
+			else
+				return
+
+/obj/structure/brustwehr
+	name = "brustwehr"
+	icon = 'icons/obj/sandbags.dmi'
+	icon_state = "brustwehr"
+	anchored = 1
+	climbable = 1
+	density = 1
+
+/obj/structure/brustwehr/New()
+	flags |= ON_BORDER
+	set_dir(dir)
+	..()
+
+/obj/structure/brustwehr/set_dir(direction)
+	dir = direction
+	if(dir == NORTH)
+		layer = OBJ_LAYER
+	else
+		layer = FLY_LAYER
+
+/obj/structure/brustwehr/CanPass(atom/movable/mover, turf/target, height=0, air_group=0)
+	if(istype(mover, /obj/item/projectile))
+		return check_cover(mover, target)
+	if (get_dir(loc, target) == dir)
+		return !density
+	else
+		return 1
+
+/obj/structure/brustwehr/proc/check_cover(obj/item/projectile/P, turf/from)
+	var/turf/cover
+	cover = get_turf(src)
+	if(!cover)
+		return 1
+	if (get_dist(P.starting, loc) <= 1) //Tables won't help you if people are THIS close
+		return 1
+
+	var/chance = 20
+	if(ismob(P.original) && get_turf(P.original) == cover)
+		var/mob/M = P.original
+		if (M.lying)
+			chance += 35				//Lying down lets you catch less bullets
+		if(get_dir(loc, from) == dir)	//Flipped tables catch mroe bullets
+			chance += 40
+		else
+			return 1					//But only from one side
+
+	if(prob(chance))
+		return 0 //blocked
+	return 1
+
+
+/obj/structure/brustwehr/ex_act(severity)
+	switch(severity)
+		if(1.0) qdel(src)
+		if(2.0)
+			if (prob(50))
+				qdel(src)
+			else
+				return
+
+

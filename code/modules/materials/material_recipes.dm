@@ -136,3 +136,8 @@
 		new/datum/stack_recipe("white folder", /obj/item/weapon/folder/white), \
 		new/datum/stack_recipe("yellow folder", /obj/item/weapon/folder/yellow), \
 		))
+
+/material/sandstone/generate_recipes()
+	..()
+	recipes += new/datum/stack_recipe("foxhole", /obj/structure/foxhole, 20, time = 200, one_per_turf = 1)
+	recipes += new/datum/stack_recipe("brustwehr", /obj/structure/brustwehr, 5, time = 100, one_per_turf = 4)

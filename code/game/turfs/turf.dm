@@ -29,7 +29,6 @@ var/list/turf_edge_cache = list()
 
 	var/list/decals
 	var/interior = 1
-	var/diggable = 0
 	var/blend_with_neighbors = 0
 
 	var/list/exterior_areas = null
@@ -298,19 +297,3 @@ var/const/enterloopsanity = 100
 			continue
 		if(T.interior && !T.opacity)
 			T.set_light(config.starlight, 1, config.starlight_color)
-
-/turf/attackby(obj/item/C, mob/user)
-	if(diggable && istype(C,/obj/item/weapon/shovel/))
-		var/obj/structure/pit/P = locate(/obj/structure/pit) in src
-		if(P)
-			P.attackby(C, user)
-		else
-			visible_message("<span class='notice'>\The [user] starts digging \the [src]</span>")
-			if(do_after(user, 50))
-				user << "<span class='notice'>You dig a deep pit.</span>"
-				if(!(locate(/obj/structure/pit) in src))
-					new /obj/structure/pit(src)
-			else
-				user << "<span class='notice'>You stop shoveling.</span>"
-	else
-		..()

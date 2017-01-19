@@ -318,7 +318,7 @@
 	desc = "A synthetic armor vest. This one has added webbing and ballistic plates."
 	icon_state = "webvest"
 	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
-	allowed = list(/obj/item/weapon/gun/projectile/automatic/coltmodel733,/obj/item/weapon/gun/projectile/automatic/aks74,/obj/item/ammo_magazine/,/obj/item/device/flashlight)
+	allowed = list(/obj/item/weapon/gun/projectile/automatic/coltmodel733,/obj/item/weapon/gun/projectile/automatic/aks74,/obj/item/weapon/gun/projectile/automatic/aks74u,/obj/item/weapon/gun/projectile/shotgun/pump/ithaca/stakeout,/obj/item/ammo_magazine/,/obj/item/device/flashlight)
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO
 	item_flags = THICKMATERIAL
 	cold_protection = UPPER_TORSO|LOWER_TORSO

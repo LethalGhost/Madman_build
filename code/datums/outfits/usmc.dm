@@ -133,3 +133,14 @@
 	l_hand = /obj/item/device/binoculars
 	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9
 
+/decl/hierarchy/outfit/job/us_sapper
+	name = "Sapper"
+	uniform = /obj/item/clothing/under/coldwar/usmc/winter/medic
+	shoes = /obj/item/clothing/shoes/steeltoed
+	suit = /obj/item/clothing/suit/storage/vest/usflak
+	belt = /obj/item/weapon/storage/belt/utility/full
+	back = /obj/item/weapon/gun/projectile/shotgun/pump/mossberg500
+	l_pocket = /obj/item/weapon/reagent_containers/food/drinks/flask/military
+	id = /obj/item/weapon/storage/pouch
+	r_hand = /obj/item/clothing/accessory/badge/dogtag
+	r_pocket = /obj/item/weapon/material/knife/bayonet/bayonetm9

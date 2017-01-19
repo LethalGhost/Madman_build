@@ -5,6 +5,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#530909"
 	outfit_type = /decl/hierarchy/outfit/job/sa_pltcom
 //	access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook, access_ru_commander)
@@ -25,6 +26,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#530909"
 	outfit_type = /decl/hierarchy/outfit/job/sa_pltcomdep
 //	access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook, access_ru_commander)
@@ -45,6 +47,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_com
 //	access = list(access_ru_soldier, access_ru_medic, access_ru_surgerist, access_ru_engineer, access_ru_heavy_weapon, access_ru_squad_leader, access_ru_cook)
@@ -64,6 +67,7 @@
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
+	whitelist_only = 1
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_medic
 	spawn_location = "JoinLateSA"
@@ -81,6 +85,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
+	whitelist_only = 1
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_doc
 	spawn_location = "JoinLateSA"
@@ -97,6 +102,7 @@
 	title = "Pulemetchik"
 	faction = "Station"
 	total_positions = 3
+	whitelist_only = 1
 	spawn_positions = 3
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_lmg
@@ -115,6 +121,7 @@
 	faction = "Station"
 	total_positions = 9
 	spawn_positions = 9
+	whitelist_only = 1
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_rifleman
 //	access = list(access_ru_soldier)
@@ -133,6 +140,7 @@
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
+	whitelist_only = 1
 	selection_color = "#770e0e"
 	outfit_type = /decl/hierarchy/outfit/job/sa_comdeputy
 //	access = list(access_ru_soldier)
@@ -151,6 +159,7 @@
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
+	whitelist_only = 1
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
@@ -170,6 +179,7 @@
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
+	whitelist_only = 1
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
@@ -188,6 +198,7 @@
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
+	whitelist_only = 1
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
@@ -206,6 +217,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
+	whitelist_only = 1
 	selection_color = "#770e0e"
 //	access = list(access_ru_soldier)
 //	minimal_access = list(access_ru_soldier)
@@ -216,5 +228,24 @@
 	H.add_language("Russian")
 	H.default_language = all_languages["Russian"]
 	if(prob(3))
+		H.add_language("English")
+		H << "<b>Yay! You know english language!</b>"
+
+/datum/job/warpac_saper
+	title = "Sapyor"
+	faction = "Station"
+	total_positions = 2
+	spawn_positions = 2
+	whitelist_only = 1
+	selection_color = "#770e0e"
+//	access = list(access_ru_soldier)
+//	minimal_access = list(access_ru_soldier)
+	spawn_location = "JoinLateSA"
+	outfit_type = /decl/hierarchy/outfit/job/sa_saper
+
+/datum/job/warpac_prap/update_character(var/mob/living/carbon/human/H)
+	H.add_language("Russian")
+	H.default_language = all_languages["Russian"]
+	if(prob(10))
 		H.add_language("English")
 		H << "<b>Yay! You know english language!</b>"

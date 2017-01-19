@@ -10,7 +10,7 @@
 	w_class = 2
 	caliber = "9x19"
 	fire_delay = 1
-	jam_chance = 0.25
+	jam_chance = 0.05
 	load_method = MAGAZINE
 	magazine_type = /obj/item/ammo_magazine/a9x19
 	allowed_magazines = /obj/item/ammo_magazine/a9x19
@@ -34,7 +34,7 @@
 	icon_state = "makarov"
 	item_state = "gun"
 	w_class = 2
-	jam_chance = 0.5
+	jam_chance = 0.1
 	caliber = "9x18"
 	fire_delay = 1
 	load_method = MAGAZINE
@@ -68,7 +68,7 @@
 	slot_flags = SLOT_BACK | SLOT_BELT
 	ammo_type = /obj/item/ammo_casing/a545x39
 	allowed_magazines = /obj/item/ammo_magazine/c545x39m
-	requires_two_hands = 2
+	requires_two_hands = 4
 	accuracy = 1
 	fire_delay = 2
 	wielded_item_state = "ak-wielded"
@@ -90,6 +90,39 @@
 	else
 		icon_state = "aks74-empty"
 
+/obj/item/weapon/gun/projectile/automatic/aks74u
+	name = "AKS-74U"
+	desc = "That's the standard-issue weapon of the Soviet military service staff."
+	icon_state = "aks74u"
+	item_state = "ak"
+	w_class = 3
+	load_method = MAGAZINE
+	caliber = "545x39"
+	slot_flags = SLOT_BACK | SLOT_BELT
+	ammo_type = /obj/item/ammo_casing/a545x39
+	allowed_magazines = /obj/item/ammo_magazine/c545x39m
+	requires_two_hands = 2
+	accuracy = 1
+	fire_delay = 2
+	wielded_item_state = "ak-wielded"
+	fire_sound = 'sound/weapons/gunshot/ak74.wav'
+	unload_sound = 'sound/weapons/gunporn/ak74_magout.wav'
+	reload_sound = 'sound/weapons/gunporn/ak74_magin.wav'
+	cocked_sound = 'sound/weapons/gunporn/ak74_cock.wav'
+
+	firemodes = list(
+		list(mode_name="semiauto",       burst=1, fire_delay=0,    move_delay=null, requires_two_hands=2, burst_accuracy=null, dispersion=null),
+		list(mode_name="short bursts", burst=3, fire_delay=null, move_delay=1,    requires_two_hands=3, burst_accuracy=list(1,0,-1),       dispersion=list(0.3, 0.6, 0.6)),
+		list(mode_name="long bursts",   burst=5, fire_delay=null, move_delay=2,    requires_two_hands=4, burst_accuracy=list(1,0,0,-1,-2), dispersion=list(0.3, 0.6, 0.6, 1.2, 1.5)),
+		)
+
+/obj/item/weapon/gun/projectile/automatic/aks74u/update_icon()
+	..()
+	if(ammo_magazine)
+		icon_state = "aks74u"
+	else
+		icon_state = "aks74u-empty"
+
 //Colt Model 733
 
 /obj/item/weapon/gun/projectile/automatic/coltmodel733
@@ -98,7 +131,7 @@
 	icon_state = "coltmodel733-m"
 	item_state = "m16"
 	w_class = 4
-	jam_chance = 0.5
+	jam_chance = 0.25
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK | SLOT_BELT
@@ -139,13 +172,13 @@
 	slot_flags = SLOT_BACK
 	w_class = 5
 	force = 10
-	jam_chance = 0.3
+	jam_chance = 0.33
 	max_shells = 20
 	caliber = "762x51"
 	ammo_type = /obj/item/ammo_casing/a762x51
 	load_method = MAGAZINE
 	allowed_magazines = /obj/item/ammo_magazine/c762x51s
-	requires_two_hands = 4
+	requires_two_hands = 6
 	accuracy = 3
 	fire_delay = 2
 	fire_sound = 'sound/weapons/gunshot/m14.wav'
@@ -181,6 +214,7 @@
 	fire_delay = 3
 	accuracy = 3
 	scoped_accuracy = 5
+	requires_two_hands = 8
 	wielded_item_state = "sniper_wielded"
 
 	firemodes = list(
@@ -210,14 +244,14 @@
 	item_state = "m14"
 	slot_flags = SLOT_BACK
 	w_class = 5
-	jam_chance = 0.2
+	jam_chance = 0.1
 	force = 10
 	max_shells = 10
 	caliber = "762x54"
 	ammo_type = /obj/item/ammo_casing/a762x54
 	load_method = MAGAZINE
 	allowed_magazines = /obj/item/ammo_magazine/c762x54s
-	requires_two_hands = 4
+	requires_two_hands = 8
 	accuracy = 3
 	scoped_accuracy = 8
 	fire_delay = 1
@@ -238,7 +272,7 @@
 	else
 		icon_state = "svd-empty"
 
-/obj/item/weapon/gun/projectile/automatic/svd/scoped/verb/scope()
+/obj/item/weapon/gun/projectile/automatic/svd/verb/scope()
 	set category = "Object"
 	set name = "Use Scope"
 	set popup_menu = 1
@@ -257,13 +291,13 @@
 	icon_state = "m16a1-m"
 	item_state = "m16"
 	w_class = 5
-	jam_chance = 0.8
+	jam_chance = 0.6
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK
 	ammo_type = /obj/item/ammo_casing/a556x45
 	allowed_magazines = list(/obj/item/ammo_magazine/c556x45m, /obj/item/ammo_magazine/c556x45s)
-	requires_two_hands = 4
+	requires_two_hands = 6
 	accuracy = 3
 	fire_delay = 3
 	wielded_item_state = "m16-wielded"
@@ -295,13 +329,13 @@
 	icon_state = "ak74"
 	item_state = "ak"
 	w_class = 5
-	jam_chance = 0.3
+	jam_chance = 0.15
 	load_method = MAGAZINE
 	caliber = "545x39"
 	slot_flags = SLOT_BACK
 	ammo_type = /obj/item/ammo_casing/a545x39
 	allowed_magazines = /obj/item/ammo_magazine/c545x39m
-	requires_two_hands = 3
+	requires_two_hands = 6
 	accuracy = 2
 	fire_delay = 3
 	wielded_item_state = "ak-wielded"
@@ -332,13 +366,13 @@
 	icon_state = "m16a2-m"
 	item_state = "m16"
 	w_class = 5
-	jam_chance = 0.5
+	jam_chance = 0.3
 	load_method = MAGAZINE
 	caliber = "556x45"
 	slot_flags = SLOT_BACK
 	ammo_type = /obj/item/ammo_casing/a556x45
 	allowed_magazines = list(/obj/item/ammo_magazine/c556x45m, /obj/item/ammo_magazine/c556x45s)
-	requires_two_hands = 4
+	requires_two_hands = 5
 	accuracy = 2
 	fire_delay = 3
 	wielded_item_state = "m16-wielded"
@@ -369,7 +403,7 @@
 	desc = "That's the Ruchnoi Pulemet Kalashnikova, a standard-issue squad assault weapon of the VDV."
 	icon_state = "rpk74"
 	item_state = "ak"
-	jam_chance = 0.2
+	jam_chance = 0.1
 	slot_flags = SLOT_BACK
 	w_class = 5
 	force = 10
@@ -378,7 +412,7 @@
 	ammo_type = /obj/item/ammo_casing/a762x39
 	load_method = MAGAZINE
 	allowed_magazines = list(/obj/item/ammo_magazine/c762x39r, /obj/item/ammo_magazine/c762x39br)
-	requires_two_hands = 6
+	requires_two_hands = 8
 	accuracy = 3
 	wielded_item_state = "ak-wielded"
 	fire_sound = 'sound/weapons/gunshot/rpk47.wav'
@@ -408,7 +442,7 @@
 	item_state = "lmg"
 	w_class = 5
 	force = 15
-	jam_chance = 0.3
+	jam_chance = 0.2
 	slot_flags = SLOT_BACK
 	max_shells = 200
 	caliber = "762x54"
@@ -482,14 +516,14 @@
 	item_state = "lmg"
 	w_class = 5
 	force = 15
-	jam_chance = 0.4
+	jam_chance = 0.2
 	slot_flags = SLOT_BACK
 	max_shells = 100
 	caliber = "556x45"
 	ammo_type = /obj/item/ammo_casing/a556x45
 	load_method = MAGAZINE
 	allowed_magazines = /obj/item/ammo_magazine/c556x45b
-	requires_two_hands = 8
+	requires_two_hands = 12
 	wielded_item_state = "lmg-wielded"
 	unload_sound = 'sound/weapons/gunporn/m249_boxremove.wav'
 	reload_sound = 'sound/weapons/gunporn/m249_boxinsert.wav'
@@ -557,13 +591,13 @@
 	item_state = "m16"
 	w_class = 5
 	force = 10
-	jam_chance = 1.7
+	jam_chance = 0.5
 	caliber = "556x45"
 	ammo_type = /obj/item/ammo_casing/a556x45
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	allowed_magazines = list(/obj/item/ammo_magazine/c556x45m, /obj/item/ammo_magazine/c556x45s)
-	requires_two_hands = 5
+	requires_two_hands = 7
 	burst_delay = 0.5
 	fire_sound = 'sound/weapons/gunshot/m16.wav'
 	unload_sound = 'sound/weapons/gunporn/m16_magout.wav'
@@ -626,13 +660,13 @@
 	item_state = "ak"
 	w_class = 5
 	force = 10
-	jam_chance = 0.4
+	jam_chance = 0.2
 	caliber = "545x39"
 	ammo_type = /obj/item/ammo_casing/a545x39
 	slot_flags = SLOT_BACK
 	load_method = MAGAZINE
 	allowed_magazines = /obj/item/ammo_magazine/c545x39m
-	requires_two_hands = 5
+	requires_two_hands = 7
 	burst_delay = 0.5
 	wielded_item_state = "ak-wielded"
 	fire_sound = 'sound/weapons/gunshot/ak74.wav'
@@ -780,3 +814,39 @@
 		icon_state = "rpg7"
 	else
 		icon_state = "rpg7_empty"
+
+
+//shotguns
+
+/obj/item/weapon/gun/projectile/shotgun/pump/ithaca
+	name = "Ithaca 37"
+	desc = "Ha-ha, classic!"
+	icon_state = "ithaca37"
+	wielded_item_state = "gun-wielded"
+	item_state = "cshotgun"
+	max_shells = 4
+	ammo_type = /obj/item/ammo_casing/shotgun
+	requires_two_hands = 5
+	w_class = 5
+	slot_flags = SLOT_BACK
+
+/obj/item/weapon/gun/projectile/shotgun/pump/ithaca/stakeout
+	name = "Ithaca Stakeout"
+	desc = "Ha-ha, classic! But without the stock."
+	icon_state = "ithacastakeout"
+	wielded_item_state = "gun-wielded"
+	item_state = "cshotgun"
+	requires_two_hands = 2
+	w_class = 4
+
+/obj/item/weapon/gun/projectile/shotgun/pump/mossberg500
+	name = "Mossberg 500"
+	desc = "Bulky! Robust! Loud! A weapon of choice for the US marine, isn't it?"
+	icon_state = "mossberg500"
+	wielded_item_state = "gun-wielded"
+	item_state = "cshotgun"
+	max_shells = 7
+	ammo_type = /obj/item/ammo_casing/shotgun
+	requires_two_hands = 5
+	w_class = 5
+	slot_flags = SLOT_BACK

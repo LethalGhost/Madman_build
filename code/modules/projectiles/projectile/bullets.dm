@@ -11,6 +11,7 @@
 	var/mob_passthrough_check = 0
 
 	muzzle_type = /obj/effect/projectile/bullet/muzzle
+	impact_type = /obj/effect/projectile/bullet/impact
 
 /obj/item/projectile/bullet/on_hit(var/atom/target, var/blocked = 0)
 	if (..(target, blocked))
@@ -301,7 +302,7 @@
 	armor_penetration = 25
 	sharp = 0
 
-/obj/item/projectile/bullet/rifle/a762x51/hp
+/obj/item/projectile/bullet/rifle/a762x54/hp
 	damage = 40
 	agony = 10
 	armor_penetration = -5

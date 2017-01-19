@@ -5,12 +5,12 @@
     stepsound = "snow"
     interior = 0
     blend_with_neighbors = 1
-    diggable = 1
+
 
     oxygen = MOLES_O2STANDARD * 1.15
     nitrogen = MOLES_N2STANDARD * 1.15
 
-    temperature = T0C - 30
+    temperature = T0C - 20
     var/list/crossed_dirs = list()
 
 #define FOOTSTEP_SPRITE_AMT 2
@@ -66,6 +66,28 @@
 			else overlays += icon(icon, "footprint[i]", text2num(d))
 //			overlays += icon(icon, "footprint[i]", text2num(d))
 
+/turf/snow/attackby(obj/item/weapon/W as obj, mob/user as mob)
+
+	if(!W || !user)
+		return 0
+
+	if ((istype(W, /obj/item/weapon/shovel)))
+		var/turf/T = user.loc
+		if (!( istype(T, /turf) ))
+			return
+
+		user << "\red You start digging."
+		playsound(src.loc, 'sound/effects/rustle1.ogg', 50, 1) //russle sounds sounded better
+
+		sleep(40)
+		if ((user.loc == T && user.get_active_hand() == W))
+			user << "\blue You removed some snow."
+			src.ChangeTurf(/turf/frozenground)
+	else
+		..(W,user)
+	return
+
+
 
 /turf/snow/snow2
 	name = "snow"
@@ -84,7 +106,7 @@
 
 	oxygen = MOLES_O2STANDARD * 1.15
 	nitrogen = MOLES_N2STANDARD * 1.15
-	temperature = T0C - 35
+	temperature = T0C - 20
 	var/bridge = 0 //has there been a bridge built?
 
 /turf/ice/New()
@@ -148,7 +170,7 @@
 	name = "frozen ground"
 	icon_state = "ground_frozen"
 	blend_with_neighbors = 3
-	diggable = 1
+
 
 /turf/frozenground
 	name = "frozen ground"
@@ -156,15 +178,92 @@
 	icon = 'icons/turf/snow_new.dmi'
 	icon_state = "wground1"
 	blend_with_neighbors = 3
-	diggable = 1
+	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 
 	oxygen = MOLES_O2STANDARD * 1.15
 	nitrogen = MOLES_N2STANDARD * 1.15
-	temperature = T0C - 30
+	temperature = T0C - 20
 
 /turf/frozenground/New()
 	icon_state = "wground[rand(1,3)]"
 	..()
+
+
+/turf/frozenground/ex_act(severity)
+	switch(severity)
+		if(3.0)
+			return
+		if(2.0)
+			if (prob(70))
+				gets_dug()
+		if(1.0)
+			gets_dug()
+	return
+
+
+/turf/frozenground/attackby(obj/item/weapon/W as obj, mob/user as mob)
+	if(!W || !user)
+		return 0
+
+	var/list/usable_tools = list(
+		/obj/item/weapon/shovel,
+		/obj/item/weapon/pickaxe/diamonddrill,
+		/obj/item/weapon/pickaxe/drill,
+		/obj/item/weapon/pickaxe/borgdrill
+		)
+
+	var/valid_tool
+	for(var/valid_type in usable_tools)
+		if(istype(W,valid_type))
+			valid_tool = 1
+			break
+
+	if(valid_tool)
+		if (dug)
+			user << "\red This area has already been dug"
+			return
+
+		var/turf/T = user.loc
+		if (!(istype(T)))
+			return
+
+		user << "\red You start digging."
+		playsound(user.loc, 'sound/effects/rustle1.ogg', 50, 1)
+
+		if(!do_after(user,40, src)) return
+
+		user << "<span class='notice'>You dug a hole.</span>"
+		gets_dug()
+
+	else if(istype(W,/obj/item/weapon/storage/ore))
+		var/obj/item/weapon/storage/ore/S = W
+		if(S.collection_mode)
+			for(var/obj/item/weapon/ore/O in contents)
+				O.attackby(W,user)
+				return
+	else if(istype(W,/obj/item/weapon/storage/bag/fossils))
+		var/obj/item/weapon/storage/bag/fossils/S = W
+		if(S.collection_mode)
+			for(var/obj/item/weapon/fossil/F in contents)
+				F.attackby(W,user)
+				return
+
+	else
+		..(W,user)
+	return
+
+/turf/frozenground/proc/gets_dug()
+
+	if(dug)
+		return
+
+	for(var/i=0;i<(rand(3)+2);i++)
+		new/obj/item/weapon/ore/glass(src)
+
+	dug = 1
+	icon_state = "wground_dug"
+	return
+
 
 /turf/snow/plating
 	name = "snowy plating"

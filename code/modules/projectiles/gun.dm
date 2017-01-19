@@ -153,7 +153,7 @@
 		return
 
 	user << "<span class='notice'>You toggle the safety [safety ? "<b>off</b>" : "<b>on</b>"].</span>"
-	playsound(usr,'sound/machines/click.ogg', 15, 1)
+	playsound(usr,'sound/weapons/empty.ogg', 15, 1)
 	safety = !safety
 	return
 

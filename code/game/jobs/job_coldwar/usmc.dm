@@ -6,6 +6,7 @@
 	spawn_positions = 1
 	head_position = 1
 	selection_color = "#2d2d63"
+	whitelist_only = 1
 	outfit_type = /decl/hierarchy/outfit/job/us_plleader
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
 //	minimal_access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -24,6 +25,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#2d2d63"
 	outfit_type = /decl/hierarchy/outfit/job/us_depplleader
 	spawn_location = "JoinLateNATO"
@@ -41,6 +43,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#2d2d63"
 	outfit_type = /decl/hierarchy/outfit/job/us_messenger
 	spawn_location = "JoinLateNATO"
@@ -58,6 +61,7 @@
 	total_positions = 3
 	spawn_positions = 3
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_sqleader
 	spawn_location = "JoinLateNATO"
@@ -75,6 +79,7 @@
 	total_positions = 6
 	spawn_positions = 6
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_ftleader
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -94,6 +99,7 @@
 	total_positions = 6
 	spawn_positions = 6
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_ftlmg
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -113,6 +119,7 @@
 	total_positions = 6
 	spawn_positions = 6
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_ftlmgsup
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -132,6 +139,7 @@
 	total_positions = 6
 	spawn_positions = 6
 	head_position = 1
+	whitelist_only = 1
 	outfit_type = /decl/hierarchy/outfit/job/us_ftrifleman
 	selection_color = "#4c4ca5"
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -151,6 +159,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_commedic
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -171,6 +180,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_doc
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -191,6 +201,7 @@
 	total_positions = 2
 	spawn_positions = 2
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_dm
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -210,6 +221,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	head_position = 1
+	whitelist_only = 1
 	selection_color = "#4c4ca5"
 	outfit_type = /decl/hierarchy/outfit/job/us_pilot
 //	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
@@ -217,6 +229,25 @@
 	spawn_location = "JoinLateNATO"
 
 /datum/job/nato_pilot/update_character(var/mob/living/carbon/human/H)
+	H.add_language("English")
+	H.default_language = all_languages["English"]
+	if(prob(40))
+		H.add_language("Russian")
+		H << "<b>So you know russian language.</b>"
+
+/datum/job/nato_sapper
+	title = "Field Sapper"
+	faction = "Station"
+	total_positions = 2
+	spawn_positions = 2
+	whitelist_only = 1
+	selection_color = "#4c4ca5"
+	outfit_type = /decl/hierarchy/outfit/job/us_sapper
+//	access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
+//	minimal_access = list(access_nato_soldier, access_nato_medic, access_nato_surgerist, access_nato_engineer, access_nato_heavy_weapon, access_nato_cook, access_nato_squad_leader, access_nato_commander)
+	spawn_location = "JoinLateNATO"
+
+/datum/job/nato_sapper/update_character(var/mob/living/carbon/human/H)
 	H.add_language("English")
 	H.default_language = all_languages["English"]
 	if(prob(10))
