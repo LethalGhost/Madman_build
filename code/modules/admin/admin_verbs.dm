@@ -95,11 +95,13 @@ var/list/admin_verbs_admin = list(
 	/client/proc/add_trader,
 	/client/proc/remove_trader,
 	/datum/admins/proc/sendFax
-)
+	)
+
 var/list/admin_verbs_ban = list(
 	/client/proc/unban_panel,
 	/client/proc/jobbans
 	)
+
 var/list/admin_verbs_sounds = list(
 	/client/proc/play_local_sound,
 	/client/proc/play_sound,
@@ -138,6 +140,7 @@ var/list/admin_verbs_spawn = list(
 	/client/proc/virus2_editor,
 	/client/proc/spawn_chemdisp_cartridge
 	)
+
 var/list/admin_verbs_server = list(
 	/datum/admins/proc/capture_map_part,
 	/client/proc/Set_Holiday,
@@ -161,7 +164,9 @@ var/list/admin_verbs_server = list(
 	/client/proc/toggle_random_events,
 	/client/proc/check_customitem_activity,
 	/client/proc/nanomapgen_DumpImage,
+	/client/proc/manage_whitelists
 	)
+
 var/list/admin_verbs_debug = list(
 	/client/proc/getruntimelog,                     // allows us to access runtime logs to somebody,
 	/client/proc/cmd_admin_list_open_jobs,
